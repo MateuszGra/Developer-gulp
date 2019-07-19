@@ -52,7 +52,7 @@ button {
   cursor: pointer;
 }
 
-.buttonFirst {
+.button--white {
   position: relative;
   width: 15rem;
   height: 4rem;
@@ -71,8 +71,8 @@ button {
 
 .buttonSecend::after,
 .buttonSecend::before,
-.buttonFirst::after,
-.buttonFirst::before {
+.button--white::after,
+.button--white::before {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -81,7 +81,7 @@ button {
   transition: 0.3s;
 }
 
-.submit::after,
+.button--submit::after,
 .submitContact::after {
   content: 'Wyślij';
   color: var(--fontColor);
@@ -104,7 +104,7 @@ button {
   top: 100%;
 }
 
-.submit::before,
+.button--submit::before,
 .submitContact::before {
   content: '';
   background: url(../../../assets/images/send.png);
@@ -151,8 +151,8 @@ button {
 
 .buttonSecend:hover::after,
 .buttonSecend:hover::before,
-.buttonFirst:hover::after,
-.buttonFirst:hover::before {
+.button--white:hover::after,
+.button--white:hover::before {
   transform: translateY(-100%);
 }
 
@@ -202,7 +202,7 @@ header {
 }
 
 .nav__logo,
-.nav__logo-link {
+.nav__logoLink {
   height: 8rem;
   align-items: flex-start;
   margin: 0 0 0 8%;
@@ -261,43 +261,43 @@ header {
   opacity: 1;
 }
 
-.header__images-wrapper {
+.header__imagesWrapper {
   width: 85%;
   overflow: hidden;
   position: relative;
   margin: 0 0 4.5rem 0;
 }
 
-.header__image-first {
+.header__imageFirst {
   width: 100%;
   mix-blend-mode: normal;
 }
 
-.header__image-secend {
+.header__imageSecend {
   position: absolute;
   width: 100%;
   top: 0%;
   left: 0%;
 }
 
-.header__image-secend {
+.header__imageSecend {
   opacity: 0.66;
   mix-blend-mode: overlay;
 }
 
 /************************************************************** search **************************************************************/
-.section-search {
+.search {
   width: 100%;
 }
 
-.section-search__info {
+.search__info {
   margin: 3.5rem 0 0 0;
   width: 55%;
   text-align: center;
   line-height: 3rem;
 }
 
-.searchWrapper {
+.slider {
   display: flex;
   position: relative;
   width: 82%;
@@ -403,7 +403,7 @@ header {
   margin: 0 0 6.5rem 0;
 }
 
-.dotsWrapper {
+.slider__dotsWrapper {
   display: flex;
   flex-direction: row;
   position: absolute;
@@ -427,8 +427,8 @@ header {
   transform: scale(1.4);
 }
 
-.arrowLeftWrapper,
-.arrowRightWrapper {
+.slider__arrowLeft,
+.slider__arrowRight {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -441,17 +441,17 @@ header {
   transition: 0.4s;
 }
 
-.arrowLeftWrapper:hover,
-.arrowRightWrapper:hover {
+.slider__arrowLeft:hover,
+.slider__arrowRight:hover {
   background: rgba(134, 166, 222, 0.2);
 }
 
-.arrowLeftWrapper {
+.slider__arrowLeft {
   left: 0;
   transform: rotate(180deg);
 }
 
-.arrowRightWrapper {
+.slider__arrowRight {
   right: 0;
 }
 
@@ -475,7 +475,7 @@ header {
   padding-bottom: 10rem;
 }
 
-.investImg {
+.investments__image {
   transform: translateY(-10rem);
   margin: 0 9.8% 0 0;
   width: 40%;
@@ -483,7 +483,7 @@ header {
 
 /************************************************************** forms (all)**************************************************************/
 
-.investForm {
+.form--investments {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -491,15 +491,15 @@ header {
   z-index: 1;
 }
 
-.investFormText {
+.form__info--investments {
   margin: 2rem 0 4.5rem 0;
 }
 
 .contactInput,
 .contactTextArea,
-.inputForm,
+.form__input,
 .contactLabel,
-.labelForm {
+.form__label {
   font-size: 1.7rem;
   font-weight: lighter;
 }
@@ -508,7 +508,7 @@ header {
   width: 100%;
 }
 
-.inputForm,
+.form__input,
 .contactInput,
 .contactTextArea {
   height: 5.5rem;
@@ -519,34 +519,34 @@ header {
   border-top: none;
 }
 
-.inputForm {
+.form__input {
   border-bottom: 0.1rem solid var(--fontColor);
   width: 100%;
 }
 
-.labelForm {
+.form__label {
   transform: translateY(3.7rem) scale(1);
   margin: 0 0 0 2rem;
 }
 
-.labelForm,
+.form__label,
 .contactLabel {
   transition: 0.3s;
 }
 
 .contactLabel.active,
-.labelForm.active {
+.form__label.active {
   transform: translateX(-11.5%) translateY(0) scale(0.75);
 }
 
-.checkboxContainer,
+.form__checkboxWrapper,
 .checkboxContainerContact {
   display: flex;
   position: relative;
   margin: 3rem 0 0 0;
 }
 
-.checkmark,
+.form__checkboxInfo,
 .checkmarkContact {
   position: relative;
   display: block;
@@ -557,7 +557,7 @@ header {
 }
 
 .checkmarkContact::before,
-.checkmark::before {
+.form__checkboxInfo::before {
   position: absolute;
   left: -3rem;
   content: '';
@@ -566,20 +566,20 @@ header {
   transition: 0.3s;
 }
 
-.checkmark::before {
+.form__checkboxInfo::before {
   border: 0.1rem solid var(--fontColor);
 }
 
 .checkmarkContact.chec::before,
-.checkmark.chec::before {
+.form__checkboxInfo.chec::before {
   background: var(--linkActive);
 }
 
-.submit {
+.button--submit {
   margin: 3rem 0 0 0;
 }
 
-.checkbox {
+.form__checkbox {
   display: none;
 }
 
@@ -601,7 +601,7 @@ header {
 }
 
 .contactLabel,
-.labelForm {
+.form__label {
   position: absolute;
   transform: translateY(2rem);
   margin: 0 0 0 2rem;
@@ -630,8 +630,8 @@ header {
   margin: 4rem 0 0 3rem;
 }
 
-.error,
-.errorChec,
+.form__error,
+.form__error--checkbox,
 .errorContact,
 .errorChecContact {
   position: absolute;
@@ -647,8 +647,8 @@ header {
   white-space: nowrap;
 }
 
-.error,
-.errorChec {
+.form__error,
+.form__error--checkbox {
   color: white;
   background: var(--bgBlack);
 }
@@ -659,26 +659,26 @@ header {
   background: white;
 }
 
-.error,
+.form__error,
 .errorContact {
   top: -3rem;
 }
 
-.errorChec,
+.form__error--checkbox,
 .errorChecContact {
   top: -5rem;
 }
 
-.error.notActive,
-.errorChec.notActive,
+.form__error.notActive,
+.form__error--checkbox.notActive,
 .errorContact.notActive,
 .errorChecContact.notActive {
   opacity: 0;
   z-index: -1;
 }
 
-.error::after,
-.errorChec::after,
+.form__error::after,
+.form__error--checkbox::after,
 .errorContact::after,
 .errorChecContact::after {
   content: '';
@@ -691,8 +691,8 @@ header {
   border-right: 1rem solid transparent;
 }
 
-.error::after,
-.errorChec::after {
+.form__error::after,
+.form__error--checkbox::after {
   border-top: 1.5rem solid var(--bgBlack);
 }
 
@@ -701,7 +701,7 @@ header {
   border-top: 1.5rem solid white;
 }
 
-.inputWrapper {
+.form__inputWrapper {
   width: 100%;
   position: relative;
 }
@@ -718,23 +718,23 @@ header {
   width: 88%;
 }
 
-.benefit {
+.benefits__wrapperBenefit {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.benefitImg {
+.benefits__image {
   width: 10rem;
   height: 10rem;
   margin: 13rem 0 5rem 0;
 }
 
-.benefitTitle {
+.benefits__title {
   letter-spacing: 0.2rem;
 }
 
-.rowOne {
+.benefits__wrapperLine {
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -975,7 +975,7 @@ footer {
     font-size: 1.4rem;
   }
 
-  .searchWrapper {
+  .slider {
     height: 47rem;
   }
 
@@ -1064,7 +1064,7 @@ footer {
   }
 
   .nav__logo,
-  .nav__logo-link {
+  .nav__logoLink {
     height: 5rem;
   }
 
@@ -1092,7 +1092,7 @@ footer {
     overflow: hidden;
   }
 
-  .nav__hamburger-line,
+  .nav__hamburgerLine,
   .nav__hamburger::after,
   .nav__hamburger::before {
     width: 100%;
@@ -1105,11 +1105,11 @@ footer {
     transition: 0.3s;
   }
 
-  .nav__hamburger-line {
+  .nav__hamburgerLine {
     transition: 0.1s;
   }
 
-  .nav__hamburger-line.active {
+  .nav__hamburgerLine.active {
     transform: scaleY(0);
   }
 
@@ -1138,30 +1138,30 @@ footer {
     transform: translateY(-50%) rotate(-225deg);
   }
 
-  .header__images-wrapper {
+  .header__imagesWrapper {
     width: 95%;
     margin: 0 0 0 0;
   }
 
-  .header__image-first,
-  .header__image-secend {
+  .header__imageFirst,
+  .header__imageSecend {
     width: 100%;
   }
 
   /************************************************************** search **************************************************************/
-  .section-search__info {
+  .search__info {
     width: 95%;
     line-height: 2.5rem;
     margin: 3rem 0 0 0;
   }
 
-  .searchWrapper {
+  .slider {
     margin: 5rem 0 0 0;
     width: 95%;
     height: 30rem;
   }
 
-  .searchWrapper {
+  .slider {
     height: 32rem;
   }
 
@@ -1198,7 +1198,7 @@ footer {
     padding-bottom: 3rem;
   }
 
-  .investImg {
+  .investments__image {
     transform: translateY(0);
     width: 70%;
     margin: 0 0 2rem 0;
@@ -1233,7 +1233,7 @@ footer {
     margin: 2rem 0 2rem 0;
   }
 
-  .labelForm,
+  .form__label,
   .contactLabel {
     font-size: 1.3rem;
   }
@@ -1242,7 +1242,7 @@ footer {
     margin: 3rem 0 5rem 0
   }
 
-  .investFormText {
+  .form__info--investments {
     text-align: center;
     margin: 2rem 0 1rem 0;
   }
@@ -1253,12 +1253,12 @@ footer {
     padding-bottom: 5rem;
   }
 
-  .benefitTitle {
+  .benefits__title {
     font-size: 1.6rem;
     text-align: center;
   }
 
-  .benefitImg {
+  .benefits__image {
     margin: 5rem 0 3rem 0;
   }
 
@@ -1342,15 +1342,15 @@ footer {
 /************************************************************** 680 media **************************************************************/
 /****************************************************************************************************************************************/
 @media (max-width: 680px) {
-  .header__images-wrapper {
+  .header__imagesWrapper {
     width: 100%;
   }
 
-  .investImg {
+  .investments__image {
     width: 95%;
   }
 
-  .investForm {
+  .form--investments {
     width: 95%;
   }
 
@@ -1407,11 +1407,11 @@ footer {
     font-size: 2.5rem
   }
 
-  .searchWrapper {
+  .slider {
     height: 60rem;
   }
 
-  .searchWrapper {
+  .slider {
     width: 80%;
   }
 
@@ -1436,8 +1436,8 @@ footer {
 
   .buttonSecend:hover::after,
   .buttonSecend:hover::before,
-  .buttonFirst:hover::after,
-  .buttonFirst:hover::before {
+  .button--white:hover::after,
+  .button--white:hover::before {
     transform: translateY(0%);
   }
 }
@@ -1451,22 +1451,22 @@ footer {
 
   }
 
-  .rowOne {
+  .benefits__wrapperLine {
     flex-direction: column;
   }
 
-  .benefitImg {
+  .benefits__image {
     width: 6rem;
     height: 6rem;
     margin: 4rem 0 1rem 0;
   }
 
-  .benefitTitle {
+  .benefits__title {
     font-size: 1rem;
     width: 70%;
   }
 
-  .searchWrapper {
+  .slider {
     width: 95%;
   }
 
@@ -1482,8 +1482,8 @@ footer {
     font-size: 6rem;
   }
 
-  .error,
-  .errorChec,
+  .form__error,
+  .form__error--checkbox,
   .errorContact,
   .errorChecContact {
     font-size: 1.2rem;

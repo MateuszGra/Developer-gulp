@@ -63,11 +63,11 @@
                 if (i === 0) dot.classList.add('active');
             }
 
-            const searchWrapper = document.querySelector('.searchWrapper');
-            searchWrapper.appendChild(fragment);
+            const slider = document.querySelector('.slider');
+            slider.appendChild(fragment);
 
-            const dotsWrapper = document.querySelector('.dotsWrapper');
-            dotsWrapper.appendChild(fragmentTwo);
+            const slider__dotsWrapper = document.querySelector('.slider__dotsWrapper');
+            slider__dotsWrapper.appendChild(fragmentTwo);
         })
         //scroll_animation
         .then(resp => {
@@ -182,12 +182,12 @@
         .catch(error => {
             console.log('Błąd API: ', error)
             const errortext = 'Przepraszamy. Brak połączenia z serwerem.'
-            createElement(name = "errorApi", type = "h2", clas = "errorApi", txt = errortext, parent = searchWrapper);
+            createElement(name = "errorApi", type = "h2", clas = "errorApi", txt = errortext, parent = slider);
         });
 
     //hide hamburger
     const nav__hamburger = document.querySelector('.nav__hamburger');
-    const nav__hamburgerLine = document.querySelector('.nav__hamburger-line');
+    const nav__hamburgerLine = document.querySelector('.nav__hamburgerLine');
     const nav__ul = document.querySelector('.nav__ul');
 
     nav__hamburger.addEventListener("click", (e) => {

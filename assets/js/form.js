@@ -36,7 +36,7 @@
 
 
   var contact_form = document.querySelectorAll('#contact_form');
-  var checkboxValid = document.querySelectorAll('.checkbox');
+  var checkboxValid = document.querySelectorAll('.form__checkbox');
   var errorsBox = document.querySelectorAll('#errorChec');
   var errors = document.querySelectorAll('#error');
 

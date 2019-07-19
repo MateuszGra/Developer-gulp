@@ -2,7 +2,7 @@
 <html lang="pl-PL">
 
 <head>
-  <title>Gulp Starter</title>
+  <title>Developer</title>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge ,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -24,9 +24,9 @@
     <!----------------------------------------------------------- header ----------------------------------------------------------->
     <header id="header">
       <nav class="nav">
-        <a class="nav__logo-link" href="index.html"><img class="nav__logo" src="assets/images/logo.png"></a>
+        <a class="nav__logoLink" href="index.html"><img class="nav__logo" src="assets/images/logo.png"></a>
         <div class="nav__hamburger">
-          <figure class="nav__hamburger-line"></figure>
+          <figure class="nav__hamburgerLine"></figure>
         </div>
         <ul class="nav__ul active">
           <li class="nav__li"><a class="nav__a" href="#header">STRONA GŁÓWNA</a></li>
@@ -35,94 +35,93 @@
           <li class="nav__li"><a class="nav__a" href="#blog">BLOG</a></li>
         </ul>
       </nav>
-      <div class="header__images-wrapper">
-        <img class="header__image-first" src="assets/images/header.jpg">
-        <img class="header__image-secend" src="assets/images/header-overlay.jpg">
+      <div class="header__imagesWrapper">
+        <img class="header__imageFirst" src="assets/images/header.jpg">
+        <img class="header__imageSecend" src="assets/images/header-overlay.jpg">
       </div>
     </header>
     <!----------------------------------------------------------- search ----------------------------------------------------------->
-    <section class="section-search" id="search">
-      <h1 class="section-search__title">Znajdź inwestycję, którą pokochasz!</h1>
-      <p class="section-search__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.
+    <section class="search" id="search">
+      <h1 class="search__title">Znajdź inwestycję, którą pokochasz!</h1>
+      <p class="search__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.
         Aliquam erat volutpat.
         Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
-      <div class="searchWrapper">
-        <div class="dotsWrapper"></div>
-        <div class="arrowLeftWrapper" id="arrow"><img src="assets/images//SVG/arrow.svg"></div>
-        <div class="arrowRightWrapper" id="arrow"><img src="assets/images/SVG/arrow.svg"></div>
+      <div class="slider">
+        <div class="slider__dotsWrapper"></div>
+        <div class="slider__arrowLeft" id="arrow"><img src="assets/images//SVG/arrow.svg"></div>
+        <div class="slider__arrowRight" id="arrow"><img src="assets/images/SVG/arrow.svg"></div>
       </div>
     </section>
     <!----------------------------------------------------------- investments ----------------------------------------------------------->
     <section class="investments" id="investments">
-      <img class="investImg" src="assets/images/form1.jpg">
-      <form class="investForm" id="contact_form" novalidate method="POST" action="" target="_blank">
+      <img class="investments__image" src="assets/images/form1.jpg">
+      <form class="form--investments" id="contact_form" novalidate method="POST" action="" target="_blank">
         <h1>Zainteresowany kupnem? Zostaw numer!</h1>
-        <p class="investFormText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor
+        <p class="form__info--investments">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor
           sem.</p>
-        <div class="inputWrapper">
-          <div class="error notActive" id="error">Proszę uzupełnić pole</div>
-          <label class="labelForm" for="name" id="label">Imię i nazwisko</label>
-          <input class="inputForm input" type=”text” name="name" id="name">
+        <div class="form__inputWrapper">
+          <div class="form__error notActive" id="error">Proszę uzupełnić pole</div>
+          <label class="form__label" for="name" id="label">Imię i nazwisko</label>
+          <input class="form__input input" type=”text” name="name" id="name">
         </div>
-        <div class="inputWrapper">
-          <div class="error notActive" id="error">Proszę uzupełnić pole</div>
-          <label class="labelForm" for="phone" id="label">Telefon</label>
-          <input class="inputForm input" type="phone" name="phone" id="phone">
+        <div class="form__inputWrapper">
+          <div class="form__error notActive" id="error">Proszę uzupełnić pole</div>
+          <label class="form__label" for="phone" id="label">Telefon</label>
+          <input class="form__input input" type="phone" name="phone" id="phone">
         </div>
-        <div class="inputWrapper">
-          <div class="error notActive" id="error">Proszę uzupełnić pole</div>
-          <label class="labelForm" for="message" id="label">Kiedy najlepiej zadzwonić</label>
-          <input class="inputForm input" type="text" name="message" id="message">
+        <div class="form__inputWrapper">
+          <div class="form__error notActive" id="error">Proszę uzupełnić pole</div>
+          <label class="form__label" for="message" id="label">Kiedy najlepiej zadzwonić</label>
+          <input class="form__input input" type="text" name="message" id="message">
         </div>
-        <label class="checkboxContainer"></div>
-          <div class="errorChec notActive" id="errorChec">Wymagana zgoda</div>
-          <input class="checkbox" type="checkbox">
-          <span class="checkmark" id="checbox">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <label class="form__checkboxWrapper"></div>
+          <div class="form__error--checkbox notActive" id="errorChec">Wymagana zgoda</div>
+          <input class="form__checkbox" type="checkbox">
+          <span class="form__checkboxInfo" id="checbox">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Aliquam at
             porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum
             sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
         </label>
-        <label class="checkboxContainer">
-          <div class="errorChec notActive" id="errorChec">Wymagana zgoda</div>
-          <input class="checkbox" type="checkbox">
-          <span class="checkmark" id="checbox">Nervous, aren't you? I can see it in your soul. I can feel it
+        <label class="form__checkboxWrapper">
+          <div class="form__error--checkbox notActive" id="errorChec">Wymagana zgoda</div>
+          <input class="form__checkbox" type="checkbox">
+          <span class="form__checkboxInfo" id="checbox">Nervous, aren't you? I can see it in your soul. I can feel it
             in your bones.
             This unnerving feeling going through your spine.</span>
         </label>
-        <button class="buttonFirst submit">Wyślij</button>
+        <button class="button--white button--submit">Wyślij</button>
       </form>
     </section>
     <!----------------------------------------------------------- benefits ----------------------------------------------------------->
     <section class="benefits">
-      <div class="rowOne">
-        <div class="benefit">
-          <img class="benefitImg" src="assets/images/SVG/blok.svg">
-          <h3 class="benefitTitle">ZNAKOMITA LOKALIZACJA</h3>
+      <div class="benefits__wrapperLine">
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/blok.svg">
+          <h3 class="benefits__title">ZNAKOMITA LOKALIZACJA</h3>
         </div>
-        <div class="benefit">
-          <img class="benefitImg" src="assets/images/SVG/metraz.svg">
-          <h3 class="benefitTitle">CIEKAWY ROZKŁAD</h3>
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/metraz.svg">
+          <h3 class="benefits__title">CIEKAWY ROZKŁAD</h3>
         </div>
-        <div class="benefit">
-          <img class="benefitImg" src="assets/images/SVG/samochod.svg">
-          <h3 class="benefitTitle">ŁATWA PRZEPROWADZKA</h3>
-        </div>
-      </div>
-      <div class="rowOne">
-        <div class="benefit">
-          <img class="benefitImg" src="assets/images/SVG/blok.svg">
-          <h3 class="benefitTitle">ZNAKOMITA LOKALIZACJA</h3>
-        </div>
-        <div class="benefit">
-          <img class="benefitImg" src="assets/images/SVG/metraz.svg">
-          <h3 class="benefitTitle">CIEKAWY ROZKŁAD</h3>
-        </div>
-        <div class="benefit">
-          <img class="benefitImg" src="assets/images/SVG/samochod.svg">
-          <h3 class="benefitTitle">ŁATWA PRZEPROWADZKA</h3>
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/samochod.svg">
+          <h3 class="benefits__title">ŁATWA PRZEPROWADZKA</h3>
         </div>
       </div>
-      <div class="rowTwo"></div>
+      <div class="benefits__wrapperLine">
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/blok.svg">
+          <h3 class="benefits__title">ZNAKOMITA LOKALIZACJA</h3>
+        </div>
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/metraz.svg">
+          <h3 class="benefits__title">CIEKAWY ROZKŁAD</h3>
+        </div>
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/samochod.svg">
+          <h3 class="benefits__title">ŁATWA PRZEPROWADZKA</h3>
+        </div>
+      </div>
     </section>
     <!----------------------------------------------------------- blog ----------------------------------------------------------->
     <section class="blog" id="blog">
@@ -137,7 +136,7 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat
           volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
         </p>
-        <button class="buttonFirst more">Więcej</button>
+        <button class="button--white more">Więcej</button>
       </div>
       <div class="columnTwo">
         <div class="blogImagesTwo">
@@ -150,7 +149,7 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat
           volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
         </p>
-        <button class="buttonFirst more">Więcej</button>
+        <button class="button--white more">Więcej</button>
       </div>
     </section>
     <!----------------------------------------------------------- more about us ----------------------------------------------------------->
@@ -198,25 +197,25 @@
       </p>
       <form class="contactForm" id="contact_form" novalidate method="POST" action="inc/send_contact.php">
         <div class="rowLabel">
-          <div class="inputWrapper inputShort firstInput">
+          <div class="form__inputWrapper inputShort firstInput">
             <div class="errorContact notActive" id="error">Proszę uzupełnić pole</div>
             <label class="contactLabel" for="name" id="label">Imię i nazwisko</label>
             <input class="contactInput input" type=”text” name="name" id="nameContact">
           </div>
-          <div class="inputWrapper inputShort">
+          <div class="form__inputWrapper inputShort">
             <div class="errorContact notActive" id="error">Proszę uzupełnić pole</div>
             <label class="contactLabel" for="phone" id="label">telefon lub adres email</label>
             <input class="contactInput input" type="phone" name="phone" id="phoneContact">
           </div>
         </div>
-        <div class="inputWrapper">
+        <div class="form__inputWrapper">
           <div class="errorContact notActive" id="error">Proszę uzupełnić pole</div>
           <label class="contactLabel" for="message" id="label">Twoja Wiadomość</label>
           <input class="contactTextArea input" type="text" name="message" id="messageContact">
         </div>
         <label class="checkboxContainerContact">
           <div class="errorChecContact notActive" id="errorChec">Wymagana zgoda</div>
-          <input class="checkbox" type="checkbox">
+          <input class="form__checkbox" type="checkbox">
           <span class="checkmarkContact" id="checbox">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Aliquam at
             porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum
@@ -226,12 +225,12 @@
         </label>
         <label class="checkboxContainerContact">
           <div class="errorChecContact notActive" id="errorChec">Wymagana zgoda</div>
-          <input class="checkbox" type="checkbox">
+          <input class="form__checkbox" type="checkbox">
           <span class="checkmarkContact" id="checbox">If you're reading this there's something not quite right
             with you.
             And that's fantastic. Believe in yourself because we already do.</span>
         </label>
-        <button class="buttonFirst submitContact">Wyślij</button>
+        <button class="button--white submitContact">Wyślij</button>
       </form>
     </section>
     <!----------------------------------------------------------- footer ----------------------------------------------------------->

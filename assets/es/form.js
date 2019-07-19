@@ -24,7 +24,7 @@
     }
     //form validation
     const contact_form = document.querySelectorAll('#contact_form');
-    const checkboxValid = document.querySelectorAll('.checkbox');
+    const checkboxValid = document.querySelectorAll('.form__checkbox');
     const errorsBox = document.querySelectorAll('#errorChec');
     const errors = document.querySelectorAll('#error');
 
