@@ -200,34 +200,36 @@
         <div class="form__row">
           <div class="form__inputWrapper form__inputWrapper--margin">
             <div class="form__error--white notActive" id="error">Proszę uzupełnić pole</div>
-            <label class="contactLabel" for="name" id="label">Imię i nazwisko</label>
-            <input class="contactInput input" type=”text” name="name" id="nameContact">
+            <label class="form__label--contact" for="name" id="label">Imię i nazwisko</label>
+            <input class="form__input--contact input" type=”text” name="name" id="nameContact">
           </div>
           <div class="form__inputWrapper">
             <div class="form__error--white notActive" id="error">Proszę uzupełnić pole</div>
-            <label class="contactLabel" for="phone" id="label">telefon lub adres email</label>
-            <input class="contactInput input" type="phone" name="phone" id="phoneContact">
+            <label class="form__label--contact" for="phone" id="label">telefon lub adres email</label>
+            <input class="form__input--contact input" type="phone" name="phone" id="phoneContact">
           </div>
         </div>
         <div class="form__inputWrapper">
           <div class="form__error--white notActive" id="error">Proszę uzupełnić pole</div>
-          <label class="contactLabel" for="message" id="label">Twoja Wiadomość</label>
-          <input class="contactTextArea input" type="text" name="message" id="messageContact">
+          <label class="form__label--contact" for="message" id="label">Twoja wiadomość</label>
+          <input class="form__input--contact form__label--long input" type="text" name="message" id="messageContact">
         </div>
-        <label class="checkboxContainerContact">
-          <div class="errorChecContact notActive" id="errorChec">Wymagana zgoda</div>
+        <label class="form__checkboxWrapper form__checkboxWrapper--contact">
+          <div class="form__error--checkbox form__error--white notActive" id="errorChec">Wymagana zgoda</div>
           <input class="form__checkbox" type="checkbox">
-          <span class="checkmarkContact" id="checbox">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <span class="form__checkboxInfo--contact" id="checbox">Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit.
             Aliquam at
             porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum
             sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam
             erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit
             amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. D</span>
         </label>
-        <label class="checkboxContainerContact">
-          <div class="errorChecContact notActive" id="errorChec">Wymagana zgoda</div>
+        <label class="form__checkboxWrapper form__checkboxWrapper--contact">
+          <div class="form__error--checkbox form__error--white notActive" id="errorChec">Wymagana zgoda</div>
           <input class="form__checkbox" type="checkbox">
-          <span class="checkmarkContact" id="checbox">If you're reading this there's something not quite right
+          <span class="form__checkboxInfo--contact" id="checbox">If you're reading this there's something not quite
+            right
             with you.
             And that's fantastic. Believe in yourself because we already do.</span>
         </label>
@@ -236,8 +238,8 @@
     </section>
     <!----------------------------------------------------------- footer ----------------------------------------------------------->
     <footer>
-      <p class="copyright">COPYRIGHT 2019. Created Without Any Original Thought by Sunday & Autumn</p>
-      <p class="policy">Polityka prywatności</p>
+      <p class="footer__copyright">COPYRIGHT 2019. Created Without Any Original Thought by Sunday & Autumn</p>
+      <a href="" onclick="return false" class="footer__policy">Polityka prywatności</a>
     </footer>
   </main>
 </body>

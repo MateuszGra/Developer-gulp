@@ -516,20 +516,18 @@ header {
 .form__info--investments {
   margin: 2rem 0 4.5rem 0; }
 
-.contactInput,
-.contactTextArea,
+.form__input--contact,
 .form__input,
-.contactLabel,
+.form__label--contact,
 .form__label {
   font-size: 1.7rem;
   font-weight: lighter; }
 
-.contactTextArea {
+.form__label--long {
   width: 100%; }
 
 .form__input,
-.contactInput,
-.contactTextArea {
+.form__input--contact {
   height: 5.5rem;
   font-family: 'Lato', sans-serif;
   background: transparent;
@@ -547,17 +545,16 @@ header {
   margin: 0 0 0 2rem; }
 
 .form__label,
-.contactLabel {
+.form__label--contact {
   -webkit-transition: 0.3s;
   transition: 0.3s; }
 
-.contactLabel.active,
+.form__label--contact.active,
 .form__label.active {
   -webkit-transform: translateX(-11.5%) translateY(0) scale(0.75);
           transform: translateX(-11.5%) translateY(0) scale(0.75); }
 
-.form__checkboxWrapper,
-.checkboxContainerContact {
+.form__checkboxWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -565,7 +562,7 @@ header {
   margin: 3rem 0 0 0; }
 
 .form__checkboxInfo,
-.checkmarkContact {
+.form__checkboxInfo--contact {
   position: relative;
   display: block;
   font-size: 1.4rem;
@@ -573,7 +570,7 @@ header {
   margin: 0 0 0 3rem;
   cursor: pointer; }
 
-.checkmarkContact::before,
+.form__checkboxInfo--contact::before,
 .form__checkboxInfo::before {
   position: absolute;
   left: -3rem;
@@ -586,7 +583,7 @@ header {
 .form__checkboxInfo::before {
   border: 0.1rem solid var(--fontColor); }
 
-.checkmarkContact.chec::before,
+.form__checkboxInfo--contact.chec::before,
 .form__checkboxInfo.chec::before {
   background: var(--linkActive); }
 
@@ -596,21 +593,20 @@ header {
 .form__checkbox {
   display: none; }
 
-.contactInput,
-.contactLabel,
-.contactTextArea {
+.form__input--contact,
+.form__label--contact {
   color: white; }
 
-.contactInput {
+.form__input--contact {
   border-bottom: 0.2rem white solid;
   z-index: 1;
   width: 100%; }
 
-.contactTextArea {
+.form__label--long {
   border-bottom: 0.2rem white solid;
   width: 100%; }
 
-.contactLabel,
+.form__label--contact,
 .form__label {
   position: absolute;
   -webkit-transform: translateY(2rem);
@@ -621,14 +617,13 @@ header {
 .form__inputWrapper--margin {
   margin: 0 1.3vw 0 0; }
 
-.checkmarkContact {
-  font-size: 1.2rem;
+.form__checkboxInfo--contact {
   color: white; }
 
-.checkmarkContact::before {
+.form__checkboxInfo--contact::before {
   border: 0.1rem solid white; }
 
-.checkboxContainerContact {
+.form__checkboxWrapper--contact {
   width: 90%;
   margin: 3rem 0 0 2.8rem; }
 
@@ -667,21 +662,18 @@ header {
 .form__error--white {
   top: -3rem; }
 
-.form__error--checkbox,
-.errorChecContact {
+.form__error--checkbox {
   top: -5rem; }
 
 .form__error.notActive,
 .form__error--checkbox.notActive,
-.form__error--white.notActive,
-.errorChecContact.notActive {
+.form__error--white.notActive {
   opacity: 0;
   z-index: -1; }
 
 .form__error::after,
 .form__error--checkbox::after,
-.form__error--white::after,
-.errorChecContact::after {
+.form__error--white::after {
   content: '';
   display: block;
   position: absolute;
@@ -695,8 +687,7 @@ header {
 .form__error--checkbox::after {
   border-top: 1.5rem solid var(--bgBlack); }
 
-.form__error--white::after,
-.errorChecContact::after {
+.form__error--white::after {
   border-top: 1.5rem solid white; }
 
 .form__inputWrapper {
@@ -955,16 +946,21 @@ footer {
   width: 100%;
   height: 10rem; }
 
-.copyright {
+.footer__copyright {
   margin: 0 0 0 8.85%; }
 
-.policy {
-  margin: 0 8.85% 0 0; }
+.footer__policy {
+  margin: 0 8.85% 0 0;
+  text-decoration: none;
+  color: var(--fontColor); }
 
-.copyright,
-.policy {
+.footer__copyright,
+.footer__policy {
   font-size: 1.4rem;
   font-weight: lighter; }
+
+.footer__policy:hover {
+  color: var(--linkActive); }
 
 /****************************************************************************************************************************************/
 /************************************************************** 1400 media **************************************************************/
@@ -1140,7 +1136,7 @@ footer {
     width: 70%;
     margin: 0 0 2rem 0; }
   /************************************************************** forms (all) **************************************************************/
-  .investForm {
+  .form--investments {
     width: 70%; }
   .form--contact {
     width: 70%;
@@ -1159,7 +1155,7 @@ footer {
   .moreAbout__titleTwo {
     margin: 2rem 0 2rem 0; }
   .form__label,
-  .contactLabel {
+  .form__label--contact {
     font-size: 1.3rem; }
   .statistics {
     margin: 3rem 0 5rem 0; }
@@ -1209,8 +1205,8 @@ footer {
     width: 80%;
     text-align: center;
     font-size: 1.5rem; }
-  .copyright,
-  .policy {
+  .footer__copyright,
+  .footer__policy {
     font-size: 1.2rem; }
   /************************************************************** more about us **************************************************************/
   .statistics__number {
@@ -1232,9 +1228,9 @@ footer {
       -webkit-transform: translateY(calc(-100% + 11rem));
               transform: translateY(calc(-100% + 11rem)); } }
   /************************************************************** footer **************************************************************/
-  .copyright {
+  .footer__copyright {
     margin: 0 0 0 4%; }
-  .policy {
+  .footer__policy {
     margin: 0 4% 0 0; } }
 
 /****************************************************************************************************************************************/
@@ -1262,12 +1258,12 @@ footer {
   .column__info--first,
   .column__info--secend {
     width: 90%; }
-  .copyright,
-  .policy {
+  .footer__copyright,
+  .footer__policy {
     font-size: 1rem; }
-  .copyright {
+  .footer__copyright {
     margin: 0 0 0 2%; }
-  .policy {
+  .footer__policy {
     margin: 0 2% 0 0; }
   .devWrapper {
     -webkit-box-orient: vertical;
@@ -1375,7 +1371,7 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
     height: 7rem; }
-  .copyright {
+  .footer__copyright {
     margin: 0 0 1.5rem 0; }
   @-webkit-keyframes numberAnimation {
     0% {
