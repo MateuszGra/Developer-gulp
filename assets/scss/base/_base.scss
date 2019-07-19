@@ -1,9 +1,4 @@
 /************************************************************** uniwersal **************************************************************/
-* {
-  margin: 0;
-  padding: 0;
-}
-
 :root {
   --fontColor: #000000;
   --linkActive: #86a6de;
@@ -608,7 +603,7 @@ header {
   z-index: -1;
 }
 
-.firstInput {
+.form__inputWrapper--margin {
   margin: 0 1.3vw 0 0;
 }
 
@@ -632,7 +627,7 @@ header {
 
 .form__error,
 .form__error--checkbox,
-.errorContact,
+.form__error--white,
 .errorChecContact {
   position: absolute;
   text-align: center;
@@ -653,14 +648,14 @@ header {
   background: var(--bgBlack);
 }
 
-.errorContact,
+.form__error--white,
 .errorChecContact {
   color: var(--bgBlack);
   background: white;
 }
 
 .form__error,
-.errorContact {
+.form__error--white {
   top: -3rem;
 }
 
@@ -671,7 +666,7 @@ header {
 
 .form__error.notActive,
 .form__error--checkbox.notActive,
-.errorContact.notActive,
+.form__error--white.notActive,
 .errorChecContact.notActive {
   opacity: 0;
   z-index: -1;
@@ -679,7 +674,7 @@ header {
 
 .form__error::after,
 .form__error--checkbox::after,
-.errorContact::after,
+.form__error--white::after,
 .errorChecContact::after {
   content: '';
   display: block;
@@ -696,7 +691,7 @@ header {
   border-top: 1.5rem solid var(--bgBlack);
 }
 
-.errorContact::after,
+.form__error--white::after,
 .errorChecContact::after {
   border-top: 1.5rem solid white;
 }
@@ -706,7 +701,7 @@ header {
   position: relative;
 }
 
-.rowLabel {
+.form__row {
   display: flex;
 }
 
@@ -792,7 +787,7 @@ header {
 }
 
 .figureLine,
-.columnLineTwo {
+.figureLine--white {
   width: 5rem;
   height: 0.2rem;
 }
@@ -896,33 +891,33 @@ header {
   width: 100%;
 }
 
-.contactUs {
+.contact__title {
   letter-spacing: 0.4rem;
   color: white;
   margin: 10rem 0 2rem 0;
 }
 
-.columnLineTwo {
+.figureLine--white {
   background: white;
 }
 
-.contactTitle {
+.contact__titleTwo {
   letter-spacing: 0.3rem;
   margin: 4rem 0 4rem 0;
 }
 
-.contactUs,
-.contactTitle,
-.contactText {
+.contact__title,
+.contact__titleTwo,
+.contact__paragraph {
   color: white;
 }
 
-.contactText {
+.contact__paragraph {
   letter-spacing: 0.2rem;
   margin: 0 0 4rem 0;
 }
 
-.contactForm {
+.form--contact {
   width: 47.9%;
   margin: 0 0 10rem 0;
   z-index: 1;
@@ -1204,12 +1199,12 @@ footer {
     width: 70%;
   }
 
-  .contactForm {
+  .form--contact {
     width: 70%;
     margin: 0 0 5rem 0;
   }
 
-  .contactText,
+  .contact__paragraph,
   .moreAbout__paragraph {
     font-size: 1.4rem;
     letter-spacing: 0.1rem;
@@ -1218,12 +1213,12 @@ footer {
     text-align: center;
   }
 
-  .contactUs,
+  .contact__title,
   .moreAbout__title {
     margin: 4rem 0 2rem 0;
   }
 
-  .contactTitle,
+  .contact__titleTwo,
   .moreAbout__titleTwo {
     margin: 2rem 0 2rem 0;
   }
@@ -1348,7 +1343,7 @@ footer {
     width: 95%;
   }
 
-  .contactForm {
+  .form--contact {
     width: 95%;
   }
 
@@ -1477,7 +1472,7 @@ footer {
 
   .form__error,
   .form__error--checkbox,
-  .errorContact,
+  .form__error--white,
   .errorChecContact {
     font-size: 1.2rem;
   }

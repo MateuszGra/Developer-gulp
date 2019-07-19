@@ -35,7 +35,7 @@
   } //form validation
 
 
-  var contact_form = document.querySelectorAll('#contact_form');
+  var form = document.querySelectorAll('#form');
   var checkboxValid = document.querySelectorAll('.form__checkbox');
   var errorsBox = document.querySelectorAll('#errorChec');
   var errors = document.querySelectorAll('#error');
@@ -119,13 +119,12 @@
     if (notChec > 0 || notEmpty > 0) return false;
   };
 
-  contact_form[0].onsubmit = function (e) {
+  form[0].addEventListener('submit', function (e) {
     e.preventDefault();
     if (formValidation(0, 2, 0, 3) == false) return false;else sendFormInvestments();
-  };
-
-  contact_form[1].onsubmit = function (e) {
+  });
+  form[1].addEventListener('submit', function (e) {
     e.preventDefault();
     if (formValidation(2, 4, 3, 6) == false) return false;else sendFormContact();
-  };
+  });
 })();

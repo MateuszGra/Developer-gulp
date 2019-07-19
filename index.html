@@ -55,7 +55,7 @@
     <!----------------------------------------------------------- investments ----------------------------------------------------------->
     <section class="investments" id="investments">
       <img class="investments__image" src="assets/images/form1.jpg">
-      <form class="form--investments" id="contact_form" novalidate method="POST" action="" target="_blank">
+      <form class="form--investments" id="form" novalidate method="POST" action="" target="_blank">
         <h1>Zainteresowany kupnem? Zostaw numer!</h1>
         <p class="form__info--investments">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor
           sem.</p>
@@ -191,26 +191,26 @@
     </section>
     <!----------------------------------------------------------- contact ----------------------------------------------------------->
     <section class="contact">
-      <h3 class="contactUs">KONTAKT</h3>
-      <figure class="columnLineTwo"></figure>
-      <h2 class="contactTitle">Napisz do nas!</h2>
-      <p class="contactText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.
+      <h3 class="contact__title">KONTAKT</h3>
+      <figure class="figureLine--white"></figure>
+      <h2 class="contact__titleTwo">Napisz do nas!</h2>
+      <p class="contact__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.
       </p>
-      <form class="contactForm" id="contact_form" novalidate method="POST" action="inc/send_contact.php">
-        <div class="rowLabel">
-          <div class="form__inputWrapper inputShort firstInput">
-            <div class="errorContact notActive" id="error">Proszę uzupełnić pole</div>
+      <form class="form--contact" id="form" novalidate method="POST" action="inc/send_contact.php">
+        <div class="form__row">
+          <div class="form__inputWrapper form__inputWrapper--margin">
+            <div class="form__error--white notActive" id="error">Proszę uzupełnić pole</div>
             <label class="contactLabel" for="name" id="label">Imię i nazwisko</label>
             <input class="contactInput input" type=”text” name="name" id="nameContact">
           </div>
-          <div class="form__inputWrapper inputShort">
-            <div class="errorContact notActive" id="error">Proszę uzupełnić pole</div>
+          <div class="form__inputWrapper">
+            <div class="form__error--white notActive" id="error">Proszę uzupełnić pole</div>
             <label class="contactLabel" for="phone" id="label">telefon lub adres email</label>
             <input class="contactInput input" type="phone" name="phone" id="phoneContact">
           </div>
         </div>
         <div class="form__inputWrapper">
-          <div class="errorContact notActive" id="error">Proszę uzupełnić pole</div>
+          <div class="form__error--white notActive" id="error">Proszę uzupełnić pole</div>
           <label class="contactLabel" for="message" id="label">Twoja Wiadomość</label>
           <input class="contactTextArea input" type="text" name="message" id="messageContact">
         </div>

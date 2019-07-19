@@ -23,7 +23,7 @@
         });
     }
     //form validation
-    const contact_form = document.querySelectorAll('#contact_form');
+    const form = document.querySelectorAll('#form');
     const checkboxValid = document.querySelectorAll('.form__checkbox');
     const errorsBox = document.querySelectorAll('#errorChec');
     const errors = document.querySelectorAll('#error');
@@ -99,16 +99,17 @@
 
         if (notChec > 0 || notEmpty > 0) return false;
     }
-    contact_form[0].onsubmit = (e) => {
+
+    form[0].addEventListener('submit', (e) => {
         e.preventDefault();
         if (formValidation(0, 2, 0, 3) == false) return false;
         else sendFormInvestments();
-    };
+    });
 
-    contact_form[1].onsubmit = (e) => {
+    form[1].addEventListener('submit', (e) => {
         e.preventDefault();
         if (formValidation(2, 4, 3, 6) == false) return false;
         else sendFormContact();
-    };
+    });
 
 })();
