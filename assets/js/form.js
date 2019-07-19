@@ -58,9 +58,42 @@
 
   for (var i = 0; i < checkbox.length; i++) {
     _loop4(i);
-  }
+  } //send email
 
-  var formValidation = function formValidation(firstBox, lastBox, firstInput, lastInput) {
+
+  var sendFormInvestments = function sendFormInvestments(e) {
+    $.ajax({
+      type: 'POST',
+      url: '../../inc/send_inwestments.php',
+      data: {
+        name: $('#name').val(),
+        phone: $('#phone').val(),
+        message: $('#message').val()
+      },
+      success: function success(data) {},
+      error: function error(XMLHttpRequest, textStatus, errorThrown) {
+        console.log(XMLHttpRequest + textStatus + errorThrown);
+      }
+    });
+  };
+
+  var sendFormContact = function sendFormContact(e) {
+    $.ajax({
+      type: 'POST',
+      url: '../../inc/send_contact.php',
+      data: {
+        name: $('#nameContact').val(),
+        phone: $('#phoneContact').val(),
+        message: $('#messageContact').val()
+      },
+      success: function success(data) {},
+      error: function error(XMLHttpRequest, textStatus, errorThrown) {
+        console.log(XMLHttpRequest + textStatus + errorThrown);
+      }
+    });
+  };
+
+  var formValidation = function formValidation(firstBox, lastBox, firstInput, lastInput, sendFunction) {
     var notChec = 0;
     var notEmpty = 0;
 
@@ -79,35 +112,16 @@
       }
     }
 
-    if (notChec > 0 || notEmpty > 0) return false;
+    if (notChec > 0 || notEmpty > 0) return false;else sendFunction;
   };
 
-  contact_form[0].onsubmit = function () {
-    return formValidation(0, 2, 0, 3);
-  };
-
-  contact_form[1].onsubmit = function () {
-    return formValidation(2, 4, 3, 6);
-  }; //ajax send
-
-
-  $('.submit').click(function (e) {
+  contact_form[0].onsubmit = function (e) {
     e.preventDefault();
-    $.ajax({
-      type: 'POST',
-      url: '../../inc/send_inwestments.php',
-      //dataType: 'json',
-      data: {
-        name: $('#name').val(),
-        phone: $('#phone').val(),
-        message: $('#message').val()
-      },
-      success: function success(data) {
-        console.log(data);
-      },
-      error: function error(XMLHttpRequest, textStatus, errorThrown) {
-        console.log(XMLHttpRequest + textStatus + errorThrown);
-      }
-    });
-  });
+    return formValidation(0, 2, 0, 3, sendFormInvestments());
+  };
+
+  contact_form[1].onsubmit = function (e) {
+    e.preventDefault();
+    return formValidation(2, 4, 3, 6, sendFormContact());
+  };
 })();

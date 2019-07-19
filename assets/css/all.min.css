@@ -494,7 +494,7 @@ main {
 header {
   margin: 15rem 0 0 0; }
 
-nav {
+.nav {
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -513,28 +513,29 @@ nav {
   -webkit-transition: 0.3s;
   transition: 0.3s; }
 
-nav.hide {
+.nav.hide {
   -webkit-transform: translateY(-15rem);
           transform: translateY(-15rem); }
 
-.hamburger {
+.nav__hamburger {
   display: none; }
 
-.navLogo {
+.nav__logo,
+.nav__logo-link {
   height: 8rem;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
   margin: 0 0 0 8%; }
 
-.navList {
+.nav__ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   list-style: none;
   margin: 0 8.8% 0 0; }
 
-.navLink {
+.nav__a {
   letter-spacing: 0.2rem;
   margin: 0 0 0 2.6vw;
   font-size: 1.7rem;
@@ -545,8 +546,8 @@ nav.hide {
   position: relative;
   text-align: center; }
 
-.navLink:after,
-.navLink::before {
+.nav__a:after,
+.nav__a::before {
   display: block;
   position: absolute;
   color: var(--linkActive);
@@ -558,50 +559,50 @@ nav.hide {
   transition: 0.3s;
   opacity: 0; }
 
-.navLink::before {
+.nav__a::before {
   content: '[';
   left: 50%; }
 
-.navLink:after {
+.nav__a::after {
   content: ']';
   right: 50%; }
 
-.navLink.active {
+.nav__a.active {
   color: var(--linkActive); }
 
-.navLink.active:before {
+.nav__a.active:before {
   left: -1.5rem;
   opacity: 1; }
 
-.navLink.active::after {
+.nav__a.active::after {
   right: -1.5rem;
   opacity: 1; }
 
-.headerImages {
+.header__images-wrapper {
   width: 85%;
   overflow: hidden;
   position: relative;
   margin: 0 0 4.5rem 0; }
 
-.headerImgFirst {
+.header__image-first {
   width: 100%;
   mix-blend-mode: normal; }
 
-.headerImgSecend {
+.header__image-secend {
   position: absolute;
   width: 100%;
   top: 0%;
   left: 0%; }
 
-.headerImgSecend {
+.header__image-secend {
   opacity: 0.66;
   mix-blend-mode: overlay; }
 
 /************************************************************** search **************************************************************/
-.search {
+.section-search {
   width: 100%; }
 
-.searchText {
+.section-search__info {
   margin: 3.5rem 0 0 0;
   width: 55%;
   text-align: center;
@@ -1323,15 +1324,15 @@ footer {
     text-align: center; }
   p {
     font-size: 1.5rem; }
-  nav {
+  .nav {
     height: 7rem; }
   /************************************************************** header **************************************************************/
   header {
     margin: 8rem 0 2rem 0; }
-  nav.hide {
+  .nav.hide {
     -webkit-transform: translateY(-30rem);
             transform: translateY(-30rem); }
-  .navList {
+  .nav__ul {
     position: absolute;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1345,24 +1346,25 @@ footer {
     border-radius: 1rem;
     -webkit-transition: 0.3s;
     transition: 0.3s; }
-  .navList.active {
+  .nav__ul.active {
     -webkit-transform: translateX(30rem);
             transform: translateX(30rem); }
-  .listEl {
+  .nav__li {
     padding: 0.5rem; }
-  .navLink {
+  .nav__a {
     line-height: 3.5rem;
     margin: 0 0 0 0; }
-  .navLogo {
+  .nav__logo,
+  .nav__logo-link {
     height: 5rem; }
-  .navLink:after {
+  .nav__a::after {
     display: none; }
-  .navLink.active {
+  .nav__a.active {
     color: var(--fontColor); }
-  .navLink.active::after,
-  .navLink.active::before {
+  .nav__a.active::after,
+  .nav__a.active::before {
     display: none; }
-  .hamburger {
+  .nav__hamburger {
     display: block;
     position: relative;
     width: 4rem;
@@ -1371,47 +1373,47 @@ footer {
     cursor: pointer;
     margin: 0 8% 0 0;
     overflow: hidden; }
-  .hamburgerLines,
-  .hamburger::after,
-  .hamburger::before {
+  .nav__hamburger-line,
+  .nav__hamburger::after,
+  .nav__hamburger::before {
     width: 100%;
     height: 0.3rem;
     background: black; }
-  .hamburger::after,
-  .hamburger::before {
+  .nav__hamburger::after,
+  .nav__hamburger::before {
     -webkit-transition: 0.3s;
     transition: 0.3s; }
-  .hamburgerLines {
+  .nav__hamburger-line {
     -webkit-transition: 0.1s;
     transition: 0.1s; }
-  .hamburgerLines.active {
+  .nav__hamburger-line.active {
     -webkit-transform: scaleY(0);
             transform: scaleY(0); }
-  .hamburger::after,
-  .hamburger::before {
+  .nav__hamburger::after,
+  .nav__hamburger::before {
     position: absolute;
     content: '';
     display: block; }
-  .hamburger::after {
+  .nav__hamburger::after {
     top: calc(50% - 0.15rem); }
-  .hamburger::before {
+  .nav__hamburger::before {
     top: calc(100% - 0.3rem); }
-  .hamburger.active::after {
+  .nav__hamburger.active::after {
     top: 50%;
     -webkit-transform: translateY(-50%) rotate(225deg);
             transform: translateY(-50%) rotate(225deg); }
-  .hamburger.active::before {
+  .nav__hamburger.active::before {
     top: 50%;
     -webkit-transform: translateY(-50%) rotate(-225deg);
             transform: translateY(-50%) rotate(-225deg); }
-  .headerImages {
+  .header__images-wrapper {
     width: 95%;
     margin: 0 0 0 0; }
-  .headerImgFirst,
-  .headerImgSecend {
+  .header__image-first,
+  .header__image-secend {
     width: 100%; }
   /************************************************************** search **************************************************************/
-  .searchText {
+  .section-search__info {
     width: 95%;
     line-height: 2.5rem;
     margin: 3rem 0 0 0; }
@@ -1553,7 +1555,7 @@ footer {
 /************************************************************** 680 media **************************************************************/
 /****************************************************************************************************************************************/
 @media (max-width: 680px) {
-  .headerImages {
+  .header__images-wrapper {
     width: 100%; }
   .investImg {
     width: 95%; }

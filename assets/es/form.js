@@ -41,8 +41,45 @@
         });
     }
 
+    //send email
 
-    const formValidation = (firstBox, lastBox, firstInput, lastInput) => {
+    const sendFormInvestments = (e) => {
+        $.ajax({
+            type: 'POST',
+            url: '../../inc/send_inwestments.php',
+            data: {
+                name: $('#name').val(),
+                phone: $('#phone').val(),
+                message: $('#message').val(),
+            },
+            success: function (data) {
+
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log(XMLHttpRequest + textStatus + errorThrown)
+            }
+        });
+    }
+
+    const sendFormContact = (e) => {
+        $.ajax({
+            type: 'POST',
+            url: '../../inc/send_contact.php',
+            data: {
+                name: $('#nameContact').val(),
+                phone: $('#phoneContact').val(),
+                message: $('#messageContact').val(),
+            },
+            success: function (data) {
+
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log(XMLHttpRequest + textStatus + errorThrown)
+            }
+        });
+    }
+
+    const formValidation = (firstBox, lastBox, firstInput, lastInput, sendFunction) => {
         let notChec = 0;
         let notEmpty = 0;
 
@@ -61,34 +98,16 @@
         }
 
         if (notChec > 0 || notEmpty > 0) return false;
+        else sendFunction;
     }
-    contact_form[0].onsubmit = () => {
-        return formValidation(0, 2, 0, 3);
-    };
-
-    contact_form[1].onsubmit = () => {
-        return formValidation(2, 4, 3, 6);
-    };
-
-    //ajax send
-    $('.submit').click(function (e) {
+    contact_form[0].onsubmit = (e) => {
         e.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: '../../inc/send_inwestments.php',
-            //dataType: 'json',
-            data: {
-                name: $('#name').val(),
-                phone: $('#phone').val(),
-                message: $('#message').val(),
-            },
-            success: function (data) {
-                console.log(data)
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                console.log(XMLHttpRequest + textStatus + errorThrown)
-            }
+        return formValidation(0, 2, 0, 3, sendFormInvestments());
+    };
 
-        });
-    });
+    contact_form[1].onsubmit = (e) => {
+        e.preventDefault();
+        return formValidation(2, 4, 3, 6, sendFormContact());
+    };
+
 })();

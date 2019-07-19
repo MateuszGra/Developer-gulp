@@ -186,40 +186,40 @@
         });
 
     //hide hamburger
-    const hamburger = document.querySelector('.hamburger');
-    const hmaburgerLines = document.querySelector('.hamburgerLines');
-    const navList = document.querySelector('.navList');
+    const nav__hamburger = document.querySelector('.nav__hamburger');
+    const nav__hamburgerLine = document.querySelector('.nav__hamburger-line');
+    const nav__ul = document.querySelector('.nav__ul');
 
-    hamburger.addEventListener("click", (e) => {
-        hmaburgerLines.classList.toggle('active');
-        hamburger.classList.toggle('active');
-        navList.classList.toggle('active');
+    nav__hamburger.addEventListener("click", (e) => {
+        nav__hamburgerLine.classList.toggle('active');
+        nav__hamburger.classList.toggle('active');
+        nav__ul.classList.toggle('active');
     }, false);
-    hamburger.addEventListener("touch", (e) => {
-        hmaburgerLines.classList.toggle('active');
-        hamburger.classList.toggle('active');
-        navList.classList.toggle('active');
+    nav__hamburger.addEventListener("touch", (e) => {
+        nav__hamburgerLine.classList.toggle('active');
+        nav__hamburger.classList.toggle('active');
+        nav__ul.classList.toggle('active');
     }, false);
 
     //nav links animation and hide hamburger when click on link
-    const navLink = document.querySelectorAll('.navLink');
+    const nav__a = document.querySelectorAll('.nav__a');
 
-    for (let i = 0; i < navLink.length; i++) {
-        navLink[i].addEventListener('mouseover', (e) => {
-            navLink[i].classList.add('active');
+    for (let i = 0; i < nav__a.length; i++) {
+        nav__a[i].addEventListener('mouseover', (e) => {
+            nav__a[i].classList.add('active');
         });
-        navLink[i].addEventListener('mouseout', (e) => {
-            navLink[i].classList.remove('active');
+        nav__a[i].addEventListener('mouseout', (e) => {
+            nav__a[i].classList.remove('active');
         });
-        navLink[i].addEventListener("click", (e) => {
-            hmaburgerLines.classList.remove('active');
-            hamburger.classList.remove('active');
-            navList.classList.add('active');
+        nav__a[i].addEventListener("click", (e) => {
+            nav__hamburgerLine.classList.remove('active');
+            nav__hamburger.classList.remove('active');
+            nav__ul.classList.add('active');
         }, false);
-        navLink[i].addEventListener("touch", (e) => {
-            hmaburgerLines.classList.remove('active');
-            hamburger.classList.remove('active');
-            navList.classList.add('active');
+        nav__a[i].addEventListener("touch", (e) => {
+            nav__hamburgerLine.classList.remove('active');
+            nav__hamburger.classList.remove('active');
+            nav__ul.classList.add('active');
         }, false);
     }
 
@@ -236,7 +236,7 @@
 
     //on scroll animations
     let prevScrollpos = window.pageYOffset;
-    const nav = document.querySelector('nav');
+    const nav = document.querySelector('.nav');
 
     window.onscroll = () => {
         //nav animation
