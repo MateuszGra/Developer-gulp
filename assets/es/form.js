@@ -53,7 +53,7 @@
                 message: $('#message').val(),
             },
             success: function (data) {
-
+                console.log(data);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log(XMLHttpRequest + textStatus + errorThrown)
@@ -71,7 +71,7 @@
                 message: $('#messageContact').val(),
             },
             success: function (data) {
-
+                console.log(data);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log(XMLHttpRequest + textStatus + errorThrown)
@@ -79,7 +79,7 @@
         });
     }
 
-    const formValidation = (firstBox, lastBox, firstInput, lastInput, sendFunction) => {
+    const formValidation = (firstBox, lastBox, firstInput, lastInput) => {
         let notChec = 0;
         let notEmpty = 0;
 
@@ -98,16 +98,17 @@
         }
 
         if (notChec > 0 || notEmpty > 0) return false;
-        else sendFunction;
     }
     contact_form[0].onsubmit = (e) => {
         e.preventDefault();
-        return formValidation(0, 2, 0, 3, sendFormInvestments());
+        if (formValidation(0, 2, 0, 3) == false) return false;
+        else sendFormInvestments();
     };
 
     contact_form[1].onsubmit = (e) => {
         e.preventDefault();
-        return formValidation(2, 4, 3, 6, sendFormContact());
+        if (formValidation(2, 4, 3, 6) == false) return false;
+        else sendFormContact();
     };
 
 })();

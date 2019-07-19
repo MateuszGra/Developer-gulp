@@ -70,7 +70,9 @@
         phone: $('#phone').val(),
         message: $('#message').val()
       },
-      success: function success(data) {},
+      success: function success(data) {
+        console.log(data);
+      },
       error: function error(XMLHttpRequest, textStatus, errorThrown) {
         console.log(XMLHttpRequest + textStatus + errorThrown);
       }
@@ -86,14 +88,16 @@
         phone: $('#phoneContact').val(),
         message: $('#messageContact').val()
       },
-      success: function success(data) {},
+      success: function success(data) {
+        console.log(data);
+      },
       error: function error(XMLHttpRequest, textStatus, errorThrown) {
         console.log(XMLHttpRequest + textStatus + errorThrown);
       }
     });
   };
 
-  var formValidation = function formValidation(firstBox, lastBox, firstInput, lastInput, sendFunction) {
+  var formValidation = function formValidation(firstBox, lastBox, firstInput, lastInput) {
     var notChec = 0;
     var notEmpty = 0;
 
@@ -112,16 +116,16 @@
       }
     }
 
-    if (notChec > 0 || notEmpty > 0) return false;else sendFunction;
+    if (notChec > 0 || notEmpty > 0) return false;
   };
 
   contact_form[0].onsubmit = function (e) {
     e.preventDefault();
-    return formValidation(0, 2, 0, 3, sendFormInvestments());
+    if (formValidation(0, 2, 0, 3) == false) return false;else sendFormInvestments();
   };
 
   contact_form[1].onsubmit = function (e) {
     e.preventDefault();
-    return formValidation(2, 4, 3, 6, sendFormContact());
+    if (formValidation(2, 4, 3, 6) == false) return false;else sendFormContact();
   };
 })();
