@@ -820,55 +820,55 @@ header {
   width: 100%;
 }
 
-.aboutUs {
+.moreAbout__title {
   letter-spacing: 0.4rem;
   margin: 10.5rem 0 2rem 0;
 }
 
-.aboutTitle {
+.moreAbout__titleTwo {
   letter-spacing: 0.2rem;
   margin: 4.5rem 0 4rem 0;
 }
 
-.aboutText {
+.moreAbout__paragraph {
   word-spacing: 0.4rem;
   letter-spacing: 0.1rem;
 }
 
-.statWrapper {
+.statistics {
   display: flex;
   justify-content: space-between;
   margin: 11rem 0 11rem 0;
   width: 75%;
 }
 
-.stat {
+.statistics__statisticWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 40rem;
 }
 
-.statInfoOne,
-.statInfoTwo,
-.statInfoThree {
+.statistics__info--one,
+.statistics__info--two,
+.statistics__info--three {
   margin: 2.5rem 0 0 0;
   text-align: center;
   font-weight: lighter;
 }
 
-.statInfoThree {
+.statistics__info--three {
   width: 80%;
 }
 
-.number {
+.statistics__number {
   display: flex;
   flex-direction: row;
   height: 17rem;
   overflow: hidden;
 }
 
-.figureNumber {
+.statistics__digit {
   font-size: 15rem;
   color: black;
   font-weight: bold;
@@ -955,17 +955,17 @@ footer {
 /************************************************************** 1400 media **************************************************************/
 /****************************************************************************************************************************************/
 @media (max-width: 1400px) {
-  .statWrapper {
+  .statistics {
     width: 100%;
   }
 
-  .stat {
+  .statistics__statisticWrapper {
     width: 34rem;
   }
 
-  .statInfoOne,
-  .statInfoTwo,
-  .statInfoThree {
+  .statistics__info--one,
+  .statistics__info--two,
+  .statistics__info--three {
     width: 80%;
     font-size: 1.4rem;
   }
@@ -1210,7 +1210,7 @@ footer {
   }
 
   .contactText,
-  .aboutText {
+  .moreAbout__paragraph {
     font-size: 1.4rem;
     letter-spacing: 0.1rem;
     margin: 0 0 2rem 0;
@@ -1219,12 +1219,12 @@ footer {
   }
 
   .contactUs,
-  .aboutUs {
+  .moreAbout__title {
     margin: 4rem 0 2rem 0;
   }
 
   .contactTitle,
-  .aboutTitle {
+  .moreAbout__titleTwo {
     margin: 2rem 0 2rem 0;
   }
 
@@ -1233,7 +1233,7 @@ footer {
     font-size: 1.3rem;
   }
 
-  .statWrapper {
+  .statistics {
     margin: 3rem 0 5rem 0
   }
 
@@ -1304,11 +1304,11 @@ footer {
   }
 
   /************************************************************** more about us **************************************************************/
-  .number {
+  .statistics__number {
     height: 11rem;
   }
 
-  .figureNumber {
+  .statistics__digit {
     font-size: 10rem;
   }
 
@@ -1352,7 +1352,7 @@ footer {
     width: 95%;
   }
 
-  .statWrapper {
+  .statistics {
     flex-direction: column;
     align-items: center;
   }
@@ -1463,15 +1463,15 @@ footer {
     width: 95%;
   }
 
-  .statWrapper {
+  .statistics {
     margin: 1rem 0 5rem 0
   }
 
-  .number {
+  .statistics__number {
     height: 8rem;
   }
 
-  .figureNumber {
+  .statistics__digit {
     font-size: 6rem;
   }
 

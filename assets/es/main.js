@@ -225,13 +225,13 @@
 
     //animaton statistics
     const FragmentThree = document.createDocumentFragment();
-    const figureNumberWrapper = document.querySelectorAll('.figureNumberWrapper');
+    const statistics__digitWrapper = document.querySelectorAll('.statistics__digitWrapper');
     let stats = [6, 3, 3, 4, 9, 5, 1, 5];
     for (let o = 0; o < stats.length; o++) {
         for (let i = 0; i <= stats[o]; i++) {
-            createElement("figureNumber", "p", "figureNumber", i, FragmentThree);
+            createElement("statistics__digit", "p", "statistics__digit", i, FragmentThree);
         }
-        figureNumberWrapper[o].appendChild(FragmentThree);
+        statistics__digitWrapper[o].appendChild(FragmentThree);
     }
 
     //on scroll animations
@@ -245,26 +245,26 @@
         else nav.classList.add('hide');
 
 
-        if (currentScrollPos > figureNumberWrapper[0].offsetTop - window.innerHeight) {
+        if (currentScrollPos > statistics__digitWrapper[0].offsetTop - window.innerHeight) {
             //animaton statistics
-            figureNumberWrapper[0].classList.add('startAnimation');
-            figureNumberWrapper[1].classList.add('startAnimation');
-            figureNumberWrapper[2].classList.add('startAnimation');
+            statistics__digitWrapper[0].classList.add('startAnimation');
+            statistics__digitWrapper[1].classList.add('startAnimation');
+            statistics__digitWrapper[2].classList.add('startAnimation');
 
-            figureNumberWrapper[2].addEventListener('animationend', (e) => {
-                figureNumberWrapper[3].classList.add('startAnimation');
-                figureNumberWrapper[4].classList.add('startAnimation');
-                figureNumberWrapper[5].classList.add('startAnimation');
+            statistics__digitWrapper[2].addEventListener('animationend', (e) => {
+                statistics__digitWrapper[3].classList.add('startAnimation');
+                statistics__digitWrapper[4].classList.add('startAnimation');
+                statistics__digitWrapper[5].classList.add('startAnimation');
             });
 
-            figureNumberWrapper[5].addEventListener('animationend', (e) => {
-                figureNumberWrapper[6].classList.add('startAnimation');
-                figureNumberWrapper[7].classList.add('startAnimation');
+            statistics__digitWrapper[5].addEventListener('animationend', (e) => {
+                statistics__digitWrapper[6].classList.add('startAnimation');
+                statistics__digitWrapper[7].classList.add('startAnimation');
             });
 
         } else {
-            for (let i = 0; i < figureNumberWrapper.length; i++) {
-                figureNumberWrapper[i].classList.remove('startAnimation');
+            for (let i = 0; i < statistics__digitWrapper.length; i++) {
+                statistics__digitWrapper[i].classList.remove('startAnimation');
             }
         }
         prevScrollpos = currentScrollPos;
