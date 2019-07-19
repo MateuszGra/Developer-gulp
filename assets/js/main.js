@@ -30,7 +30,7 @@
       if (i == resp.length - 1) devWrapper.classList.add('notActiveL');
       createElement("devInfo", "div", "devInfo", null, devWrapper);
       createElement("devName", "h2", "devName", resp[i].nazwa, devInfo);
-      createElement("columnLine", "figure", "columnLine", null, devInfo);
+      createElement("figureLine", "figure", "figureLine", null, devInfo);
       createElement("devYardage", "p", "devYardage", "Metra\u017C: ".concat(resp[i].metraz, " m2"), devInfo);
       createElement("devPrice", "p", "devPrice", "Cena Netto: ".concat(resp[i].netto.toLocaleString('pl-PL'), " z\u0142*"), devInfo);
       createElement("devInfoPrice", "p", "devInfoPrice", "* cena nie zawiera 23% VAT", devInfo);

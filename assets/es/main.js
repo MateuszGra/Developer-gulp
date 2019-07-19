@@ -30,7 +30,7 @@
                 if (i == resp.length - 1) devWrapper.classList.add('notActiveL');
                 createElement("devInfo", "div", "devInfo", null, devWrapper);
                 createElement("devName", "h2", "devName", resp[i].nazwa, devInfo);
-                createElement("columnLine", "figure", "columnLine", null, devInfo);
+                createElement("figureLine", "figure", "figureLine", null, devInfo);
                 createElement("devYardage", "p", "devYardage", `Metraż: ${resp[i].metraz} m2`, devInfo);
                 createElement("devPrice", "p", "devPrice", `Cena Netto: ${resp[i].netto.toLocaleString('pl-PL')} zł*`, devInfo);
                 createElement("devInfoPrice", "p", "devInfoPrice", `* cena nie zawiera 23% VAT`, devInfo);
