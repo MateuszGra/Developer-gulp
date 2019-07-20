@@ -1,0 +1,81 @@
+@mixin title {
+    letter-spacing: 0.4rem;
+    margin: 10.5rem 0 2rem 0;
+}
+
+@mixin titleTwo {
+    letter-spacing: 0.4rem;
+    margin: 10.5rem 0 2rem 0;
+}
+
+
+@mixin paragraph {
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    margin: 0 0 2rem 0;
+    width: 80%;
+    text-align: center;
+}
+
+.moreAbout {
+    width: 100%;
+
+    &__title {
+        @include title();
+
+        @media (max-width: 1025px) {
+            margin: 4rem 0 2rem 0;
+        }
+    }
+
+    &__titleTwo {
+        @include titleTwo();
+
+        @media (max-width: 1025px) {
+            margin: 2rem 0 2rem 0;
+        }
+    }
+
+    &__paragraph {
+        word-spacing: 0.4rem;
+        letter-spacing: 0.2rem;
+
+        @media (max-width: 1025px) {
+            @include paragraph();
+        }
+    }
+
+}
+
+.contact {
+    background: var(--bgBlack);
+    width: 100%;
+
+    &__title {
+        @include title();
+        color: white;
+
+        @media (max-width: 1025px) {
+            margin: 4rem 0 2rem 0;
+        }
+    }
+
+    &__titleTwo {
+        @include titleTwo();
+        color: white;
+
+        @media (max-width: 1025px) {
+            margin: 2rem 0 2rem 0;
+        }
+    }
+
+    &__paragraph {
+        color: white;
+        letter-spacing: 0.2rem;
+        margin: 0 0 4rem 0;
+
+        @media (max-width: 1025px) {
+            @include paragraph();
+        }
+    }
+}

@@ -44,20 +44,6 @@ main {
   overflow-x: hidden;
 }
 
-.figureLine,
-.figureLine--white {
-  width: 5rem;
-  height: 0.2rem;
-}
-
-.figureLine {
-  background: var(--fontColor);
-}
-
-.figureLine--white {
-  background: white;
-}
-
 @media (max-width: 1025px) {
 
   h1,
@@ -69,80 +55,4 @@ main {
   p {
     font-size: 1.5rem;
   }
-}
-
-/************************************************************** more about us **************************************************************/
-.moreAbout {
-  width: 100%;
-}
-
-.moreAbout__title {
-  letter-spacing: 0.4rem;
-  margin: 10.5rem 0 2rem 0;
-}
-
-.moreAbout__titleTwo {
-  letter-spacing: 0.2rem;
-  margin: 4.5rem 0 4rem 0;
-}
-
-.moreAbout__paragraph {
-  word-spacing: 0.4rem;
-  letter-spacing: 0.1rem;
-}
-
-/************************************************************** contact **************************************************************/
-.contact {
-  background: var(--bgBlack);
-  width: 100%;
-}
-
-.contact__title {
-  letter-spacing: 0.4rem;
-  color: white;
-  margin: 10rem 0 2rem 0;
-}
-
-.contact__titleTwo {
-  letter-spacing: 0.3rem;
-  margin: 4rem 0 4rem 0;
-}
-
-.contact__title,
-.contact__titleTwo,
-.contact__paragraph {
-  color: white;
-}
-
-.contact__paragraph {
-  letter-spacing: 0.2rem;
-  margin: 0 0 4rem 0;
-}
-
-/****************************************************************************************************************************************/
-/************************************************************** 1025 media **************************************************************/
-/****************************************************************************************************************************************/
-@media (max-width: 1025px) {
-
-
-  /************************************************************** more about us **************************************************************/
-  .contact__paragraph,
-  .moreAbout__paragraph {
-    font-size: 1.4rem;
-    letter-spacing: 0.1rem;
-    margin: 0 0 2rem 0;
-    width: 80%;
-    text-align: center;
-  }
-
-  .contact__title,
-  .moreAbout__title {
-    margin: 4rem 0 2rem 0;
-  }
-
-  .contact__titleTwo,
-  .moreAbout__titleTwo {
-    margin: 2rem 0 2rem 0;
-  }
-
 }

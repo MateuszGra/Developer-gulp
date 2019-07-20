@@ -1,0 +1,14 @@
+@mixin lines {
+    width: 5rem;
+    height: 0.2rem;
+}
+
+.figureLine {
+    @include lines();
+    background: var(--fontColor);
+
+    &--white {
+        @include lines();
+        background: white;
+    }
+}
