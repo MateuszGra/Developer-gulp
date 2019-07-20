@@ -46,7 +46,7 @@
         height: 4rem;
         background: white;
         color: white;
-        box-shadow: 0 0.5rem 2rem var(--boxShadow);
+        box-shadow: 0 0.5rem 2rem $boxShadow;
         overflow: hidden;
     }
 
@@ -71,7 +71,7 @@
 
         &::after {
             content: 'Wyślij';
-            color: var(--fontColor);
+            color: $fontColor;
         }
 
         &::before {
@@ -84,7 +84,7 @@
     &--more {
         &::after {
             content: 'Więcej';
-            color: var(--fontColor);
+            color: $fontColor;
         }
 
         &::before {

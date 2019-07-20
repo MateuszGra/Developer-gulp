@@ -2,61 +2,61 @@
 
 (function () {
   //checkbox
-  var checkbox = document.querySelectorAll('#checbox');
+  var form__checkboxInfo = document.querySelectorAll('.form__checkboxInfo');
 
   var _loop = function _loop(i) {
-    checkbox[i].addEventListener('click', function (e) {
-      checkbox[i].classList.toggle('form__checkboxInfo--chec');
+    form__checkboxInfo[i].addEventListener('click', function (e) {
+      form__checkboxInfo[i].classList.toggle('form__checkboxInfo--chec');
     });
-    checkbox[i].addEventListener('touch', function (e) {
-      checkbox[i].classList.toggle('form__checkboxInfo--chec');
+    form__checkboxInfo[i].addEventListener('touch', function (e) {
+      form__checkboxInfo[i].classList.toggle('form__checkboxInfo--chec');
     });
   };
 
-  for (var i = 0; i < checkbox.length; i++) {
+  for (var i = 0; i < form__checkboxInfo.length; i++) {
     _loop(i);
   } //form animations
 
 
-  var inputForm = document.querySelectorAll('.input');
-  var labelForm = document.querySelectorAll('#label');
+  var form__input = document.querySelectorAll('.form__input');
+  var form__label = document.querySelectorAll('.form__label');
 
   var _loop2 = function _loop2(i) {
-    inputForm[i].addEventListener('focus', function (e) {
-      labelForm[i].classList.add('form__label--active');
+    form__input[i].addEventListener('focus', function (e) {
+      form__label[i].classList.add('form__label--active');
     });
-    inputForm[i].addEventListener('focusout', function (e) {
-      if (inputForm[i].value == '') labelForm[i].classList.remove('form__label--active');
+    form__input[i].addEventListener('focusout', function (e) {
+      if (form__input[i].value == '') form__label[i].classList.remove('form__label--active');
     });
   };
 
-  for (var i = 0; i < inputForm.length; i++) {
+  for (var i = 0; i < form__input.length; i++) {
     _loop2(i);
   } //form validation
 
 
   var form = document.querySelectorAll('#form');
-  var checkboxValid = document.querySelectorAll('.form__checkbox');
-  var errorsBox = document.querySelectorAll('#errorChec');
+  var form__checkbox = document.querySelectorAll('.form__checkbox');
+  var form__errorCheckBox = document.querySelectorAll('.form__error--checkbox');
   var errors = document.querySelectorAll('#error');
 
   var _loop3 = function _loop3(i) {
-    inputForm[i].addEventListener('focus', function (e) {
+    form__input[i].addEventListener('focus', function (e) {
       errors[i].classList.add('form__error--notActive');
     });
   };
 
-  for (var i = 0; i < inputForm.length; i++) {
+  for (var i = 0; i < form__input.length; i++) {
     _loop3(i);
   }
 
   var _loop4 = function _loop4(i) {
-    checkbox[i].addEventListener('click', function (e) {
-      errorsBox[i].classList.add('form__error--notActive');
+    form__checkboxInfo[i].addEventListener('click', function (e) {
+      form__errorCheckBox[i].classList.add('form__error--notActive');
     });
   };
 
-  for (var i = 0; i < checkbox.length; i++) {
+  for (var i = 0; i < form__checkboxInfo.length; i++) {
     _loop4(i);
   } //send email
 
@@ -102,14 +102,14 @@
     var notEmpty = 0;
 
     for (var i = firstBox; i < lastBox; i++) {
-      if (checkboxValid[i].checked == false) {
-        errorsBox[i].classList.remove('form__error--notActive');
+      if (form__checkbox[i].checked == false) {
+        form__errorCheckBox[i].classList.remove('form__error--notActive');
         notChec++;
       }
     }
 
     for (var _i = firstInput; _i < lastInput; _i++) {
-      if (inputForm[_i].value.length == 0) {
+      if (form__input[_i].value.length == 0) {
         errors[_i].classList.remove('form__error--notActive');
 
         notEmpty++;

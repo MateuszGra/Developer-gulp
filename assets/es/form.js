@@ -1,43 +1,43 @@
 (() => {
     //checkbox
-    const checkbox = document.querySelectorAll('#checbox');
+    const form__checkboxInfo = document.querySelectorAll('.form__checkboxInfo');
 
-    for (let i = 0; i < checkbox.length; i++) {
-        checkbox[i].addEventListener('click', (e) => {
-            checkbox[i].classList.toggle('form__checkboxInfo--chec');
+    for (let i = 0; i < form__checkboxInfo.length; i++) {
+        form__checkboxInfo[i].addEventListener('click', (e) => {
+            form__checkboxInfo[i].classList.toggle('form__checkboxInfo--chec');
         });
-        checkbox[i].addEventListener('touch', (e) => {
-            checkbox[i].classList.toggle('form__checkboxInfo--chec');
+        form__checkboxInfo[i].addEventListener('touch', (e) => {
+            form__checkboxInfo[i].classList.toggle('form__checkboxInfo--chec');
         });
     }
     //form animations
-    const inputForm = document.querySelectorAll('.input');
-    const labelForm = document.querySelectorAll('#label');
+    const form__input = document.querySelectorAll('.form__input');
+    const form__label = document.querySelectorAll('.form__label');
 
-    for (let i = 0; i < inputForm.length; i++) {
-        inputForm[i].addEventListener('focus', (e) => {
-            labelForm[i].classList.add('form__label--active');
+    for (let i = 0; i < form__input.length; i++) {
+        form__input[i].addEventListener('focus', (e) => {
+            form__label[i].classList.add('form__label--active');
         });
-        inputForm[i].addEventListener('focusout', (e) => {
-            if (inputForm[i].value == '') labelForm[i].classList.remove('form__label--active');
+        form__input[i].addEventListener('focusout', (e) => {
+            if (form__input[i].value == '') form__label[i].classList.remove('form__label--active');
         });
     }
     //form validation
     const form = document.querySelectorAll('#form');
-    const checkboxValid = document.querySelectorAll('.form__checkbox');
-    const errorsBox = document.querySelectorAll('#errorChec');
+    const form__checkbox = document.querySelectorAll('.form__checkbox');
+    const form__errorCheckBox = document.querySelectorAll('.form__error--checkbox');
     const errors = document.querySelectorAll('#error');
 
 
-    for (let i = 0; i < inputForm.length; i++) {
-        inputForm[i].addEventListener('focus', (e) => {
+    for (let i = 0; i < form__input.length; i++) {
+        form__input[i].addEventListener('focus', (e) => {
             errors[i].classList.add('form__error--notActive')
         });
     }
 
-    for (let i = 0; i < checkbox.length; i++) {
-        checkbox[i].addEventListener('click', (e) => {
-            errorsBox[i].classList.add('form__error--notActive');
+    for (let i = 0; i < form__checkboxInfo.length; i++) {
+        form__checkboxInfo[i].addEventListener('click', (e) => {
+            form__errorCheckBox[i].classList.add('form__error--notActive');
         });
     }
 
@@ -84,14 +84,14 @@
         let notEmpty = 0;
 
         for (let i = firstBox; i < lastBox; i++) {
-            if (checkboxValid[i].checked == false) {
-                errorsBox[i].classList.remove('form__error--notActive');
+            if (form__checkbox[i].checked == false) {
+                form__errorCheckBox[i].classList.remove('form__error--notActive');
                 notChec++;
             }
         }
 
         for (let i = firstInput; i < lastInput; i++) {
-            if (inputForm[i].value.length == 0) {
+            if (form__input[i].value.length == 0) {
                 errors[i].classList.remove('form__error--notActive');
                 notEmpty++;
             }

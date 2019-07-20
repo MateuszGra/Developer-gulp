@@ -7,7 +7,7 @@
 @mixin afterBeforeLink {
     display: block;
     position: absolute;
-    color: var(--linkActive);
+    color: $linkActive;
     font-size: 3rem;
     top: 50%;
     transform: translateY(-50%);
@@ -66,7 +66,7 @@
         letter-spacing: 0.2rem;
         margin: 0 0 0 2.6vw;
         font-size: 1.7rem;
-        color: var(--fontColor);
+        color: $fontColor;
         text-decoration: none;
         transition: 0.3s;
         position: relative;
@@ -85,7 +85,7 @@
         }
 
         &:hover {
-            color: var(--linkActive);
+            color: $linkActive;
 
             &::before {
                 left: -1.5rem;
@@ -133,7 +133,7 @@
             margin: 0 0 0 0;
 
             &:hover {
-                color: var(--fontColor);
+                color: $fontColor;
             }
 
             &::after {

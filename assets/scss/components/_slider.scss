@@ -28,7 +28,7 @@
     position: relative;
     width: 82%;
     height: 65rem;
-    box-shadow: 0 0.5rem 2rem var(--boxShadow);
+    box-shadow: 0 0.5rem 2rem $boxShadow;
     margin: 8rem 0 0 0;
     overflow: hidden;
     font-size: 3rem;
@@ -249,13 +249,13 @@
     &__dot {
         width: 1rem;
         height: 1rem;
-        background: var(--fontColor);
+        background: $fontColor;
         margin: 0 0.4rem 0 0.4rem;
         border-radius: 50%;
         cursor: pointer;
 
         &--active {
-            background: var(--linkActive);
+            background: $linkActive;
             transform: scale(1.4);
         }
     }

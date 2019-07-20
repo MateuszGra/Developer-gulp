@@ -5,7 +5,7 @@
 
 .figureLine {
     @include lines();
-    background: var(--fontColor);
+    background: $fontColor;
 
     &--white {
         @include lines();

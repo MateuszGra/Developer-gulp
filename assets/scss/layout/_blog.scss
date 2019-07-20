@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: var(--bgGray);
+    background: $bgGray;
     width: 100%;
 
     @media (max-width: 1025px) {

@@ -41,11 +41,11 @@
     &__policy {
         margin: 0 8.85% 0 0;
         text-decoration: none;
-        color: var(--fontColor);
+        color: $fontColor;
         @include font();
 
         &:hover {
-            color: var(--linkActive);
+            color: $linkActive;
         }
 
         @media (max-width: 1025px) {
