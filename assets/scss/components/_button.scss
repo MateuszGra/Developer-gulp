@@ -75,7 +75,7 @@
         }
 
         &::before {
-            background: url(../../../assets/images/send.png);
+            background: url(../images/send.png);
             @include png();
             background-size: 2.5rem;
         }
@@ -88,7 +88,7 @@
         }
 
         &::before {
-            background: url(../../../assets/images/more.png);
+            background: url(../images/more.png);
             @include png();
             background-size: 2.5rem;
         }
@@ -107,7 +107,7 @@
         }
 
         &::before {
-            background: url(../../../assets/images/contact.png);
+            background: url(../images/contact.png);
             @include png();
             background-size: 2.5rem;
         }
@@ -120,7 +120,7 @@
         }
 
         &::before {
-            background: url(../../../assets/images/download.png);
+            background: url(../images/download.png);
             @include png();
             background-size: 2.2rem;
         }

@@ -41,7 +41,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 4rem 0 0 0;
 }
 
 @mixin infoSmall {
@@ -58,6 +57,11 @@
         @media (max-width: 1025px) {
             @include column();
         }
+
+        @media (max-width: 500px) {
+            margin: 4rem 0 0 0;
+            width: 95%;
+        }
     }
 
     &--secend {
@@ -66,13 +70,15 @@
         margin: 0 0 0 9.8%;
 
         @media (max-width: 1025px) {
-            margin: 3rem 0 0 0;
+            margin: 0 0 0 4%;
+            max-width: 35rem;
             transform: translateY(0);
             @include column();
         }
 
         @media (max-width: 500px) {
             margin: 4rem 0 0 0;
+            width: 95%;
             max-width: 95%;
         }
     }
@@ -88,7 +94,7 @@
         @include imageOneThree();
     }
 
-    &___image--three {
+    &__image--three {
         @include imageOneThree();
     }
 
@@ -96,7 +102,7 @@
         @include imageTwoFour();
     }
 
-    &___image--four {
+    &__image--four {
         @include imageTwoFour();
     }
 
@@ -140,8 +146,6 @@
 
         @media (max-width: 1025px) {
             @include infoSmall();
-            max-width: 35rem;
-            margin: 0 0 0 4%;
         }
 
         @media (max-width: 680px) {

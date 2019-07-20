@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+  <title>Developer</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge ,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="Content-Language" content="pl-PL" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+
+  <!-- To replace following tags, use https://realfavicongenerator.net/ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <main>
+    <!-- header -->
+    <header class="header" id="header">
+      <nav class="nav">
+        <a class="nav__logoLink" href="index.html"><img class="nav__logo" src="assets/images/logo.png"></a>
+        <div class="nav__hamburger">
+          <figure class="nav__hamburgerLine"></figure>
+        </div>
+        <ul class="nav__ul nav__ul--active">
+          <li class="nav__li"><a class="nav__a" href="#header">STRONA GŁÓWNA</a></li>
+          <li class="nav__li"><a class="nav__a" href="#search">WYSZUKIWARKA</a></li>
+          <li class="nav__li"><a class="nav__a" href="#investments">INWESTYCJE</a></li>
+          <li class="nav__li"><a class="nav__a" href="#blog">BLOG</a></li>
+        </ul>
+      </nav>
+      <div class="header__imagesWrapper">
+        <img class="header__imageFirst" src="assets/images/header.jpg">
+        <img class="header__imageSecend" src="assets/images/header-overlay.jpg">
+      </div>
+    </header>
+    <!-- search -->
+    <section class="search" id="search">
+      <h1 class="search__title">Znajdź inwestycję, którą pokochasz!</h1>
+      <p class="search__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.
+        Aliquam erat volutpat.
+        Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
+      <div class="slider">
+        <div class="slider__dotsWrapper"></div>
+        <div class="slider__arrowLeft" id="arrow"><img src="assets/images//SVG/arrow.svg"></div>
+        <div class="slider__arrowRight" id="arrow"><img src="assets/images/SVG/arrow.svg"></div>
+      </div>
+    </section>
+    <!-- investments -->
+    <section class="investments" id="investments">
+      <img class="investments__image" src="assets/images/form1.jpg">
+      <form class="form--investments" id="form" novalidate method="POST" action="" target="_blank">
+        <h1>Zainteresowany kupnem? Zostaw numer!</h1>
+        <p class="form__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor
+          sem.</p>
+        <div class="form__inputWrapper">
+          <div class="form__error form__error--notActive" id="error">Proszę uzupełnić pole</div>
+          <label class="form__label" for="name">Imię i nazwisko</label>
+          <input class="form__input" type=”text” name="name" id="name">
+        </div>
+        <div class="form__inputWrapper">
+          <div class="form__error form__error--notActive" id="error">Proszę uzupełnić pole</div>
+          <label class="form__label" for="phone">Telefon</label>
+          <input class="form__input" type="phone" name="phone" id="phone">
+        </div>
+        <div class="form__inputWrapper">
+          <div class="form__error form__error--notActive" id="error">Proszę uzupełnić pole</div>
+          <label class="form__label" for="message">Kiedy najlepiej zadzwonić</label>
+          <input class="form__input" type="text" name="message" id="message">
+        </div>
+        <label class="form__checkboxWrapper"></div>
+          <div class="form__error form__error--checkbox form__error--notActive">Wymagana zgoda</div>
+          <input class="form__checkbox" type="checkbox">
+          <span class="form__checkboxInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Aliquam at
+            porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum
+            sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        </label>
+        <label class="form__checkboxWrapper">
+          <div class="form__error form__error--checkbox form__error--notActive">Wymagana zgoda</div>
+          <input class="form__checkbox" type="checkbox">
+          <span class="form__checkboxInfo">Nervous, aren't you? I can see it in your soul. I can feel it
+            in your bones.
+            This unnerving feeling going through your spine.</span>
+        </label>
+        <button class="button button--white button--submit">Wyślij</button>
+      </form>
+    </section>
+    <!-- benefits -->
+    <section class="benefits">
+      <div class="benefits__wrapperLine">
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/blok.svg">
+          <h3 class="benefits__title">ZNAKOMITA LOKALIZACJA</h3>
+        </div>
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/metraz.svg">
+          <h3 class="benefits__title">CIEKAWY ROZKŁAD</h3>
+        </div>
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/samochod.svg">
+          <h3 class="benefits__title">ŁATWA PRZEPROWADZKA</h3>
+        </div>
+      </div>
+      <div class="benefits__wrapperLine">
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/blok.svg">
+          <h3 class="benefits__title">ZNAKOMITA LOKALIZACJA</h3>
+        </div>
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/metraz.svg">
+          <h3 class="benefits__title">CIEKAWY ROZKŁAD</h3>
+        </div>
+        <div class="benefits__wrapperBenefit">
+          <img class="benefits__image" src="assets/images/SVG/samochod.svg">
+          <h3 class="benefits__title">ŁATWA PRZEPROWADZKA</h3>
+        </div>
+      </div>
+    </section>
+    <!-- blog -->
+    <section class="blog" id="blog">
+      <div class="column--first">
+        <div class="column__imagesWrapper">
+          <img class="column__image--one" src="assets/images/wpis-1.jpg">
+          <img class="column__image--two" src="assets/images/wpis-1-overlay.jpg">
+        </div>
+        <h3 class="column__title">BARDZO CIEKAWY WPIS NA NASZYM BLOGU, KTÓREGO PEWNIE NIKT NIE PRZECZYTA</h3>
+        <figure class="figureLine"></figure>
+        <p class="column__info--first">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat
+          volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
+        </p>
+        <button class="button button--white button--more">Więcej</button>
+      </div>
+      <div class="column--secend">
+        <div class="column__imagesWrapper">
+          <img class="column__image--three" src="assets/images/wpis-2.jpg">
+          <img class="column__image--four" src="assets/images/wpis-2-overlay.jpg">
+        </div>
+        <h3 class="column__title">BARDZO CIEKAWY WPIS NA NASZYM BLOGU, KTÓREGO PEWNIE NIKT NIE
+          PRZECZYTA</h3>
+        <figure class="figureLine"></figure>
+        <p class="column__info--secend">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat
+          volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
+        </p>
+        <button class="button button--white button--more">Więcej</button>
+      </div>
+    </section>
+    <!-- more about us -->
+    <section class="moreAbout">
+      <h4 class="moreAbout__title">WIĘCEJ O NAS</h3>
+        <figure class="figureLine"></figure>
+        <h2 class="moreAbout__titleTwo">Podobno cyferki sprzedają :)</h2>
+        <p class="moreAbout__paragraph">All alone! Whether you like it or not, alone is something you'll be quite a lot!
+        </p>
+        <div class="statistics">
+          <div class="statistics__statisticWrapper">
+            <div class="statistics__number">
+              <div class="statistics__digitWrapper"></div>
+              <div class="statistics__digitWrapper"></div>
+              <div class="statistics__digitWrapper"></div>
+            </div>
+            <figure class="figureLine"></figure>
+            <h3 class="statistics__info--one">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING</h3>
+          </div>
+          <div class="statistics__statisticWrapper">
+            <div class="statistics__number">
+              <div class="statistics__digitWrapper"></div>
+              <div class="statistics__digitWrapper"></div>
+              <div class="statistics__digitWrapper"></div>
+            </div>
+            <figure class="figureLine"></figure>
+            <h3 class="statistics__info--two">ADIPISCING ELIT. ALIQUAM AT PORTTITOR SEM. ALIQUAM ERAT VOLUTPAT.</h3>
+          </div>
+          <div class="statistics__statisticWrapper">
+            <div class="statistics__number">
+              <div class="statistics__digitWrapper"></div>
+              <div class="statistics__digitWrapper"></div>
+            </div>
+            <figure class="figureLine"></figure>
+            <h3 class="statistics__info--three">ADIPISCING ELIT. ALIQUAM AT PORTTITOR SEM. ALIQUAM ERAT VOLUTPAT.</h3>
+          </div>
+        </div>
+    </section>
+    <!-- contact -->
+    <section class="contact">
+      <h3 class="contact__title">KONTAKT</h3>
+      <figure class="figureLine--white"></figure>
+      <h2 class="contact__titleTwo">Napisz do nas!</h2>
+      <p class="contact__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.
+      </p>
+      <form class="form--contact" id="form" novalidate method="POST" action="inc/send_contact.php">
+        <div class="form__row">
+          <div class="form__inputWrapper form__inputWrapper--margin">
+            <div class="form__error form__error--white form__error--notActive" id="error">Proszę uzupełnić pole</div>
+            <label class="form__label form__label--contact" for="name">Imię i nazwisko</label>
+            <input class="form__input form__input--contact" type=”text” name="name" id="nameContact">
+          </div>
+          <div class="form__inputWrapper">
+            <div class="form__error form__error--white form__error--notActive" id="error">Proszę uzupełnić pole</div>
+            <label class="form__label form__label--contact" for="phone">Telefon lub adres email</label>
+            <input class="form__input form__input--contact" type="phone" name="phone" id="phoneContact">
+          </div>
+        </div>
+        <div class="form__inputWrapper">
+          <div class="form__error form__error--white form__error--notActive" id="error">Proszę uzupełnić pole</div>
+          <label class="form__label form__label--contact" for="message">Twoja wiadomość</label>
+          <input class="form__input form__input--contact" type="text" name="message" id="messageContact">
+        </div>
+        <label class="form__checkboxWrapper form__checkboxWrapper--contact">
+          <div class="form__error form__error--checkbox form__error--white form__error--notActive">
+            Wymagana zgoda
+          </div>
+          <input class="form__checkbox" type="checkbox">
+          <span class="form__checkboxInfo form__checkboxInfo--contact">Lorem ipsum dolor sit amet,
+            consectetur adipiscing
+            elit.
+            Aliquam at
+            porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum
+            sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam
+            erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. D</span>
+        </label>
+        <label class="form__checkboxWrapper form__checkboxWrapper--contact">
+          <div class="form__error form__error--checkbox form__error--white form__error--notActive">
+            Wymagana zgoda
+          </div>
+          <input class="form__checkbox" type="checkbox">
+          <span class="form__checkboxInfo form__checkboxInfo--contact">If you're reading this there's
+            something not quite
+            right
+            with you.
+            And that's fantastic. Believe in yourself because we already do.</span>
+        </label>
+        <button class="button button--white button--submit button--contact">Wyślij</button>
+      </form>
+    </section>
+    <!-- footer -->
+    <footer class="footer">
+      <p class="footer__copyright">COPYRIGHT 2019. Created Without Any Original Thought by Sunday & Autumn</p>
+      <a href="" onclick="return false" class="footer__policy">Polityka prywatności</a>
+    </footer>
+  </main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+</script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Muli']
+    }
+  });
+</script>
+<script src="assets/js/all.min.js"></script>
+
+</html>

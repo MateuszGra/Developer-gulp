@@ -5,9 +5,9 @@
 }
 
 @mixin fontSmall {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     letter-spacing: 0.1rem;
-    margin: 1rem 0 1rem 0;
+    margin: 1.2rem 0 1.2rem 0;
 }
 
 @mixin arrow {
@@ -118,6 +118,11 @@
         @media (max-width: 1400px) {
             @include fontSmall();
         }
+
+        @media (max-width: 1025px) {
+            font-size: 1.4rem;
+            margin: 0.5rem 0 0.5rem 0;
+        }
     }
 
     &__localYardage {
@@ -128,6 +133,11 @@
         @media (max-width: 1400px) {
             @include fontSmall();
         }
+
+        @media (max-width: 1025px) {
+            font-size: 1.4rem;
+            margin: 0.5rem 0 0.5rem 0;
+        }
     }
 
     &__localPrice {
@@ -136,6 +146,11 @@
 
         @media (max-width: 1400px) {
             @include fontSmall();
+        }
+
+        @media (max-width: 1025px) {
+            font-size: 1.4rem;
+            margin: 0.5rem 0 0.5rem 0;
         }
     }
 
@@ -146,6 +161,11 @@
         @media (max-width: 1400px) {
             @include fontSmall();
         }
+
+        @media (max-width: 1025px) {
+            font-size: 1.4rem;
+            margin: 0.5rem 0 0.5rem 0;
+        }
     }
 
     &__localDestyny {
@@ -154,6 +174,11 @@
 
         @media (max-width: 1400px) {
             @include fontSmall();
+        }
+
+        @media (max-width: 1025px) {
+            font-size: 1.4rem;
+            margin: 0.5rem 0 0.5rem 0;
         }
     }
 
@@ -165,6 +190,11 @@
         @media (max-width: 1400px) {
             @include fontSmall();
             margin: 1rem 0 1.5rem 0;
+        }
+
+        @media (max-width: 1025px) {
+            font-size: 1.4rem;
+            margin: 0.5rem 0 1.5rem 0;
         }
 
         @media (max-width: 680px) {
