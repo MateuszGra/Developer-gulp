@@ -25,42 +25,42 @@
         .then(resp => resp.json())
         .then(resp => {
             for (let i = 0; i < resp.length; i++) {
-                createElement("devWrapper", "div", "devWrapper", null, fragment);
-                if (i > 0 && i != resp.length - 1) devWrapper.classList.add('notActiveR');
-                if (i == resp.length - 1) devWrapper.classList.add('notActiveL');
-                createElement("devInfo", "div", "devInfo", null, devWrapper);
-                createElement("devName", "h2", "devName", resp[i].nazwa, devInfo);
-                createElement("figureLine", "figure", "figureLine", null, devInfo);
-                createElement("devYardage", "p", "devYardage", `Metraż: ${resp[i].metraz} m2`, devInfo);
-                createElement("devPrice", "p", "devPrice", `Cena Netto: ${resp[i].netto.toLocaleString('pl-PL')} zł*`, devInfo);
-                createElement("devInfoPrice", "p", "devInfoPrice", `* cena nie zawiera 23% VAT`, devInfo);
-                createElement("devfloor", "p", "devfloor", `Piętro: ${resp[i].pietro} `, devInfo);
-                createElement("devDestiny", "p", "devDestiny", `Przeznaczenie: ${resp[i].przeznaczenie}`, devInfo);
-                createElement("devStatus", "p", "devStatus", `Status: ${resp[i].status}`, devInfo);
-                createElement("askButtonLink", "a", "askButtonLink", null, devInfo);
-                askButtonLink.href = "#investments";
-                createElement("askButton", "button", "buttonSecend", `Zapytaj`, askButtonLink);
-                askButton.classList.add('askButton');
-                createElement("downloadButtonLink", "a", "downloadButtonLink", null, devInfo);
+                createElement("slider__slide", "div", "slider__slide", null, fragment);
+                if (i > 0 && i != resp.length - 1) slider__slide.classList.add('notActiveR');
+                if (i == resp.length - 1) slider__slide.classList.add('notActiveL');
+                createElement("slider__infoWrapper", "div", "slider__infoWrapper", null, slider__slide);
+                createElement("slider__localName", "h2", "slider__localName", resp[i].nazwa, slider__infoWrapper);
+                createElement("figureLine", "figure", "figureLine", null, slider__infoWrapper);
+                createElement("slider__localYardage", "p", "slider__localYardage", `Metraż: ${resp[i].metraz} m2`, slider__infoWrapper);
+                createElement("slider__localPrice", "p", "slider__localPrice", `Cena Netto: ${resp[i].netto.toLocaleString('pl-PL')} zł*`, slider__infoWrapper);
+                createElement("slider__localInfoPrice", "p", "slider__localInfoPrice", `* cena nie zawiera 23% VAT`, slider__infoWrapper);
+                createElement("slider__localFloor", "p", "slider__localFloor", `Piętro: ${resp[i].pietro} `, slider__infoWrapper);
+                createElement("slider__localDestyny", "p", "slider__localDestyny", `Przeznaczenie: ${resp[i].przeznaczenie}`, slider__infoWrapper);
+                createElement("slider__loacalStatus", "p", "slider__loacalStatus", `Status: ${resp[i].status}`, slider__infoWrapper);
+                createElement("buttonLink", "a", "button--link", null, slider__infoWrapper);
+                buttonLink.href = "#investments";
+                createElement("askButton", "button", "button--black", `Zapytaj`, buttonLink);
+                askButton.classList.add('button--ask');
+                createElement("downloadButtonLink", "a", "button--link", null, slider__infoWrapper);
                 downloadButtonLink.href = 'assets/images/plan.pdf';
                 downloadButtonLink.target = '_blank';
-                createElement("downloadButton", "button", "buttonSecend", `Pobierz plan`, downloadButtonLink);
-                downloadButton.classList.add('downButton');
-                createElement("drop", "img", "drop", null, devWrapper);
-                createElement("imgWrapper", "div", "imgWrapper", null, devWrapper);
-                createElement("compass", "img", "compass", null, imgWrapper);
-                compass.style.transform = `rotate(${rotateCompass(resp[i].ekspozycja)}deg)`;
-                createElement("floor", "img", "floor", null, imgWrapper);
+                createElement("downloadButton", "button", "button--black", `Pobierz plan`, downloadButtonLink);
+                downloadButton.classList.add('button--download');
+                createElement("slider__blueprint", "img", "slider__blueprint", null, slider__slide);
+                createElement("slider__mapWrapper", "div", "slider__mapWrapper", null, slider__slide);
+                createElement("slider__compass", "img", "slider__compass", null, slider__mapWrapper);
+                slider__compass.style.transform = `rotate(${rotateCompass(resp[i].ekspozycja)}deg)`;
+                createElement("slider__map", "img", "slider__map", null, slider__mapWrapper);
 
-                if (resp[i].pietro == 0) devfloor.textContent += '- Parter';
-                else devfloor.textContent += '- Piętro';
+                if (resp[i].pietro == 0) slider__localFloor.textContent += '- Parter';
+                else slider__localFloor.textContent += '- Piętro';
 
-                drop.src = resp[i].obrazki.rzut;
-                compass.src = "assets/images/SVG/polnoc.svg";
-                floor.src = resp[i].obrazki.pietro;
+                slider__blueprint.src = resp[i].obrazki.rzut;
+                slider__compass.src = "assets/images/SVG/polnoc.svg";
+                slider__map.src = resp[i].obrazki.pietro;
 
-                createElement("dot", "figure", "dot", null, fragmentTwo);
-                if (i === 0) dot.classList.add('active');
+                createElement("slider__dot", "figure", "slider__dot", null, fragmentTwo);
+                if (i === 0) slider__dot.classList.add('active');
             }
 
             const slider = document.querySelector('.slider');
@@ -88,32 +88,30 @@
         .then(resp => {
             //animate serch menu
             const arrow = document.querySelectorAll('#arrow');
-            const dot = document.querySelectorAll('.dot');
-            const devWrapper = document.querySelectorAll('.devWrapper');
+            const slider__dot = document.querySelectorAll('.slider__dot');
+            const slider__slide = document.querySelectorAll('.slider__slide');
             let position = 0;
             let prev;
             let next;
 
             const rightMove = () => {
-                const devWrapper = document.querySelectorAll('.devWrapper');
-                const dot = document.querySelectorAll('.dot');
 
                 position++;
                 prev = position - 1;
                 next = position + 1;
-                if (position == devWrapper.length) {
+                if (position == slider__slide.length) {
                     position = 0;
-                    prev = devWrapper.length - 1;
+                    prev = slider__slide.length - 1;
                     next = position + 1;
                 }
-                if (position == devWrapper.length - 1) next = 0;
+                if (position == slider__slide.length - 1) next = 0;
 
-                devWrapper[prev].classList.add('notActiveL');
-                devWrapper[next].classList.add('notActiveR');
-                devWrapper[position].classList.remove('notActiveR');
-                devWrapper[position].classList.remove('notActiveL');
-                dot[position].classList.add('active')
-                dot[prev].classList.remove('active')
+                slider__slide[prev].classList.add('notActiveL');
+                slider__slide[next].classList.add('notActiveR');
+                slider__slide[position].classList.remove('notActiveR');
+                slider__slide[position].classList.remove('notActiveL');
+                slider__dot[position].classList.add('active')
+                slider__dot[prev].classList.remove('active')
             }
 
             const leftMove = () => {
@@ -121,18 +119,18 @@
                 prev = position + 1;
                 next = position - 1;
                 if (position < 0) {
-                    position = devWrapper.length - 1;
+                    position = slider__slide.length - 1;
                     prev = 0;
                     next = position - 1;
                 }
-                if (position == 0) next = devWrapper.length - 1;
+                if (position == 0) next = slider__slide.length - 1;
 
-                devWrapper[prev].classList.add('notActiveR');
-                devWrapper[next].classList.remove('notActiveR');
-                devWrapper[next].classList.add('notActiveL');
-                devWrapper[position].classList.remove('notActiveL');
-                dot[prev].classList.remove('active')
-                dot[position].classList.add('active')
+                slider__slide[prev].classList.add('notActiveR');
+                slider__slide[next].classList.remove('notActiveR');
+                slider__slide[next].classList.add('notActiveL');
+                slider__slide[position].classList.remove('notActiveL');
+                slider__dot[prev].classList.remove('active')
+                slider__dot[position].classList.add('active')
             }
 
             arrow[1].addEventListener("click", rightMove);
@@ -149,32 +147,32 @@
                 position = click;
                 prev = position - 1;
                 next = position + 1;
-                if (position == devWrapper.length - 1) next = 0;
-                if (position == 0) prev = devWrapper.length - 1;
+                if (position == slider__slide.length - 1) next = 0;
+                if (position == 0) prev = slider__slide.length - 1;
 
-                for (let i = 0; i < devWrapper.length; i++) {
-                    if (i > position) devWrapper[i].classList.add('notActiveR');
-                    if (i < position) devWrapper[i].classList.add('notActiveL');
+                for (let i = 0; i < slider__slide.length; i++) {
+                    if (i > position) slider__slide[i].classList.add('notActiveR');
+                    if (i < position) slider__slide[i].classList.add('notActiveL');
                 }
 
-                devWrapper[prev].classList.add('notActiveL');
-                devWrapper[prev].classList.remove('notActiveR');
-                devWrapper[next].classList.add('notActiveR');
-                devWrapper[position].classList.remove('notActiveR');
-                devWrapper[position].classList.remove('notActiveL');
+                slider__slide[prev].classList.add('notActiveL');
+                slider__slide[prev].classList.remove('notActiveR');
+                slider__slide[next].classList.add('notActiveR');
+                slider__slide[position].classList.remove('notActiveR');
+                slider__slide[position].classList.remove('notActiveL');
 
-                for (let i = 0; i < dot.length; i++) {
-                    dot[i].classList.remove('active');
+                for (let i = 0; i < slider__dot.length; i++) {
+                    slider__dot[i].classList.remove('active');
                 }
-                dot[position].classList.add('active')
+                slider__dot[position].classList.add('active')
 
             }
 
-            for (let i = 0; i < dot.length; i++) {
-                dot[i].addEventListener('click', (e) => {
+            for (let i = 0; i < slider__dot.length; i++) {
+                slider__dot[i].addEventListener('click', (e) => {
                     dotClick(i);
                 })
-                dot[i].addEventListener('touch', (e) => {
+                slider__dot[i].addEventListener('touch', (e) => {
                     dotClick(i);
                 })
             }
@@ -182,7 +180,7 @@
         .catch(error => {
             console.log('Błąd API: ', error)
             const errortext = 'Przepraszamy. Brak połączenia z serwerem.'
-            createElement(name = "errorApi", type = "h2", clas = "errorApi", txt = errortext, parent = slider);
+            createElement("errorApi", "h2", "errorApi", errortext, slider);
         });
 
     //hide hamburger

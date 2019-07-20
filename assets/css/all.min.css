@@ -65,14 +65,14 @@ button {
           box-shadow: 0 0.5rem 2rem var(--boxShadow);
   overflow: hidden; }
 
-.buttonSecend {
+.button--black {
   position: relative;
   padding: 0.8rem 3rem 0.8rem 3rem;
   background: black;
   overflow: hidden; }
 
-.buttonSecend::after,
-.buttonSecend::before,
+.button--black::after,
+.button--black::before,
 .button--white::after,
 .button--white::before {
   position: absolute;
@@ -83,8 +83,7 @@ button {
   -webkit-transition: 0.3s;
   transition: 0.3s; }
 
-.button--submit::after,
-.submitContact::after {
+.button--submit::after {
   content: 'Wyślij';
   color: var(--fontColor);
   top: 0; }
@@ -103,8 +102,7 @@ button {
   height: 100%;
   top: 100%; }
 
-.button--submit::before,
-.submitContact::before {
+.button--submit::before {
   content: '';
   background: url(../../../assets/images/send.png);
   background-repeat: no-repeat;
@@ -113,37 +111,39 @@ button {
   height: 100%;
   top: 100%; }
 
-.askButton::after {
+.button--ask::after {
   content: 'Zapytaj';
   top: 0;
   color: white; }
 
-.downButton::after {
+.button--download::after {
   content: 'Pobierz plan';
   top: 0;
   color: white; }
 
-.askButton::before,
-.downButton::before {
+.button--ask::before,
+.button--ask::before,
+.button--download::before,
+.button--download::before {
   top: 100%;
   height: 100%; }
 
-.askButton::before {
+.button--ask::before {
   content: '';
   background: url(../../../assets/images/contact.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 2.5rem; }
 
-.downButton::before {
+.button--download::before {
   content: '';
   background: url(../../../assets/images/download.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 2.2rem; }
 
-.buttonSecend:hover::after,
-.buttonSecend:hover::before,
+.button--black:hover::after,
+.button--black:hover::before,
 .button--white:hover::after,
 .button--white:hover::before {
   -webkit-transform: translateY(-100%);
@@ -312,7 +312,7 @@ header {
   overflow: hidden;
   font-size: 3rem; }
 
-.devWrapper {
+.slider__slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -336,49 +336,49 @@ header {
           transform: translateX(110%);
   opacity: 0; }
 
-.devInfo {
+.slider__infoWrapper {
   margin: 0 0 0 5%; }
 
-.devName {
+.slider__localName {
   margin: 6rem 0 4rem 0;
   padding: 0 0 0 0;
   letter-spacing: 0.2rem; }
 
-.devInfoPrice,
-.devYardage,
-.devPrice,
-.devfloor,
-.devDestiny,
-.devStatus {
+.slider__localInfoPrice,
+.slider__localYardage,
+.slider__localPrice,
+.slider__localFloor,
+.slider__localDestyny,
+.slider__loacalStatus {
   letter-spacing: 0.2rem;
   font-weight: lighter;
   margin: 2rem 0 2rem 0; }
 
-.devYardage {
+.slider__localYardage {
   margin: 4rem 0 0 0; }
 
-.devStatus {
+.slider__loacalStatus {
   margin: 2rem 0 5rem 0; }
 
-.devYardage,
-.devPrice,
-.devfloor,
-.devDestiny,
-.devStatus {
+.slider__localYardage,
+.slider__localPrice,
+.slider__localFloor,
+.slider__localDestyny,
+.slider__loacalStatus {
   font-size: 2rem; }
 
-.devInfoPrice {
+.slider__localInfoPrice {
   font-size: 1.4rem; }
 
-.askButton {
+.button--ask {
   position: relative;
   margin: 0 2rem 0 0; }
 
-.askButtonLink {
+.button--link {
   width: 100%;
   height: 100%; }
 
-.imgWrapper {
+.slider__mapWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,15 +391,15 @@ header {
           justify-content: center;
   margin: 0 7.5% 0 8%; }
 
-.drop {
+.slider__blueprint {
   margin: 4rem 0 0 0;
   width: 45rem;
   height: 45rem; }
 
-.floor {
+.slider__map {
   width: 10.5rem; }
 
-.compass {
+.slider__compass {
   height: 7rem;
   margin: 0 0 6.5rem 0; }
 
@@ -418,7 +418,7 @@ header {
           transform: translateX(-50%);
   bottom: 1.5rem; }
 
-.dot {
+.slider__dot {
   width: 1rem;
   height: 1rem;
   background: var(--fontColor);
@@ -426,7 +426,7 @@ header {
   border-radius: 50%;
   cursor: pointer; }
 
-.dot.active {
+.slider__dot.active {
   background: var(--linkActive);
   -webkit-transform: scale(1.4);
           transform: scale(1.4); }
@@ -627,7 +627,7 @@ header {
   width: 90%;
   margin: 3rem 0 0 2.8rem; }
 
-.submitContact {
+.button--contact {
   margin: 4rem 0 0 3rem; }
 
 .form__error,
@@ -977,23 +977,23 @@ footer {
     font-size: 1.4rem; }
   .slider {
     height: 47rem; }
-  .devInfoPrice,
-  .devYardage,
-  .devPrice,
-  .devfloor,
-  .devDestiny,
-  .devStatus {
+  .slider__localInfoPrice,
+  .slider__localYardage,
+  .slider__localPrice,
+  .slider__localFloor,
+  .slider__localDestyny,
+  .slider__loacalStatus {
     font-size: 1.4rem;
     letter-spacing: 0.1rem;
     margin: 1rem 0 1rem 0; }
-  .drop {
+  .slider__blueprint {
     width: 27rem;
     height: 27rem; }
-  .imgWrapper {
+  .slider__mapWrapper {
     margin: 0 5% 0 5%; }
-  .devStatus {
+  .slider__loacalStatus {
     margin: 1rem 0 2.5rem 0; }
-  .buttonSecend {
+  .button--black {
     font-size: 1.3rem; } }
 
 /****************************************************************************************************************************************/
@@ -1106,21 +1106,21 @@ footer {
     height: 30rem; }
   .slider {
     height: 32rem; }
-  .imgWrapper {
+  .slider__mapWrapper {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-  .devName {
+  .slider__localName {
     margin: 2rem 0 2rem 0;
     text-align: left; }
-  .drop {
+  .slider__blueprint {
     width: 18rem;
     height: 18rem; }
-  .buttonSecend {
+  .button--black {
     padding: 0.5rem 1.5rem 0.5rem 1.5rem; }
-  .askButton {
+  .button--ask {
     margin: 0 1rem 0 0; }
-  .compass {
+  .slider__compass {
     width: 3rem; }
   /************************************************************** investment **************************************************************/
   .investments {
@@ -1265,7 +1265,7 @@ footer {
     margin: 0 0 0 2%; }
   .footer__policy {
     margin: 0 2% 0 0; }
-  .devWrapper {
+  .slider__slide {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1276,7 +1276,7 @@ footer {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
-  .devInfo {
+  .slider__infoWrapper {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
@@ -1284,31 +1284,31 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-  .devStatus {
+  .slider__loacalStatus {
     margin: 1rem 0 1rem 0; }
-  .devName {
+  .slider__localName {
     margin: 1rem 0 1rem 0;
     font-size: 2.5rem; }
   .slider {
     height: 60rem; }
   .slider {
     width: 80%; }
-  .imgWrapper {
+  .slider__mapWrapper {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     margin: 0 0 0 0; }
-  .compass {
+  .slider__compass {
     width: 1.5rem;
     margin: 0 2rem 0 0; }
-  .drop {
+  .slider__blueprint {
     margin: 0 0 0 0; }
-  .floor {
+  .slider__map {
     width: 9rem;
     height: 9rem; }
-  .buttonSecend:hover::after,
-  .buttonSecend:hover::before,
+  .button--black:hover::after,
+  .button--black:hover::before,
   .button--white:hover::after,
   .button--white:hover::before {
     -webkit-transform: translateY(0%);
