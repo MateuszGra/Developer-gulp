@@ -40,108 +40,6 @@ h4 {
 p {
   font-size: 1.8rem; }
 
-button {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.8rem;
-  border-radius: 1rem;
-  letter-spacing: 0.2rem;
-  border: none;
-  cursor: pointer; }
-
-.button--white {
-  position: relative;
-  width: 15rem;
-  height: 4rem;
-  background: white;
-  color: white;
-  -webkit-box-shadow: 0 0.5rem 2rem var(--boxShadow);
-          box-shadow: 0 0.5rem 2rem var(--boxShadow);
-  overflow: hidden; }
-
-.button--black {
-  position: relative;
-  padding: 0.8rem 3rem 0.8rem 3rem;
-  background: black;
-  overflow: hidden; }
-
-.button--black::after,
-.button--black::before,
-.button--white::after,
-.button--white::before {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  line-height: 200%;
-  left: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s; }
-
-.button--submit::after {
-  content: 'Wyślij';
-  color: var(--fontColor);
-  top: 0; }
-
-.button--more::after {
-  content: 'Więcej';
-  color: var(--fontColor);
-  top: 0; }
-
-.button--more::before {
-  content: '';
-  background: url(../../../assets/images/more.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 2.5rem;
-  height: 100%;
-  top: 100%; }
-
-.button--submit::before {
-  content: '';
-  background: url(../../../assets/images/send.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 2.5rem;
-  height: 100%;
-  top: 100%; }
-
-.button--ask::after {
-  content: 'Zapytaj';
-  top: 0;
-  color: white; }
-
-.button--download::after {
-  content: 'Pobierz plan';
-  top: 0;
-  color: white; }
-
-.button--ask::before,
-.button--ask::before,
-.button--download::before,
-.button--download::before {
-  top: 100%;
-  height: 100%; }
-
-.button--ask::before {
-  content: '';
-  background: url(../../../assets/images/contact.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 2.5rem; }
-
-.button--download::before {
-  content: '';
-  background: url(../../../assets/images/download.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 2.2rem; }
-
-.button--black:hover::after,
-.button--black:hover::before,
-.button--white:hover::after,
-.button--white:hover::before {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%); }
-
 section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -363,14 +261,6 @@ header {
 .slider__localInfoPrice {
   font-size: 1.4rem; }
 
-.button--ask {
-  position: relative;
-  margin: 0 2rem 0 0; }
-
-.button--link {
-  width: 100%;
-  height: 100%; }
-
 .slider__mapWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -580,9 +470,6 @@ header {
 .form__checkboxInfo.chec::before {
   background: var(--linkActive); }
 
-.button--submit {
-  margin: 3rem 0 0 0; }
-
 .form__checkbox {
   display: none; }
 
@@ -619,9 +506,6 @@ header {
 .form__checkboxWrapper--contact {
   width: 90%;
   margin: 3rem 0 0 2.8rem; }
-
-.button--contact {
-  margin: 4rem 0 0 3rem; }
 
 .form__error,
 .form__error--checkbox,
@@ -985,9 +869,7 @@ footer {
   .slider__mapWrapper {
     margin: 0 5% 0 5%; }
   .slider__loacalStatus {
-    margin: 1rem 0 2.5rem 0; }
-  .button--black {
-    font-size: 1.3rem; } }
+    margin: 1rem 0 2.5rem 0; } }
 
 /****************************************************************************************************************************************/
 /************************************************************** 1025 media **************************************************************/
@@ -1109,10 +991,6 @@ footer {
   .slider__blueprint {
     width: 18rem;
     height: 18rem; }
-  .button--black {
-    padding: 0.5rem 1.5rem 0.5rem 1.5rem; }
-  .button--ask {
-    margin: 0 1rem 0 0; }
   .slider__compass {
     width: 3rem; }
   /************************************************************** investment **************************************************************/
@@ -1299,13 +1177,7 @@ footer {
     margin: 0 0 0 0; }
   .slider__map {
     width: 9rem;
-    height: 9rem; }
-  .button--black:hover::after,
-  .button--black:hover::before,
-  .button--white:hover::after,
-  .button--white:hover::before {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%); } }
+    height: 9rem; } }
 
 /****************************************************************************************************************************************/
 /************************************************************** 500 media **************************************************************/
@@ -1380,3 +1252,97 @@ footer {
     100% {
       -webkit-transform: translateY(calc(-100% + 8rem));
               transform: translateY(calc(-100% + 8rem)); } } }
+
+.button {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  letter-spacing: 0.2rem;
+  border: none;
+  cursor: pointer; }
+  .button::after, .button::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 200%;
+    left: 0;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s; }
+  .button::before {
+    content: '';
+    top: 100%; }
+  .button::after {
+    top: 0; }
+  .button:hover::after, .button:hover::before {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); }
+    @media (max-width: 680px) {
+      .button:hover::after, .button:hover::before {
+        -webkit-transform: translateY(0%);
+                transform: translateY(0%); } }
+  .button--white {
+    position: relative;
+    width: 15rem;
+    height: 4rem;
+    background: white;
+    color: white;
+    -webkit-box-shadow: 0 0.5rem 2rem var(--boxShadow);
+            box-shadow: 0 0.5rem 2rem var(--boxShadow);
+    overflow: hidden; }
+  .button--black {
+    position: relative;
+    padding: 0.8rem 3rem 0.8rem 3rem;
+    background: black;
+    overflow: hidden; }
+    @media (max-width: 1400px) {
+      .button--black {
+        font-size: 1.3rem; } }
+    @media (max-width: 1025px) {
+      .button--black {
+        padding: 0.5rem 1.5rem 0.5rem 1.5rem; } }
+  .button--submit {
+    margin: 3rem 0 0 0; }
+    .button--submit::after {
+      content: 'Wyślij';
+      color: var(--fontColor); }
+    .button--submit::before {
+      background: url(../../../assets/images/send.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 2.5rem; }
+  .button--more::after {
+    content: 'Więcej';
+    color: var(--fontColor); }
+  .button--more::before {
+    background: url(../../../assets/images/more.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2.5rem; }
+  .button--ask {
+    margin: 0 2rem 0 0; }
+    @media (max-width: 1025px) {
+      .button--ask {
+        margin: 0 1rem 0 0; } }
+    .button--ask::after {
+      content: 'Zapytaj';
+      color: white; }
+    .button--ask::before {
+      background: url(../../../assets/images/contact.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 2.5rem; }
+  .button--download::after {
+    content: 'Pobierz plan';
+    color: white; }
+  .button--download::before {
+    background: url(../../../assets/images/download.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2.2rem; }
+  .button--link {
+    width: 100%;
+    height: 100%; }
+  .button--contact {
+    margin: 4rem 0 0 3rem; }

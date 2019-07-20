@@ -41,11 +41,13 @@
       buttonLink.href = "#investments";
       createElement("askButton", "button", "button--black", "Zapytaj", buttonLink);
       askButton.classList.add('button--ask');
+      askButton.classList.add('button');
       createElement("downloadButtonLink", "a", "button--link", null, slider__infoWrapper);
       downloadButtonLink.href = 'assets/images/plan.pdf';
       downloadButtonLink.target = '_blank';
       createElement("downloadButton", "button", "button--black", "Pobierz plan", downloadButtonLink);
       downloadButton.classList.add('button--download');
+      downloadButton.classList.add('button');
       createElement("slider__blueprint", "img", "slider__blueprint", null, slider__slide);
       createElement("slider__mapWrapper", "div", "slider__mapWrapper", null, slider__slide);
       createElement("slider__compass", "img", "slider__compass", null, slider__mapWrapper);

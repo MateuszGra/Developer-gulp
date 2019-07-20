@@ -1,0 +1,137 @@
+@mixin png {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    letter-spacing: 0.2rem;
+    border: none;
+    cursor: pointer;
+
+    &::after,
+    &::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        line-height: 200%;
+        left: 0;
+        transition: transform 0.3s;
+    }
+
+    &::before {
+        content: '';
+        top: 100%;
+    }
+
+    &::after {
+        top: 0;
+    }
+
+    &:hover::after,
+    &:hover::before {
+        transform: translateY(-100%);
+
+        @media (max-width: 680px) {
+            transform: translateY(0%);
+        }
+    }
+
+
+    &--white {
+        position: relative;
+        width: 15rem;
+        height: 4rem;
+        background: white;
+        color: white;
+        box-shadow: 0 0.5rem 2rem var(--boxShadow);
+        overflow: hidden;
+    }
+
+    &--black {
+        position: relative;
+        padding: 0.8rem 3rem 0.8rem 3rem;
+        background: black;
+        overflow: hidden;
+
+        @media (max-width: 1400px) {
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 1025px) {
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        }
+
+    }
+
+    &--submit {
+        margin: 3rem 0 0 0;
+
+        &::after {
+            content: 'Wyślij';
+            color: var(--fontColor);
+        }
+
+        &::before {
+            background: url(../../../assets/images/send.png);
+            @include png();
+            background-size: 2.5rem;
+        }
+    }
+
+    &--more {
+        &::after {
+            content: 'Więcej';
+            color: var(--fontColor);
+        }
+
+        &::before {
+            background: url(../../../assets/images/more.png);
+            @include png();
+            background-size: 2.5rem;
+        }
+    }
+
+    &--ask {
+        margin: 0 2rem 0 0;
+
+        @media (max-width: 1025px) {
+            margin: 0 1rem 0 0;
+        }
+
+        &::after {
+            content: 'Zapytaj';
+            color: white;
+        }
+
+        &::before {
+            background: url(../../../assets/images/contact.png);
+            @include png();
+            background-size: 2.5rem;
+        }
+    }
+
+    &--download {
+        &::after {
+            content: 'Pobierz plan';
+            color: white;
+        }
+
+        &::before {
+            background: url(../../../assets/images/download.png);
+            @include png();
+            background-size: 2.2rem;
+        }
+    }
+
+    &--link {
+        width: 100%;
+        height: 100%;
+    }
+
+    &--contact {
+        margin: 4rem 0 0 3rem;
+    }
+}
