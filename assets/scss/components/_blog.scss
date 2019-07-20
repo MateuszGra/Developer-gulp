@@ -1,0 +1,155 @@
+.blog {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: var(--bgGray);
+    width: 100%;
+
+    @media (max-width: 1025px) {
+        padding: 0 0 3rem 0;
+    }
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
+
+}
+
+@mixin imageOneThree {
+    position: relative;
+    width: 100%;
+    mix-blend-mode: normal;
+}
+
+@mixin imageTwoFour {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.66;
+    mix-blend-mode: overlay;
+}
+
+@mixin info {
+    margin: 2rem 0 2rem 0;
+    line-height: 3rem;
+}
+
+@mixin column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem 0 0 0;
+}
+
+@mixin infoSmall {
+    width: 80%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+.column {
+    &--first {
+        width: 40%;
+
+        @media (max-width: 1025px) {
+            @include column();
+        }
+    }
+
+    &--secend {
+        width: 31%;
+        transform: translateY(-25rem);
+        margin: 0 0 0 9.8%;
+
+        @media (max-width: 1025px) {
+            margin: 3rem 0 0 0;
+            transform: translateY(0);
+            @include column();
+        }
+
+        @media (max-width: 500px) {
+            margin: 4rem 0 0 0;
+            max-width: 95%;
+        }
+    }
+
+    &__imagesWrapper {
+        position: relative;
+        width: 100%;
+        max-width: 77.4rem;
+        overflow: hidden;
+    }
+
+    &__image--one {
+        @include imageOneThree();
+    }
+
+    &___image--three {
+        @include imageOneThree();
+    }
+
+    &__image--two {
+        @include imageTwoFour();
+    }
+
+    &___image--four {
+        @include imageTwoFour();
+    }
+
+    &__title {
+        line-height: 3rem;
+        margin: 3rem 0 2rem 0;
+        width: 70%;
+
+        @media (max-width: 1025px) {
+            text-align: center;
+            width: 95%;
+        }
+
+        @media (max-width: 680px) {
+            width: 95%
+        }
+
+    }
+
+    &__info--first {
+        @include info();
+        width: 70%;
+
+        @media (max-width: 1025px) {
+            @include infoSmall();
+            max-width: 545rem;
+        }
+
+        @media (max-width: 680px) {
+            width: 90%;
+        }
+
+        @media (max-width: 500px) {
+            width: 95%;
+        }
+    }
+
+    &__info--secend {
+        @include info();
+        width: 90%;
+
+        @media (max-width: 1025px) {
+            @include infoSmall();
+            max-width: 35rem;
+            margin: 0 0 0 4%;
+        }
+
+        @media (max-width: 680px) {
+            width: 90%;
+        }
+
+        @media (max-width: 500px) {
+            width: 95%;
+        }
+    }
+}

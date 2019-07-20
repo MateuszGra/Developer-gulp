@@ -35,156 +35,13 @@ section {
   align-items: center
 }
 
-main,
-header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
 main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   overflow-x: hidden;
-}
-
-/************************************************************** header **************************************************************/
-header {
-  margin: 15rem 0 0 0;
-}
-
-.header__imagesWrapper {
-  width: 85%;
-  overflow: hidden;
-  position: relative;
-  margin: 0 0 4.5rem 0;
-}
-
-.header__imageFirst {
-  width: 100%;
-  mix-blend-mode: normal;
-}
-
-.header__imageSecend {
-  position: absolute;
-  width: 100%;
-  top: 0%;
-  left: 0%;
-}
-
-.header__imageSecend {
-  opacity: 0.66;
-  mix-blend-mode: overlay;
-}
-
-/************************************************************** search **************************************************************/
-.search {
-  width: 100%;
-}
-
-.search__info {
-  margin: 3.5rem 0 0 0;
-  width: 55%;
-  text-align: center;
-  line-height: 3rem;
-}
-
-/************************************************************** investments **************************************************************/
-.investments {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  background: var(--bgGray);
-  margin: 22rem 0 0 0;
-  padding-bottom: 10rem;
-}
-
-.investments__image {
-  transform: translateY(-10rem);
-  margin: 0 9.8% 0 0;
-  width: 40%;
-}
-
-/************************************************************** benefits **************************************************************/
-.benefits {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 38rem;
-  width: 88%;
-}
-
-.benefits__wrapperBenefit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.benefits__image {
-  width: 10rem;
-  height: 10rem;
-  margin: 13rem 0 5rem 0;
-}
-
-.benefits__title {
-  letter-spacing: 0.2rem;
-}
-
-.benefits__wrapperLine {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-/************************************************************** blog **************************************************************/
-.blog {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background: var(--bgGray);
-  width: 100%;
-}
-
-.column--first {
-  width: 40%;
-}
-
-.column--secend {
-  width: 31%;
-  transform: translateY(-25rem);
-  margin: 0 0 0 9.8%;
-}
-
-.column__imagesWrapper,
-.column__imagesWrapper {
-  position: relative;
-  width: 100%;
-  max-width: 77.4rem;
-  overflow: hidden;
-}
-
-.column__image--one,
-.column__image--three {
-  position: relative;
-  width: 100%;
-  mix-blend-mode: normal;
-}
-
-.column__image--four,
-.column__image--two {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.66;
-  mix-blend-mode: overlay;
-}
-
-.column__title {
-  line-height: 3rem;
-  margin: 3rem 0 2rem 0;
-  width: 70%;
 }
 
 .figureLine,
@@ -197,18 +54,21 @@ header {
   background: var(--fontColor);
 }
 
-.column__info--first,
-.column__info--secend {
-  margin: 2rem 0 2rem 0;
-  line-height: 3rem;
+.figureLine--white {
+  background: white;
 }
 
-.column__info--first {
-  width: 70%;
-}
+@media (max-width: 1025px) {
 
-.column__info--secend {
-  width: 90%;
+  h1,
+  h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
 }
 
 /************************************************************** more about us **************************************************************/
@@ -243,10 +103,6 @@ header {
   margin: 10rem 0 2rem 0;
 }
 
-.figureLine--white {
-  background: white;
-}
-
 .contact__titleTwo {
   letter-spacing: 0.3rem;
   margin: 4rem 0 4rem 0;
@@ -263,152 +119,11 @@ header {
   margin: 0 0 4rem 0;
 }
 
-/************************************************************** footer **************************************************************/
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 10rem;
-}
-
-.footer__copyright {
-  margin: 0 0 0 8.85%;
-}
-
-.footer__policy {
-  margin: 0 8.85% 0 0;
-  text-decoration: none;
-  color: var(--fontColor);
-}
-
-.footer__copyright,
-.footer__policy {
-  font-size: 1.4rem;
-  font-weight: lighter;
-}
-
-.footer__policy:hover {
-  color: var(--linkActive);
-}
-
-/****************************************************************************************************************************************/
-/************************************************************** 1400 media **************************************************************/
-/****************************************************************************************************************************************/
-
-
 /****************************************************************************************************************************************/
 /************************************************************** 1025 media **************************************************************/
 /****************************************************************************************************************************************/
 @media (max-width: 1025px) {
 
-  /************************************************************** uniwersal **************************************************************/
-  h1,
-  h2 {
-    font-size: 3rem;
-    text-align: center;
-  }
-
-  p {
-    font-size: 1.5rem;
-  }
-
-  /************************************************************** header **************************************************************/
-  header {
-    margin: 8rem 0 2rem 0;
-  }
-
-  .header__imagesWrapper {
-    width: 95%;
-    margin: 0 0 0 0;
-  }
-
-  .header__imageFirst,
-  .header__imageSecend {
-    width: 100%;
-  }
-
-  /************************************************************** search **************************************************************/
-  .search__info {
-    width: 95%;
-    line-height: 2.5rem;
-    margin: 3rem 0 0 0;
-  }
-
-  /************************************************************** investment **************************************************************/
-  .investments {
-    margin: 6rem 0 0 0;
-    flex-direction: column;
-    padding-bottom: 3rem;
-  }
-
-  .investments__image {
-    transform: translateY(0);
-    width: 70%;
-    margin: 0 0 2rem 0;
-  }
-
-
-  /************************************************************** benefits **************************************************************/
-  .benefits {
-    width: 95%;
-    padding-bottom: 5rem;
-  }
-
-  .benefits__title {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .benefits__image {
-    margin: 5rem 0 3rem 0;
-  }
-
-  /************************************************************** blog **************************************************************/
-  .blog {
-    padding: 0 0 3rem 0;
-  }
-
-  .column--secend {
-    margin: 3rem 0 0 0;
-    transform: translateY(0);
-  }
-
-  .column--first,
-  .column--secend {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 4rem 0 0 0;
-  }
-
-  .column--first {
-    max-width: 545rem;
-  }
-
-  .column--secend {
-    max-width: 35rem;
-    margin: 0 0 0 4%;
-  }
-
-
-  .column__title {
-    text-align: center;
-    width: 95%;
-  }
-
-  .column__info--first,
-  .column__info--secend {
-    width: 80%;
-    text-align: center;
-    font-size: 1.5rem;
-  }
-
-  .footer__copyright,
-  .footer__policy {
-    font-size: 1.2rem;
-  }
 
   /************************************************************** more about us **************************************************************/
   .contact__paragraph,
@@ -428,101 +143,6 @@ footer {
   .contact__titleTwo,
   .moreAbout__titleTwo {
     margin: 2rem 0 2rem 0;
-  }
-
-  /************************************************************** footer **************************************************************/
-  .footer__copyright {
-    margin: 0 0 0 4%;
-  }
-
-  .footer__policy {
-    margin: 0 4% 0 0;
-  }
-}
-
-/****************************************************************************************************************************************/
-/************************************************************** 680 media **************************************************************/
-/****************************************************************************************************************************************/
-@media (max-width: 680px) {
-  .header__imagesWrapper {
-    width: 100%;
-  }
-
-  .investments__image {
-    width: 95%;
-  }
-
-  .column__title {
-    width: 95%
-  }
-
-  .column__info--first,
-  .column__info--secend {
-    width: 90%;
-  }
-
-  .footer__copyright,
-  .footer__policy {
-    font-size: 1rem;
-  }
-
-  .footer__copyright {
-    margin: 0 0 0 2%;
-  }
-
-  .footer__policy {
-    margin: 0 2% 0 0;
-  }
-
-}
-
-/****************************************************************************************************************************************/
-/************************************************************** 500 media **************************************************************/
-/****************************************************************************************************************************************/
-@media (max-width: 500px) {
-  .benefits {
-    flex-direction: row;
-
-  }
-
-  .benefits__wrapperLine {
-    flex-direction: column;
-  }
-
-  .benefits__image {
-    width: 6rem;
-    height: 6rem;
-    margin: 4rem 0 1rem 0;
-  }
-
-  .benefits__title {
-    font-size: 1rem;
-    width: 70%;
-  }
-
-  .blog {
-    flex-direction: column;
-  }
-
-  .column--first,
-  .column--secend {
-    width: 95%;
-  }
-
-  .column--secend {
-    margin: 4rem 0 0 0;
-    max-width: 95%;
-  }
-
-  footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 7rem;
-  }
-
-  .footer__copyright {
-    margin: 0 0 1.5rem 0;
   }
 
 }

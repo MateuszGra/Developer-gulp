@@ -241,24 +241,24 @@
 
         if (currentScrollPos > statistics__digitWrapper[0].offsetTop - window.innerHeight) {
             //animaton statistics
-            statistics__digitWrapper[0].classList.add('startAnimation');
-            statistics__digitWrapper[1].classList.add('startAnimation');
-            statistics__digitWrapper[2].classList.add('startAnimation');
+            statistics__digitWrapper[0].classList.add('statistics__digitWrapper--animate');
+            statistics__digitWrapper[1].classList.add('statistics__digitWrapper--animate');
+            statistics__digitWrapper[2].classList.add('statistics__digitWrapper--animate');
 
             statistics__digitWrapper[2].addEventListener('animationend', (e) => {
-                statistics__digitWrapper[3].classList.add('startAnimation');
-                statistics__digitWrapper[4].classList.add('startAnimation');
-                statistics__digitWrapper[5].classList.add('startAnimation');
+                statistics__digitWrapper[3].classList.add('statistics__digitWrapper--animate');
+                statistics__digitWrapper[4].classList.add('statistics__digitWrapper--animate');
+                statistics__digitWrapper[5].classList.add('statistics__digitWrapper--animate');
             });
 
             statistics__digitWrapper[5].addEventListener('animationend', (e) => {
-                statistics__digitWrapper[6].classList.add('startAnimation');
-                statistics__digitWrapper[7].classList.add('startAnimation');
+                statistics__digitWrapper[6].classList.add('statistics__digitWrapper--animate');
+                statistics__digitWrapper[7].classList.add('statistics__digitWrapper--animate');
             });
 
         } else {
             for (let i = 0; i < statistics__digitWrapper.length; i++) {
-                statistics__digitWrapper[i].classList.remove('startAnimation');
+                statistics__digitWrapper[i].classList.remove('statistics__digitWrapper--animate');
             }
         }
         prevScrollpos = currentScrollPos;
