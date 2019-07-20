@@ -4,10 +4,10 @@
 
     for (let i = 0; i < checkbox.length; i++) {
         checkbox[i].addEventListener('click', (e) => {
-            checkbox[i].classList.toggle('chec');
+            checkbox[i].classList.toggle('form__checkboxInfo--chec');
         });
         checkbox[i].addEventListener('touch', (e) => {
-            checkbox[i].classList.toggle('chec');
+            checkbox[i].classList.toggle('form__checkboxInfo--chec');
         });
     }
     //form animations
@@ -16,10 +16,10 @@
 
     for (let i = 0; i < inputForm.length; i++) {
         inputForm[i].addEventListener('focus', (e) => {
-            labelForm[i].classList.add('active');
+            labelForm[i].classList.add('form__label--active');
         });
         inputForm[i].addEventListener('focusout', (e) => {
-            if (inputForm[i].value == '') labelForm[i].classList.remove('active');
+            if (inputForm[i].value == '') labelForm[i].classList.remove('form__label--active');
         });
     }
     //form validation
@@ -31,13 +31,13 @@
 
     for (let i = 0; i < inputForm.length; i++) {
         inputForm[i].addEventListener('focus', (e) => {
-            errors[i].classList.add('notActive')
+            errors[i].classList.add('form__error--notActive')
         });
     }
 
     for (let i = 0; i < checkbox.length; i++) {
         checkbox[i].addEventListener('click', (e) => {
-            errorsBox[i].classList.add('notActive');
+            errorsBox[i].classList.add('form__error--notActive');
         });
     }
 
@@ -85,14 +85,14 @@
 
         for (let i = firstBox; i < lastBox; i++) {
             if (checkboxValid[i].checked == false) {
-                errorsBox[i].classList.remove('notActive');
+                errorsBox[i].classList.remove('form__error--notActive');
                 notChec++;
             }
         }
 
         for (let i = firstInput; i < lastInput; i++) {
             if (inputForm[i].value.length == 0) {
-                errors[i].classList.remove('notActive');
+                errors[i].classList.remove('form__error--notActive');
                 notEmpty++;
             }
         }

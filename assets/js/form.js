@@ -6,10 +6,10 @@
 
   var _loop = function _loop(i) {
     checkbox[i].addEventListener('click', function (e) {
-      checkbox[i].classList.toggle('chec');
+      checkbox[i].classList.toggle('form__checkboxInfo--chec');
     });
     checkbox[i].addEventListener('touch', function (e) {
-      checkbox[i].classList.toggle('chec');
+      checkbox[i].classList.toggle('form__checkboxInfo--chec');
     });
   };
 
@@ -23,10 +23,10 @@
 
   var _loop2 = function _loop2(i) {
     inputForm[i].addEventListener('focus', function (e) {
-      labelForm[i].classList.add('active');
+      labelForm[i].classList.add('form__label--active');
     });
     inputForm[i].addEventListener('focusout', function (e) {
-      if (inputForm[i].value == '') labelForm[i].classList.remove('active');
+      if (inputForm[i].value == '') labelForm[i].classList.remove('form__label--active');
     });
   };
 
@@ -42,7 +42,7 @@
 
   var _loop3 = function _loop3(i) {
     inputForm[i].addEventListener('focus', function (e) {
-      errors[i].classList.add('notActive');
+      errors[i].classList.add('form__error--notActive');
     });
   };
 
@@ -52,7 +52,7 @@
 
   var _loop4 = function _loop4(i) {
     checkbox[i].addEventListener('click', function (e) {
-      errorsBox[i].classList.add('notActive');
+      errorsBox[i].classList.add('form__error--notActive');
     });
   };
 
@@ -103,14 +103,14 @@
 
     for (var i = firstBox; i < lastBox; i++) {
       if (checkboxValid[i].checked == false) {
-        errorsBox[i].classList.remove('notActive');
+        errorsBox[i].classList.remove('form__error--notActive');
         notChec++;
       }
     }
 
     for (var _i = firstInput; _i < lastInput; _i++) {
       if (inputForm[_i].value.length == 0) {
-        errors[_i].classList.remove('notActive');
+        errors[_i].classList.remove('form__error--notActive');
 
         notEmpty++;
       }

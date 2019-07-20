@@ -1,0 +1,128 @@
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    margin: 11rem 0 11rem 0;
+    width: 75%;
+}
+
+.statistics__statisticWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40rem;
+}
+
+.statistics__info--one,
+.statistics__info--two,
+.statistics__info--three {
+    margin: 2.5rem 0 0 0;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.statistics__info--three {
+    width: 80%;
+}
+
+.statistics__number {
+    display: flex;
+    flex-direction: row;
+    height: 17rem;
+    overflow: hidden;
+}
+
+.statistics__digit {
+    font-size: 15rem;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.startAnimation {
+    height: max-content;
+    animation: numberAnimation 1s both;
+}
+
+@keyframes numberAnimation {
+    0% {
+        transform: translateY(0%)
+    }
+
+    100% {
+        transform: translateY(calc(-100% + 17rem))
+    }
+}
+
+@media (max-width: 1400px) {
+    .statistics {
+        width: 100%;
+    }
+
+    .statistics__statisticWrapper {
+        width: 34rem;
+    }
+
+    .statistics__info--one,
+    .statistics__info--two,
+    .statistics__info--three {
+        width: 80%;
+        font-size: 1.4rem;
+    }
+
+}
+
+@media (max-width: 1025px) {
+    .statistics {
+        margin: 3rem 0 5rem 0
+    }
+
+    .statistics__number {
+        height: 11rem;
+    }
+
+    .statistics__digit {
+        font-size: 10rem;
+    }
+
+    @keyframes numberAnimation {
+        0% {
+            transform: translateY(0%)
+        }
+
+        100% {
+            transform: translateY(calc(-100% + 11rem))
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    .statistics {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .statistics {
+        margin: 1rem 0 5rem 0
+    }
+
+    .statistics__number {
+        height: 8rem;
+    }
+
+    .statistics__digit {
+        font-size: 6rem;
+    }
+
+    @keyframes numberAnimation {
+        0% {
+            transform: translateY(0%)
+        }
+
+        100% {
+            transform: translateY(calc(-100% + 8rem))
+        }
+    }
+}

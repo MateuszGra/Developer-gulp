@@ -26,8 +26,8 @@
   }).then(function (resp) {
     for (var i = 0; i < resp.length; i++) {
       createElement("slider__slide", "div", "slider__slide", null, fragment);
-      if (i > 0 && i != resp.length - 1) slider__slide.classList.add('notActiveR');
-      if (i == resp.length - 1) slider__slide.classList.add('notActiveL');
+      if (i > 0 && i != resp.length - 1) slider__slide.classList.add('slider__slide--right');
+      if (i == resp.length - 1) slider__slide.classList.add('slider__slide--left');
       createElement("slider__infoWrapper", "div", "slider__infoWrapper", null, slider__slide);
       createElement("slider__localName", "h2", "slider__localName", resp[i].nazwa, slider__infoWrapper);
       createElement("figureLine", "figure", "figureLine", null, slider__infoWrapper);
@@ -58,7 +58,7 @@
       slider__compass.src = "assets/images/SVG/polnoc.svg";
       slider__map.src = resp[i].obrazki.pietro;
       createElement("slider__dot", "figure", "slider__dot", null, fragmentTwo);
-      if (i === 0) slider__dot.classList.add('active');
+      if (i === 0) slider__dot.classList.add('slider__dot--active');
     }
 
     var slider = document.querySelector('.slider');
@@ -100,12 +100,12 @@
       }
 
       if (position == slider__slide.length - 1) next = 0;
-      slider__slide[prev].classList.add('notActiveL');
-      slider__slide[next].classList.add('notActiveR');
-      slider__slide[position].classList.remove('notActiveR');
-      slider__slide[position].classList.remove('notActiveL');
-      slider__dot[position].classList.add('active');
-      slider__dot[prev].classList.remove('active');
+      slider__slide[prev].classList.add('slider__slide--left');
+      slider__slide[next].classList.add('slider__slide--right');
+      slider__slide[position].classList.remove('slider__slide--right');
+      slider__slide[position].classList.remove('slider__slide--left');
+      slider__dot[position].classList.add('slider__dot--active');
+      slider__dot[prev].classList.remove('slider__dot--active');
     };
 
     var leftMove = function leftMove() {
@@ -120,12 +120,12 @@
       }
 
       if (position == 0) next = slider__slide.length - 1;
-      slider__slide[prev].classList.add('notActiveR');
-      slider__slide[next].classList.remove('notActiveR');
-      slider__slide[next].classList.add('notActiveL');
-      slider__slide[position].classList.remove('notActiveL');
-      slider__dot[prev].classList.remove('active');
-      slider__dot[position].classList.add('active');
+      slider__slide[prev].classList.add('slider__slide--right');
+      slider__slide[next].classList.remove('slider__slide--right');
+      slider__slide[next].classList.add('slider__slide--left');
+      slider__slide[position].classList.remove('slider__slide--left');
+      slider__dot[prev].classList.remove('slider__dot--active');
+      slider__dot[position].classList.add('slider__dot--active');
     };
 
     arrow[1].addEventListener("click", rightMove);
@@ -146,21 +146,21 @@
       if (position == 0) prev = slider__slide.length - 1;
 
       for (var i = 0; i < slider__slide.length; i++) {
-        if (i > position) slider__slide[i].classList.add('notActiveR');
-        if (i < position) slider__slide[i].classList.add('notActiveL');
+        if (i > position) slider__slide[i].classList.add('slider__slide--right');
+        if (i < position) slider__slide[i].classList.add('slider__slide--left');
       }
 
-      slider__slide[prev].classList.add('notActiveL');
-      slider__slide[prev].classList.remove('notActiveR');
-      slider__slide[next].classList.add('notActiveR');
-      slider__slide[position].classList.remove('notActiveR');
-      slider__slide[position].classList.remove('notActiveL');
+      slider__slide[prev].classList.add('slider__slide--left');
+      slider__slide[prev].classList.remove('slider__slide--right');
+      slider__slide[next].classList.add('slider__slide--right');
+      slider__slide[position].classList.remove('slider__slide--right');
+      slider__slide[position].classList.remove('slider__slide--left');
 
       for (var _i = 0; _i < slider__dot.length; _i++) {
-        slider__dot[_i].classList.remove('active');
+        slider__dot[_i].classList.remove('slider__dot--active');
       }
 
-      slider__dot[position].classList.add('active');
+      slider__dot[position].classList.add('slider__dot--active');
     };
 
     var _loop = function _loop(i) {
@@ -178,46 +178,36 @@
   }).catch(function (error) {
     console.log('Błąd API: ', error);
     var errortext = 'Przepraszamy. Brak połączenia z serwerem.';
-    createElement("errorApi", "h2", "errorApi", errortext, slider);
+    createElement("slider__errorApi", "h2", "slider__errorApi", errortext, slider);
   }); //hide hamburger
 
   var nav__hamburger = document.querySelector('.nav__hamburger');
   var nav__hamburgerLine = document.querySelector('.nav__hamburgerLine');
   var nav__ul = document.querySelector('.nav__ul');
   nav__hamburger.addEventListener("click", function (e) {
-    nav__hamburgerLine.classList.toggle('active');
-    nav__hamburger.classList.toggle('active');
-    nav__ul.classList.toggle('active');
+    nav__hamburgerLine.classList.toggle('nav__hamburgerLine--active');
+    nav__hamburger.classList.toggle('nav__hamburger--active');
+    nav__ul.classList.toggle('nav__ul--active');
   }, false);
   nav__hamburger.addEventListener("touch", function (e) {
-    nav__hamburgerLine.classList.toggle('active');
-    nav__hamburger.classList.toggle('active');
-    nav__ul.classList.toggle('active');
-  }, false); //nav links animation and hide hamburger when click on link
+    nav__hamburgerLine.classList.toggle('nav__hamburgerLine--active');
+    nav__hamburger.classList.toggle('nav__hamburger--active');
+    nav__ul.classList.toggle('nav__ul--active');
+  }, false); //hide menu when click on link
 
   var nav__a = document.querySelectorAll('.nav__a');
 
-  var _loop2 = function _loop2(i) {
-    nav__a[i].addEventListener('mouseover', function (e) {
-      nav__a[i].classList.add('active');
-    });
-    nav__a[i].addEventListener('mouseout', function (e) {
-      nav__a[i].classList.remove('active');
-    });
+  for (var i = 0; i < nav__a.length; i++) {
     nav__a[i].addEventListener("click", function (e) {
-      nav__hamburgerLine.classList.remove('active');
-      nav__hamburger.classList.remove('active');
-      nav__ul.classList.add('active');
+      nav__hamburgerLine.classList.remove('nav__hamburgerLine--active');
+      nav__hamburger.classList.remove('nav__hamburger--active');
+      nav__ul.classList.add('nav__ul--active');
     }, false);
     nav__a[i].addEventListener("touch", function (e) {
-      nav__hamburgerLine.classList.remove('active');
-      nav__hamburger.classList.remove('active');
-      nav__ul.classList.add('active');
+      nav__hamburgerLine.classList.remove('nav__hamburgerLine--active');
+      nav__hamburger.classList.remove('nav__hamburger--active');
+      nav__ul.classList.add('nav__ul--active');
     }, false);
-  };
-
-  for (var i = 0; i < nav__a.length; i++) {
-    _loop2(i);
   } //animaton statistics
 
 
@@ -226,8 +216,8 @@
   var stats = [6, 3, 3, 4, 9, 5, 1, 5];
 
   for (var o = 0; o < stats.length; o++) {
-    for (var i = 0; i <= stats[o]; i++) {
-      createElement("statistics__digit", "p", "statistics__digit", i, FragmentThree);
+    for (var _i2 = 0; _i2 <= stats[o]; _i2++) {
+      createElement("statistics__digit", "p", "statistics__digit", _i2, FragmentThree);
     }
 
     statistics__digitWrapper[o].appendChild(FragmentThree);
@@ -240,7 +230,7 @@
   window.onscroll = function () {
     //nav animation
     var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) nav.classList.remove('hide');else nav.classList.add('hide');
+    if (prevScrollpos > currentScrollPos) nav.classList.remove('nav--hide');else nav.classList.add('nav--hide');
 
     if (currentScrollPos > statistics__digitWrapper[0].offsetTop - window.innerHeight) {
       //animaton statistics
@@ -257,8 +247,8 @@
         statistics__digitWrapper[7].classList.add('startAnimation');
       });
     } else {
-      for (var _i2 = 0; _i2 < statistics__digitWrapper.length; _i2++) {
-        statistics__digitWrapper[_i2].classList.remove('startAnimation');
+      for (var _i3 = 0; _i3 < statistics__digitWrapper.length; _i3++) {
+        statistics__digitWrapper[_i3].classList.remove('startAnimation');
       }
     }
 

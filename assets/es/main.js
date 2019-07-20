@@ -26,8 +26,8 @@
         .then(resp => {
             for (let i = 0; i < resp.length; i++) {
                 createElement("slider__slide", "div", "slider__slide", null, fragment);
-                if (i > 0 && i != resp.length - 1) slider__slide.classList.add('notActiveR');
-                if (i == resp.length - 1) slider__slide.classList.add('notActiveL');
+                if (i > 0 && i != resp.length - 1) slider__slide.classList.add('slider__slide--right');
+                if (i == resp.length - 1) slider__slide.classList.add('slider__slide--left');
                 createElement("slider__infoWrapper", "div", "slider__infoWrapper", null, slider__slide);
                 createElement("slider__localName", "h2", "slider__localName", resp[i].nazwa, slider__infoWrapper);
                 createElement("figureLine", "figure", "figureLine", null, slider__infoWrapper);
@@ -62,7 +62,7 @@
                 slider__map.src = resp[i].obrazki.pietro;
 
                 createElement("slider__dot", "figure", "slider__dot", null, fragmentTwo);
-                if (i === 0) slider__dot.classList.add('active');
+                if (i === 0) slider__dot.classList.add('slider__dot--active');
             }
 
             const slider = document.querySelector('.slider');
@@ -108,12 +108,12 @@
                 }
                 if (position == slider__slide.length - 1) next = 0;
 
-                slider__slide[prev].classList.add('notActiveL');
-                slider__slide[next].classList.add('notActiveR');
-                slider__slide[position].classList.remove('notActiveR');
-                slider__slide[position].classList.remove('notActiveL');
-                slider__dot[position].classList.add('active')
-                slider__dot[prev].classList.remove('active')
+                slider__slide[prev].classList.add('slider__slide--left');
+                slider__slide[next].classList.add('slider__slide--right');
+                slider__slide[position].classList.remove('slider__slide--right');
+                slider__slide[position].classList.remove('slider__slide--left');
+                slider__dot[position].classList.add('slider__dot--active')
+                slider__dot[prev].classList.remove('slider__dot--active')
             }
 
             const leftMove = () => {
@@ -127,12 +127,12 @@
                 }
                 if (position == 0) next = slider__slide.length - 1;
 
-                slider__slide[prev].classList.add('notActiveR');
-                slider__slide[next].classList.remove('notActiveR');
-                slider__slide[next].classList.add('notActiveL');
-                slider__slide[position].classList.remove('notActiveL');
-                slider__dot[prev].classList.remove('active')
-                slider__dot[position].classList.add('active')
+                slider__slide[prev].classList.add('slider__slide--right');
+                slider__slide[next].classList.remove('slider__slide--right');
+                slider__slide[next].classList.add('slider__slide--left');
+                slider__slide[position].classList.remove('slider__slide--left');
+                slider__dot[prev].classList.remove('slider__dot--active')
+                slider__dot[position].classList.add('slider__dot--active')
             }
 
             arrow[1].addEventListener("click", rightMove);
@@ -153,20 +153,20 @@
                 if (position == 0) prev = slider__slide.length - 1;
 
                 for (let i = 0; i < slider__slide.length; i++) {
-                    if (i > position) slider__slide[i].classList.add('notActiveR');
-                    if (i < position) slider__slide[i].classList.add('notActiveL');
+                    if (i > position) slider__slide[i].classList.add('slider__slide--right');
+                    if (i < position) slider__slide[i].classList.add('slider__slide--left');
                 }
 
-                slider__slide[prev].classList.add('notActiveL');
-                slider__slide[prev].classList.remove('notActiveR');
-                slider__slide[next].classList.add('notActiveR');
-                slider__slide[position].classList.remove('notActiveR');
-                slider__slide[position].classList.remove('notActiveL');
+                slider__slide[prev].classList.add('slider__slide--left');
+                slider__slide[prev].classList.remove('slider__slide--right');
+                slider__slide[next].classList.add('slider__slide--right');
+                slider__slide[position].classList.remove('slider__slide--right');
+                slider__slide[position].classList.remove('slider__slide--left');
 
                 for (let i = 0; i < slider__dot.length; i++) {
-                    slider__dot[i].classList.remove('active');
+                    slider__dot[i].classList.remove('slider__dot--active');
                 }
-                slider__dot[position].classList.add('active')
+                slider__dot[position].classList.add('slider__dot--active')
 
             }
 
@@ -182,7 +182,7 @@
         .catch(error => {
             console.log('Błąd API: ', error)
             const errortext = 'Przepraszamy. Brak połączenia z serwerem.'
-            createElement("errorApi", "h2", "errorApi", errortext, slider);
+            createElement("slider__errorApi", "h2", "slider__errorApi", errortext, slider);
         });
 
     //hide hamburger
@@ -191,35 +191,29 @@
     const nav__ul = document.querySelector('.nav__ul');
 
     nav__hamburger.addEventListener("click", (e) => {
-        nav__hamburgerLine.classList.toggle('active');
-        nav__hamburger.classList.toggle('active');
-        nav__ul.classList.toggle('active');
+        nav__hamburgerLine.classList.toggle('nav__hamburgerLine--active');
+        nav__hamburger.classList.toggle('nav__hamburger--active');
+        nav__ul.classList.toggle('nav__ul--active');
     }, false);
     nav__hamburger.addEventListener("touch", (e) => {
-        nav__hamburgerLine.classList.toggle('active');
-        nav__hamburger.classList.toggle('active');
-        nav__ul.classList.toggle('active');
+        nav__hamburgerLine.classList.toggle('nav__hamburgerLine--active');
+        nav__hamburger.classList.toggle('nav__hamburger--active');
+        nav__ul.classList.toggle('nav__ul--active');
     }, false);
 
-    //nav links animation and hide hamburger when click on link
+    //hide menu when click on link
     const nav__a = document.querySelectorAll('.nav__a');
 
     for (let i = 0; i < nav__a.length; i++) {
-        nav__a[i].addEventListener('mouseover', (e) => {
-            nav__a[i].classList.add('active');
-        });
-        nav__a[i].addEventListener('mouseout', (e) => {
-            nav__a[i].classList.remove('active');
-        });
         nav__a[i].addEventListener("click", (e) => {
-            nav__hamburgerLine.classList.remove('active');
-            nav__hamburger.classList.remove('active');
-            nav__ul.classList.add('active');
+            nav__hamburgerLine.classList.remove('nav__hamburgerLine--active');
+            nav__hamburger.classList.remove('nav__hamburger--active');
+            nav__ul.classList.add('nav__ul--active');
         }, false);
         nav__a[i].addEventListener("touch", (e) => {
-            nav__hamburgerLine.classList.remove('active');
-            nav__hamburger.classList.remove('active');
-            nav__ul.classList.add('active');
+            nav__hamburgerLine.classList.remove('nav__hamburgerLine--active');
+            nav__hamburger.classList.remove('nav__hamburger--active');
+            nav__ul.classList.add('nav__ul--active');
         }, false);
     }
 
@@ -241,8 +235,8 @@
     window.onscroll = () => {
         //nav animation
         let currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) nav.classList.remove('hide');
-        else nav.classList.add('hide');
+        if (prevScrollpos > currentScrollPos) nav.classList.remove('nav--hide');
+        else nav.classList.add('nav--hide');
 
 
         if (currentScrollPos > statistics__digitWrapper[0].offsetTop - window.innerHeight) {
@@ -269,6 +263,4 @@
         }
         prevScrollpos = currentScrollPos;
     }
-
-
 })();

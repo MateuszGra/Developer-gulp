@@ -1,0 +1,198 @@
+.form {
+    &--investments {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 52rem;
+        z-index: 1;
+
+        @media (max-width: 1025px) {
+            width: 70%;
+        }
+
+        @media (max-width: 680px) {
+            width: 95%;
+        }
+    }
+
+    &--contact {
+        width: 47.9%;
+        margin: 0 0 10rem 0;
+        z-index: 1;
+
+        @media (max-width: 1025px) {
+            width: 70%;
+            margin: 0 0 5rem 0;
+        }
+
+        @media (max-width: 680px) {
+            width: 95%;
+        }
+    }
+
+    &__info {
+        margin: 2rem 0 4.5rem 0;
+
+        @media (max-width: 1025px) {
+            text-align: center;
+            margin: 2rem 0 1rem 0;
+        }
+    }
+
+    &__input {
+        font-size: 1.7rem;
+        font-weight: lighter;
+        height: 5.5rem;
+        font-family: 'Lato', sans-serif;
+        background: transparent;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        width: 100%;
+        border-bottom: 0.1rem solid var(--fontColor);
+
+        &--contact {
+            color: white;
+            border-bottom: 0.2rem white solid;
+            z-index: 1;
+        }
+
+    }
+
+    &__label {
+        position: absolute;
+        font-weight: lighter;
+        font-size: 1.7rem;
+        margin: 0 0 0 2rem;
+        z-index: -1;
+        transition: transform 0.3s;
+        transform: translateY(2rem);
+
+        @media (max-width: 1025px) {
+            font-size: 1.3rem;
+        }
+
+        &--active {
+            transform: translateX(-11.5%) translateY(0) scale(0.75);
+        }
+
+        &--contact {
+            color: white;
+        }
+
+        &__label--long {
+            width: 100%;
+        }
+    }
+
+    &__checkboxWrapper {
+        display: flex;
+        position: relative;
+        margin: 3rem 0 0 0;
+
+        &--contact {
+            width: 90%;
+            margin: 3rem 0 0 2.8rem;
+        }
+    }
+
+    &__checkboxInfo {
+        position: relative;
+        display: block;
+        font-size: 1.4rem;
+        font-weight: lighter;
+        margin: 0 0 0 3rem;
+        cursor: pointer;
+
+        &::before {
+            position: absolute;
+            left: -3rem;
+            content: '';
+            width: 1.3rem;
+            height: 1.3rem;
+            transition: 0.3s;
+            border: 0.1rem solid var(--fontColor);
+        }
+
+        &--chec::before {
+            background: var(--linkActive);
+        }
+
+        &--contact {
+            color: white;
+
+            &::before {
+                border: 0.1rem solid white;
+            }
+        }
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__inputWrapper {
+        width: 100%;
+        position: relative;
+
+        &--margin {
+            margin: 0 1.3vw 0 0;
+        }
+    }
+
+    &__error {
+        position: absolute;
+        text-align: center;
+        white-space: nowrap;
+        font-weight: lighter;
+        padding: 0.8rem;
+        font-size: 1.5rem;
+        opacity: 1;
+        transition: opacity 0.6s;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        top: -3rem;
+
+        color: white;
+        background: var(--bgBlack);
+
+        @media (max-width: 500px) {
+            font-size: 1.2rem;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -1.5rem;
+            width: 0;
+            height: 0;
+            border-left: 1rem solid transparent;
+            border-right: 1rem solid transparent;
+            border-top: 1.5rem solid var(--bgBlack);
+        }
+
+        &--white {
+            color: var(--bgBlack);
+            background: white;
+
+            &::after {
+                border-top: 1.5rem solid white;
+            }
+        }
+
+        &--checkbox {
+            top: -5rem;
+        }
+
+        &--notActive {
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+
+    &__row {
+        display: flex;
+    }
+}
