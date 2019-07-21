@@ -129,6 +129,7 @@
 
       for (var i = 0; i < 2; i++) {
         form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
+        form__checkbox[i].checked = false;
       }
 
       for (var _i2 = 0; _i2 < 3; _i2++) {
@@ -147,6 +148,7 @@
 
       for (var i = 2; i < form__checkboxInfo.length; i++) {
         form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
+        form__checkbox[i].checked = false;
       }
 
       for (var _i3 = 3; _i3 < form__input.length; _i3++) {

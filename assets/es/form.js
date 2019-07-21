@@ -108,6 +108,7 @@
             sendFormInvestments();
             for (let i = 0; i < 2; i++) {
                 form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
+                form__checkbox[i].checked = false
             }
             for (let i = 0; i < 3; i++) {
                 form__input[i].value = '';
@@ -124,6 +125,7 @@
             sendFormContact();
             for (let i = 2; i < form__checkboxInfo.length; i++) {
                 form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
+                form__checkbox[i].checked = false
             }
             for (let i = 3; i < form__input.length; i++) {
                 form__input[i].value = '';
