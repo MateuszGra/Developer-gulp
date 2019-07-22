@@ -80,7 +80,7 @@
         }
     }
 
-    &__infoWrapper {
+    &__info-wrapper {
         margin: 0 0 0 5%;
 
         @media (max-width: 680px) {
@@ -90,7 +90,7 @@
         }
     }
 
-    &__localName {
+    &__local-name {
         margin: 6rem 0 4rem 0;
         padding: 0 0 0 0;
         letter-spacing: 0.2rem;
@@ -111,7 +111,7 @@
         }
     }
 
-    &__localInfoPrice {
+    &__local-info-price {
         @include font();
         font-size: 1.4rem;
 
@@ -125,7 +125,7 @@
         }
     }
 
-    &__localYardage {
+    &__local-yardage {
         @include font();
         font-size: 2rem;
         margin: 4rem 0 0 0;
@@ -140,7 +140,7 @@
         }
     }
 
-    &__localPrice {
+    &__local-price {
         @include font();
         font-size: 2rem;
 
@@ -154,7 +154,7 @@
         }
     }
 
-    &__localFloor {
+    &__local-floor {
         @include font();
         font-size: 2rem;
 
@@ -168,7 +168,7 @@
         }
     }
 
-    &__localDestyny {
+    &__local-destyny {
         @include font();
         font-size: 2rem;
 
@@ -182,7 +182,7 @@
         }
     }
 
-    &__loacalStatus {
+    &__loacal-status {
         @include font();
         font-size: 2rem;
         margin: 2rem 0 5rem 0;
@@ -222,7 +222,7 @@
         }
     }
 
-    &__mapWrapper {
+    &__map-wrapper {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -266,7 +266,7 @@
 
     }
 
-    &__dotsWrapper {
+    &__dots-wrapper {
         display: flex;
         flex-direction: row;
         position: absolute;
@@ -290,7 +290,7 @@
         }
     }
 
-    &__arrowLeft {
+    &__arrow-left {
         @include arrow();
         left: 0;
         transform: rotate(180deg);
@@ -300,7 +300,7 @@
         }
     }
 
-    &__arrowRight {
+    &__arrow-right {
         @include arrow();
         right: 0;
 

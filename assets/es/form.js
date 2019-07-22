@@ -1,15 +1,15 @@
 (() => {
     //checkbox
-    const form__checkboxInfo = document.querySelectorAll('.form__checkboxInfo');
+    const form__checkboxInfo = document.querySelectorAll('.form__checkbox-info');
     const form__checkbox = document.querySelectorAll('.form__checkbox');
     for (let i = 0; i < form__checkboxInfo.length; i++) {
         form__checkboxInfo[i].addEventListener('click', (e) => {
-            if (form__checkbox[i].checked == true) form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
-            if (form__checkbox[i].checked == false) form__checkboxInfo[i].classList.add('form__checkboxInfo--chec');
+            if (form__checkbox[i].checked == true) form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
+            if (form__checkbox[i].checked == false) form__checkboxInfo[i].classList.add('form__checkbox-info--chec');
         });
         form__checkboxInfo[i].addEventListener('touch', (e) => {
-            if (form__checkbox[i].checked == true) form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
-            if (form__checkbox[i].checked == false) form__checkboxInfo[i].classList.add('form__checkboxInfo--chec');
+            if (form__checkbox[i].checked == true) form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
+            if (form__checkbox[i].checked == false) form__checkboxInfo[i].classList.add('form__checkbox-info--chec');
         });
     }
     //form animations
@@ -29,16 +29,17 @@
     const form__errorCheckBox = document.querySelectorAll('.form__error--checkbox');
     const errors = document.querySelectorAll('#error');
     const form__status = document.querySelectorAll('.form__status')
+    const loader = document.querySelectorAll('.loader');
 
     for (let i = 0; i < form__input.length; i++) {
         form__input[i].addEventListener('focus', (e) => {
-            errors[i].classList.add('form__error--notActive')
+            errors[i].classList.add('form__error--not-active')
         });
     }
 
     for (let i = 0; i < form__checkboxInfo.length; i++) {
         form__checkboxInfo[i].addEventListener('click', (e) => {
-            form__errorCheckBox[i].classList.add('form__error--notActive');
+            form__errorCheckBox[i].classList.add('form__error--not-active');
         });
     }
 
@@ -54,10 +55,15 @@
                 message: $('#message').val(),
             },
             success: function (data) {
-                console.log(data);
+                loader[0].classList.add('loader--hidden')
+                form__status[0].textContent = "Wiadomość została wysłana";
+                form__status[0].classList.add('form__status--active');
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log(XMLHttpRequest + textStatus + errorThrown)
+                loader[0].classList.add('loader--hidden')
+                form__status[0].textContent = "Błąd systemu";
+                form__status[0].classList.add('form__status--active');
             }
         });
     }
@@ -72,10 +78,15 @@
                 message: $('#messageContact').val(),
             },
             success: function (data) {
-                console.log(data);
+                loader[1].classList.add('loader--hidden')
+                form__status[1].textContent = "Wiadomość została wysłana";
+                form__status[1].classList.add('form__status--active');
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log(XMLHttpRequest + textStatus + errorThrown)
+                loader[1].classList.add('loader--hidden')
+                form__status[1].textContent = "Błąd systemu";
+                form__status[1].classList.add('form__status--active');
             }
         });
     }
@@ -86,14 +97,14 @@
 
         for (let i = firstBox; i < lastBox; i++) {
             if (form__checkbox[i].checked == false) {
-                form__errorCheckBox[i].classList.remove('form__error--notActive');
+                form__errorCheckBox[i].classList.remove('form__error--not-active');
                 notChec++;
             }
         }
 
         for (let i = firstInput; i < lastInput; i++) {
             if (form__input[i].value.length == 0) {
-                errors[i].classList.remove('form__error--notActive');
+                errors[i].classList.remove('form__error--not-active');
                 notEmpty++;
             }
         }
@@ -107,14 +118,14 @@
         else {
             sendFormInvestments();
             for (let i = 0; i < 2; i++) {
-                form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
+                form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
                 form__checkbox[i].checked = false
             }
             for (let i = 0; i < 3; i++) {
                 form__input[i].value = '';
                 form__label[i].classList.remove('form__label--active');
             }
-            form__status[0].classList.add('form__status--active');
+            loader[0].classList.remove('loader--hidden')
         }
     });
 
@@ -124,14 +135,14 @@
         else {
             sendFormContact();
             for (let i = 2; i < form__checkboxInfo.length; i++) {
-                form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
+                form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
                 form__checkbox[i].checked = false
             }
             for (let i = 3; i < form__input.length; i++) {
                 form__input[i].value = '';
                 form__label[i].classList.remove('form__label--active');
             }
-            form__status[1].classList.add('form__status--active');
+            loader[1].classList.remove('loader--hidden')
         }
     });
 

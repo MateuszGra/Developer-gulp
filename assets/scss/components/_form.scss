@@ -81,13 +81,13 @@
         }
     }
 
-    &__checkboxWrapper {
+    &__checkbox-wrapper {
         display: flex;
         position: relative;
         margin: 3rem 0 0 0;
     }
 
-    &__checkboxInfo {
+    &__checkbox-info {
         position: relative;
         display: block;
         font-size: 1.4rem;
@@ -122,7 +122,7 @@
         display: none;
     }
 
-    &__inputWrapper {
+    &__input-wrapper {
         width: 100%;
         position: relative;
 
@@ -177,7 +177,7 @@
             top: -5rem;
         }
 
-        &--notActive {
+        &--not-active {
             opacity: 0;
             z-index: -1;
         }
@@ -187,7 +187,7 @@
         display: flex;
     }
 
-    &__buttonWrapper {
+    &__button-wrapper {
         display: flex;
         align-items: flex-end;
     }

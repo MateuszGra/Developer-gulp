@@ -28,15 +28,15 @@
       createElement("slider__slide", "div", "slider__slide", null, fragment);
       if (i > 0 && i != resp.length - 1) slider__slide.classList.add('slider__slide--right');
       if (i == resp.length - 1) slider__slide.classList.add('slider__slide--left');
-      createElement("slider__infoWrapper", "div", "slider__infoWrapper", null, slider__slide);
-      createElement("slider__localName", "h2", "slider__localName", resp[i].nazwa, slider__infoWrapper);
-      createElement("figureLine", "figure", "figureLine", null, slider__infoWrapper);
-      createElement("slider__localYardage", "p", "slider__localYardage", "Metra\u017C: ".concat(resp[i].metraz, " m2"), slider__infoWrapper);
-      createElement("slider__localPrice", "p", "slider__localPrice", "Cena Netto: ".concat(resp[i].netto.toLocaleString('pl-PL'), " z\u0142*"), slider__infoWrapper);
-      createElement("slider__localInfoPrice", "p", "slider__localInfoPrice", "* cena nie zawiera 23% VAT", slider__infoWrapper);
-      createElement("slider__localFloor", "p", "slider__localFloor", "Pi\u0119tro: ".concat(resp[i].pietro, " "), slider__infoWrapper);
-      createElement("slider__localDestyny", "p", "slider__localDestyny", "Przeznaczenie: ".concat(resp[i].przeznaczenie), slider__infoWrapper);
-      createElement("slider__loacalStatus", "p", "slider__loacalStatus", "Status: ".concat(resp[i].status), slider__infoWrapper);
+      createElement("slider__infoWrapper", "div", "slider__info-wrapper", null, slider__slide);
+      createElement("slider__localName", "h2", "slider__local-name", resp[i].nazwa, slider__infoWrapper);
+      createElement("figureLine", "figure", "figure-line", null, slider__infoWrapper);
+      createElement("slider__localYardage", "p", "slider__local-yardage", "Metra\u017C: ".concat(resp[i].metraz, " m2"), slider__infoWrapper);
+      createElement("slider__localPrice", "p", "slider__local-price", "Cena Netto: ".concat(resp[i].netto.toLocaleString('pl-PL'), " z\u0142*"), slider__infoWrapper);
+      createElement("slider__localInfoPrice", "p", "slider__local-info-price", "* cena nie zawiera 23% VAT", slider__infoWrapper);
+      createElement("slider__localFloor", "p", "slider__local-floor", "Pi\u0119tro: ".concat(resp[i].pietro, " "), slider__infoWrapper);
+      createElement("slider__localDestyny", "p", "slider__local-destyny", "Przeznaczenie: ".concat(resp[i].przeznaczenie), slider__infoWrapper);
+      createElement("slider__loacalStatus", "p", "slider__loacal-status", "Status: ".concat(resp[i].status), slider__infoWrapper);
       createElement("buttonLink", "a", "button--link", null, slider__infoWrapper);
       buttonLink.href = "#investments";
       createElement("askButton", "button", "button--black", "Zapytaj", buttonLink);
@@ -49,7 +49,7 @@
       downloadButton.classList.add('button--download');
       downloadButton.classList.add('button');
       createElement("slider__blueprint", "img", "slider__blueprint", null, slider__slide);
-      createElement("slider__mapWrapper", "div", "slider__mapWrapper", null, slider__slide);
+      createElement("slider__mapWrapper", "div", "slider__map-wrapper", null, slider__slide);
       createElement("slider__compass", "img", "slider__compass", null, slider__mapWrapper);
       slider__compass.style.transform = "rotate(".concat(rotateCompass(resp[i].ekspozycja), "deg)");
       createElement("slider__map", "img", "slider__map", null, slider__mapWrapper);
@@ -63,7 +63,7 @@
 
     var slider = document.querySelector('.slider');
     slider.appendChild(fragment);
-    var slider__dotsWrapper = document.querySelector('.slider__dotsWrapper');
+    var slider__dotsWrapper = document.querySelector('.slider__dots-wrapper');
     slider__dotsWrapper.appendChild(fragmentTwo);
   }) //scroll_animation
   .then(function (resp) {
@@ -182,37 +182,37 @@
   }); //hide hamburger
 
   var nav__hamburger = document.querySelector('.nav__hamburger');
-  var nav__hamburgerLine = document.querySelector('.nav__hamburgerLine');
-  var nav__ul = document.querySelector('.nav__ul');
+  var nav__hamburgerLine = document.querySelector('.nav__hamburger-line');
+  var nav__menu = document.querySelector('.nav__menu');
   nav__hamburger.addEventListener("click", function (e) {
-    nav__hamburgerLine.classList.toggle('nav__hamburgerLine--active');
+    nav__hamburgerLine.classList.toggle('nav__hamburger-line--active');
     nav__hamburger.classList.toggle('nav__hamburger--active');
-    nav__ul.classList.toggle('nav__ul--active');
+    nav__menu.classList.toggle('nav__menu--active');
   }, false);
   nav__hamburger.addEventListener("touch", function (e) {
-    nav__hamburgerLine.classList.toggle('nav__hamburgerLine--active');
+    nav__hamburgerLine.classList.toggle('nav__hamburger-line--active');
     nav__hamburger.classList.toggle('nav__hamburger--active');
-    nav__ul.classList.toggle('nav__ul--active');
+    nav__menu.classList.toggle('nav__menu--active');
   }, false); //hide menu when click on link
 
-  var nav__a = document.querySelectorAll('.nav__a');
+  var nav__menuLink = document.querySelectorAll('.nav__menu-link');
 
-  for (var i = 0; i < nav__a.length; i++) {
-    nav__a[i].addEventListener("click", function (e) {
-      nav__hamburgerLine.classList.remove('nav__hamburgerLine--active');
+  for (var i = 0; i < nav__menuLink.length; i++) {
+    nav__menuLink[i].addEventListener("click", function (e) {
+      nav__hamburgerLine.classList.remove('nav__hamburger-line--active');
       nav__hamburger.classList.remove('nav__hamburger--active');
-      nav__ul.classList.add('nav__ul--active');
+      nav__menu.classList.add('nav__menu--active');
     }, false);
-    nav__a[i].addEventListener("touch", function (e) {
-      nav__hamburgerLine.classList.remove('nav__hamburgerLine--active');
+    nav__menuLink[i].addEventListener("touch", function (e) {
+      nav__hamburgerLine.classList.remove('nav__hamburger-line--active');
       nav__hamburger.classList.remove('nav__hamburger--active');
-      nav__ul.classList.add('nav__ul--active');
+      nav__menu.classList.add('nav__menu--active');
     }, false);
   } //animaton statistics
 
 
   var FragmentThree = document.createDocumentFragment();
-  var statistics__digitWrapper = document.querySelectorAll('.statistics__digitWrapper');
+  var statistics__digitWrapper = document.querySelectorAll('.statistics__digit-wrapper');
   var stats = [6, 3, 3, 4, 9, 5, 1, 5];
 
   for (var o = 0; o < stats.length; o++) {
@@ -234,21 +234,21 @@
 
     if (currentScrollPos > statistics__digitWrapper[0].offsetTop - window.innerHeight) {
       //animaton statistics
-      statistics__digitWrapper[0].classList.add('statistics__digitWrapper--animate');
-      statistics__digitWrapper[1].classList.add('statistics__digitWrapper--animate');
-      statistics__digitWrapper[2].classList.add('statistics__digitWrapper--animate');
+      statistics__digitWrapper[0].classList.add('statistics__digit-wrapper--animate');
+      statistics__digitWrapper[1].classList.add('statistics__digit-wrapper--animate');
+      statistics__digitWrapper[2].classList.add('statistics__digit-wrapper--animate');
       statistics__digitWrapper[2].addEventListener('animationend', function (e) {
-        statistics__digitWrapper[3].classList.add('statistics__digitWrapper--animate');
-        statistics__digitWrapper[4].classList.add('statistics__digitWrapper--animate');
-        statistics__digitWrapper[5].classList.add('statistics__digitWrapper--animate');
+        statistics__digitWrapper[3].classList.add('statistics__digit-wrapper--animate');
+        statistics__digitWrapper[4].classList.add('statistics__digit-wrapper--animate');
+        statistics__digitWrapper[5].classList.add('statistics__digit-wrapper--animate');
       });
       statistics__digitWrapper[5].addEventListener('animationend', function (e) {
-        statistics__digitWrapper[6].classList.add('statistics__digitWrapper--animate');
-        statistics__digitWrapper[7].classList.add('statistics__digitWrapper--animate');
+        statistics__digitWrapper[6].classList.add('statistics__digit-wrapper--animate');
+        statistics__digitWrapper[7].classList.add('statistics__digit-wrapper--animate');
       });
     } else {
       for (var _i3 = 0; _i3 < statistics__digitWrapper.length; _i3++) {
-        statistics__digitWrapper[_i3].classList.remove('statistics__digitWrapper--animate');
+        statistics__digitWrapper[_i3].classList.remove('statistics__digit-wrapper--animate');
       }
     }
 

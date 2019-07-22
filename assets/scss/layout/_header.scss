@@ -10,7 +10,7 @@
         margin: 8rem 0 2rem 0;
     }
 
-    &__imagesWrapper {
+    &__images-wrapper {
         width: 85%;
         overflow: hidden;
         position: relative;
@@ -26,7 +26,7 @@
         }
     }
 
-    &__imageFirst {
+    &__image-first {
         width: 100%;
         mix-blend-mode: normal;
 
@@ -35,7 +35,7 @@
         }
     }
 
-    &__imageSecend {
+    &__image-secend {
         position: absolute;
         width: 100%;
         top: 0%;

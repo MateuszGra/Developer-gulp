@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
 
-  <!-- To replace following tags, use https://realfavicongenerator.net/ -->
+  <!-- favicons-->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -24,20 +24,20 @@
     <!-- header -->
     <header class="header" id="header">
       <nav class="nav">
-        <a class="nav__logoLink" href="index.html"><img class="nav__logo" src="assets/images/logo.png"></a>
+        <a class="nav__logo-link" href="index.html"><img class="nav__logo" src="assets/images/logo.png"></a>
         <div class="nav__hamburger">
-          <figure class="nav__hamburgerLine"></figure>
+          <figure class="nav__hamburger-line"></figure>
         </div>
-        <ul class="nav__ul nav__ul--active">
-          <li class="nav__li"><a class="nav__a" href="#header">STRONA GŁÓWNA</a></li>
-          <li class="nav__li"><a class="nav__a" href="#search">WYSZUKIWARKA</a></li>
-          <li class="nav__li"><a class="nav__a" href="#investments">INWESTYCJE</a></li>
-          <li class="nav__li"><a class="nav__a" href="#blog">BLOG</a></li>
+        <ul class="nav__menu nav__menu--active">
+          <li class="nav__menu-item"><a class="nav__menu-link" href="#header">STRONA GŁÓWNA</a></li>
+          <li class="nav__menu-item"><a class="nav__menu-link" href="#search">WYSZUKIWARKA</a></li>
+          <li class="nav__menu-item"><a class="nav__menu-link" href="#investments">INWESTYCJE</a></li>
+          <li class="nav__menu-item"><a class="nav__menu-link" href="#blog">BLOG</a></li>
         </ul>
       </nav>
-      <div class="header__imagesWrapper">
-        <img class="header__imageFirst" src="assets/images/header.jpg">
-        <img class="header__imageSecend" src="assets/images/header-overlay.jpg">
+      <div class="header__images-wrapper">
+        <img class="header__image-first" src="assets/images/header.jpg">
+        <img class="header__image-secend" src="assets/images/header-overlay.jpg">
       </div>
     </header>
     <!-- search -->
@@ -47,9 +47,9 @@
         Aliquam erat volutpat.
         Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
       <div class="slider">
-        <div class="slider__dotsWrapper"></div>
-        <div class="slider__arrowLeft" id="arrow"><img src="assets/images//SVG/arrow.svg"></div>
-        <div class="slider__arrowRight" id="arrow"><img src="assets/images/SVG/arrow.svg"></div>
+        <div class="slider__dots-wrapper"></div>
+        <div class="slider__arrow-left" id="arrow"><img src="assets/images//SVG/arrow.svg"></div>
+        <div class="slider__arrow-right" id="arrow"><img src="assets/images/SVG/arrow.svg"></div>
       </div>
     </section>
     <!-- investments -->
@@ -59,68 +59,72 @@
         <h1>Zainteresowany kupnem? Zostaw numer!</h1>
         <p class="form__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor
           sem.</p>
-        <div class="form__inputWrapper">
-          <div class="form__error form__error--notActive" id="error">Proszę uzupełnić pole</div>
+        <div class="form__input-wrapper">
+          <div class="form__error form__error--not-active" id="error">Proszę uzupełnić pole</div>
           <label class="form__label" for="name">Imię i nazwisko</label>
           <input class="form__input" type=”text” name="name" id="name">
         </div>
-        <div class="form__inputWrapper">
-          <div class="form__error form__error--notActive" id="error">Proszę uzupełnić pole</div>
+        <div class="form__input-wrapper">
+          <div class="form__error form__error--not-active" id="error">Proszę uzupełnić pole</div>
           <label class="form__label" for="phone">Telefon</label>
           <input class="form__input" type="phone" name="phone" id="phone">
         </div>
-        <div class="form__inputWrapper">
-          <div class="form__error form__error--notActive" id="error">Proszę uzupełnić pole</div>
+        <div class="form__input-wrapper">
+          <div class="form__error form__error--not-active" id="error">Proszę uzupełnić pole</div>
           <label class="form__label" for="message">Kiedy najlepiej zadzwonić</label>
           <input class="form__input" type="text" name="message" id="message">
         </div>
-        <label class="form__checkboxWrapper"></div>
-          <div class="form__error form__error--checkbox form__error--notActive">Wymagana zgoda</div>
+        <label class="form__checkbox-wrapper"></div>
+          <div class="form__error form__error--checkbox form__error--not-active">Wymagana zgoda</div>
           <input class="form__checkbox" type="checkbox">
-          <span class="form__checkboxInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <span class="form__checkbox-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Aliquam at
             porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum
             sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
         </label>
-        <label class="form__checkboxWrapper">
-          <div class="form__error form__error--checkbox form__error--notActive">Wymagana zgoda</div>
+        <label class="form__checkbox-wrapper">
+          <div class="form__error form__error--checkbox form__error--not-active">Wymagana zgoda</div>
           <input class="form__checkbox" type="checkbox">
-          <span class="form__checkboxInfo">Nervous, aren't you? I can see it in your soul. I can feel it
+          <span class="form__checkbox-info">Nervous, aren't you? I can see it in your soul. I can feel it
             in your bones.
             This unnerving feeling going through your spine.</span>
         </label>
-        <div class="form__buttonWrapper">
+        <div class="form__button-wrapper">
           <button class="button button--white button--submit">Wyślij</button>
-          <p class="form__status">Wiadomość została wysłana</p>
+          <div class="loader loader--hidden">
+            <div class="loader__quadrat"></div>
+            <div class="loader__shadow"></div>
+          </div>
+          <p class="form__status"></p>
         </div>
       </form>
     </section>
     <!-- benefits -->
     <section class="benefits">
-      <div class="benefits__wrapperLine">
-        <div class="benefits__wrapperBenefit">
+      <div class="benefits__wrapper-line">
+        <div class="benefits__wrapper-benefit">
           <img class="benefits__image" src="assets/images/SVG/blok.svg">
           <h3 class="benefits__title">ZNAKOMITA LOKALIZACJA</h3>
         </div>
-        <div class="benefits__wrapperBenefit">
+        <div class="benefits__wrapper-benefit">
           <img class="benefits__image" src="assets/images/SVG/metraz.svg">
           <h3 class="benefits__title">CIEKAWY ROZKŁAD</h3>
         </div>
-        <div class="benefits__wrapperBenefit">
+        <div class="benefits__wrapper-benefit">
           <img class="benefits__image" src="assets/images/SVG/samochod.svg">
           <h3 class="benefits__title">ŁATWA PRZEPROWADZKA</h3>
         </div>
       </div>
-      <div class="benefits__wrapperLine">
-        <div class="benefits__wrapperBenefit">
+      <div class="benefits__wrapper-line">
+        <div class="benefits__wrapper-benefit">
           <img class="benefits__image" src="assets/images/SVG/blok.svg">
           <h3 class="benefits__title">ZNAKOMITA LOKALIZACJA</h3>
         </div>
-        <div class="benefits__wrapperBenefit">
+        <div class="benefits__wrapper-benefit">
           <img class="benefits__image" src="assets/images/SVG/metraz.svg">
           <h3 class="benefits__title">CIEKAWY ROZKŁAD</h3>
         </div>
-        <div class="benefits__wrapperBenefit">
+        <div class="benefits__wrapper-benefit">
           <img class="benefits__image" src="assets/images/SVG/samochod.svg">
           <h3 class="benefits__title">ŁATWA PRZEPROWADZKA</h3>
         </div>
@@ -129,12 +133,12 @@
     <!-- blog -->
     <section class="blog" id="blog">
       <div class="column--first">
-        <div class="column__imagesWrapper">
+        <div class="column__images-wrapper">
           <img class="column__image--one" src="assets/images/wpis-1.jpg">
           <img class="column__image--two" src="assets/images/wpis-1-overlay.jpg">
         </div>
         <h3 class="column__title">BARDZO CIEKAWY WPIS NA NASZYM BLOGU, KTÓREGO PEWNIE NIKT NIE PRZECZYTA</h3>
-        <figure class="figureLine"></figure>
+        <figure class="figure-line"></figure>
         <p class="column__info--first">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat
           volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
@@ -142,13 +146,13 @@
         <button class="button button--white button--more">Więcej</button>
       </div>
       <div class="column--secend">
-        <div class="column__imagesWrapper">
+        <div class="column__images-wrapper">
           <img class="column__image--three" src="assets/images/wpis-2.jpg">
           <img class="column__image--four" src="assets/images/wpis-2-overlay.jpg">
         </div>
         <h3 class="column__title">BARDZO CIEKAWY WPIS NA NASZYM BLOGU, KTÓREGO PEWNIE NIKT NIE
           PRZECZYTA</h3>
-        <figure class="figureLine"></figure>
+        <figure class="figure-line"></figure>
         <p class="column__info--secend">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat
           volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
@@ -157,37 +161,38 @@
       </div>
     </section>
     <!-- more about us -->
-    <section class="moreAbout">
-      <h4 class="moreAbout__title">WIĘCEJ O NAS</h3>
-        <figure class="figureLine"></figure>
-        <h2 class="moreAbout__titleTwo">Podobno cyferki sprzedają :)</h2>
-        <p class="moreAbout__paragraph">All alone! Whether you like it or not, alone is something you'll be quite a lot!
+    <section class="more-about">
+      <h4 class="more-about__title">WIĘCEJ O NAS</h3>
+        <figure class="figure-line"></figure>
+        <h2 class="more-about__title-two">Podobno cyferki sprzedają :)</h2>
+        <p class="more-about__paragraph">All alone! Whether you like it or not, alone is something you'll be quite a
+          lot!
         </p>
         <div class="statistics">
-          <div class="statistics__statisticWrapper">
+          <div class="statistics__statistic-wrapper">
             <div class="statistics__number">
-              <div class="statistics__digitWrapper"></div>
-              <div class="statistics__digitWrapper"></div>
-              <div class="statistics__digitWrapper"></div>
+              <div class="statistics__digit-wrapper"></div>
+              <div class="statistics__digit-wrapper"></div>
+              <div class="statistics__digit-wrapper"></div>
             </div>
-            <figure class="figureLine"></figure>
+            <figure class="figure-line"></figure>
             <h3 class="statistics__info--one">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING</h3>
           </div>
-          <div class="statistics__statisticWrapper">
+          <div class="statistics__statistic-wrapper">
             <div class="statistics__number">
-              <div class="statistics__digitWrapper"></div>
-              <div class="statistics__digitWrapper"></div>
-              <div class="statistics__digitWrapper"></div>
+              <div class="statistics__digit-wrapper"></div>
+              <div class="statistics__digit-wrapper"></div>
+              <div class="statistics__digit-wrapper"></div>
             </div>
-            <figure class="figureLine"></figure>
+            <figure class="figure-line"></figure>
             <h3 class="statistics__info--two">ADIPISCING ELIT. ALIQUAM AT PORTTITOR SEM. ALIQUAM ERAT VOLUTPAT.</h3>
           </div>
-          <div class="statistics__statisticWrapper">
+          <div class="statistics__statistic-wrapper">
             <div class="statistics__number">
-              <div class="statistics__digitWrapper"></div>
-              <div class="statistics__digitWrapper"></div>
+              <div class="statistics__digit-wrapper"></div>
+              <div class="statistics__digit-wrapper"></div>
             </div>
-            <figure class="figureLine"></figure>
+            <figure class="figure-line"></figure>
             <h3 class="statistics__info--three">ADIPISCING ELIT. ALIQUAM AT PORTTITOR SEM. ALIQUAM ERAT VOLUTPAT.</h3>
           </div>
         </div>
@@ -195,34 +200,34 @@
     <!-- contact -->
     <section class="contact">
       <h3 class="contact__title">KONTAKT</h3>
-      <figure class="figureLine--white"></figure>
-      <h2 class="contact__titleTwo">Napisz do nas!</h2>
+      <figure class="figure-line--white"></figure>
+      <h2 class="contact__title-two">Napisz do nas!</h2>
       <p class="contact__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.
       </p>
       <form class="form--contact" id="form" novalidate method="POST" action="inc/send_contact.php">
         <div class="form__row">
-          <div class="form__inputWrapper form__inputWrapper--margin">
-            <div class="form__error form__error--white form__error--notActive" id="error">Proszę uzupełnić pole</div>
+          <div class="form__input-wrapper form__input-wrapper--margin">
+            <div class="form__error form__error--white form__error--not-active" id="error">Proszę uzupełnić pole</div>
             <label class="form__label form__label--contact" for="name">Imię i nazwisko</label>
             <input class="form__input form__input--contact" type=”text” name="name" id="nameContact">
           </div>
-          <div class="form__inputWrapper">
-            <div class="form__error form__error--white form__error--notActive" id="error">Proszę uzupełnić pole</div>
+          <div class="form__input-wrapper">
+            <div class="form__error form__error--white form__error--not-active" id="error">Proszę uzupełnić pole</div>
             <label class="form__label form__label--contact" for="phone">Telefon lub adres email</label>
             <input class="form__input form__input--contact" type="phone" name="phone" id="phoneContact">
           </div>
         </div>
-        <div class="form__inputWrapper">
-          <div class="form__error form__error--white form__error--notActive" id="error">Proszę uzupełnić pole</div>
+        <div class="form__input-wrapper">
+          <div class="form__error form__error--white form__error--not-active" id="error">Proszę uzupełnić pole</div>
           <label class="form__label form__label--contact" for="message">Twoja wiadomość</label>
           <input class="form__input form__input--contact" type="text" name="message" id="messageContact">
         </div>
-        <label class="form__checkboxWrapper">
-          <div class="form__error form__error--checkbox form__error--white form__error--notActive">
+        <label class="form__checkbox-wrapper">
+          <div class="form__error form__error--checkbox form__error--white form__error--not-active">
             Wymagana zgoda
           </div>
           <input class="form__checkbox" type="checkbox">
-          <span class="form__checkboxInfo form__checkboxInfo--contact">Lorem ipsum dolor sit amet,
+          <span class="form__checkbox-info form__checkbox-info--contact">Lorem ipsum dolor sit amet,
             consectetur adipiscing
             elit.
             Aliquam at
@@ -231,20 +236,24 @@
             erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit
             amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. D</span>
         </label>
-        <label class="form__checkboxWrapper">
-          <div class="form__error form__error--checkbox form__error--white form__error--notActive">
+        <label class="form__checkbox-wrapper">
+          <div class="form__error form__error--checkbox form__error--white form__error--not-active">
             Wymagana zgoda
           </div>
           <input class="form__checkbox" type="checkbox">
-          <span class="form__checkboxInfo form__checkboxInfo--contact">If you're reading this there's
+          <span class="form__checkbox-info form__checkbox-info--contact">If you're reading this there's
             something not quite
             right
             with you.
             And that's fantastic. Believe in yourself because we already do.</span>
         </label>
-        <div class="form__buttonWrapper">
+        <div class="form__button-wrapper">
           <button class="button button--white button--submit button--contact">Wyślij</button>
-          <p class="form__status">Wiadomość została wysłana</p>
+          <div class="loader loader--hidden">
+            <div class="loader__quadrat"></div>
+            <div class="loader__shadow"></div>
+          </div>
+          <p class="form__status"></p>
         </div>
       </form>
     </section>

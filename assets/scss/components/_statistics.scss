@@ -28,7 +28,7 @@
         align-items: center;
     }
 
-    &__statisticWrapper {
+    &__statistic-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -94,7 +94,7 @@
         }
     }
 
-    &__digitWrapper--animate {
+    &__digit-wrapper--animate {
         height: max-content;
         animation: numberAnimation 1s both;
     }

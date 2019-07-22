@@ -2,17 +2,17 @@
 
 (function () {
   //checkbox
-  var form__checkboxInfo = document.querySelectorAll('.form__checkboxInfo');
+  var form__checkboxInfo = document.querySelectorAll('.form__checkbox-info');
   var form__checkbox = document.querySelectorAll('.form__checkbox');
 
   var _loop = function _loop(i) {
     form__checkboxInfo[i].addEventListener('click', function (e) {
-      if (form__checkbox[i].checked == true) form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
-      if (form__checkbox[i].checked == false) form__checkboxInfo[i].classList.add('form__checkboxInfo--chec');
+      if (form__checkbox[i].checked == true) form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
+      if (form__checkbox[i].checked == false) form__checkboxInfo[i].classList.add('form__checkbox-info--chec');
     });
     form__checkboxInfo[i].addEventListener('touch', function (e) {
-      if (form__checkbox[i].checked == true) form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
-      if (form__checkbox[i].checked == false) form__checkboxInfo[i].classList.add('form__checkboxInfo--chec');
+      if (form__checkbox[i].checked == true) form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
+      if (form__checkbox[i].checked == false) form__checkboxInfo[i].classList.add('form__checkbox-info--chec');
     });
   };
 
@@ -42,10 +42,11 @@
   var form__errorCheckBox = document.querySelectorAll('.form__error--checkbox');
   var errors = document.querySelectorAll('#error');
   var form__status = document.querySelectorAll('.form__status');
+  var loader = document.querySelectorAll('.loader');
 
   var _loop3 = function _loop3(i) {
     form__input[i].addEventListener('focus', function (e) {
-      errors[i].classList.add('form__error--notActive');
+      errors[i].classList.add('form__error--not-active');
     });
   };
 
@@ -55,7 +56,7 @@
 
   var _loop4 = function _loop4(i) {
     form__checkboxInfo[i].addEventListener('click', function (e) {
-      form__errorCheckBox[i].classList.add('form__error--notActive');
+      form__errorCheckBox[i].classList.add('form__error--not-active');
     });
   };
 
@@ -74,10 +75,15 @@
         message: $('#message').val()
       },
       success: function success(data) {
-        console.log(data);
+        loader[0].classList.add('loader--hidden');
+        form__status[0].textContent = "Wiadomość została wysłana";
+        form__status[0].classList.add('form__status--active');
       },
       error: function error(XMLHttpRequest, textStatus, errorThrown) {
         console.log(XMLHttpRequest + textStatus + errorThrown);
+        loader[0].classList.add('loader--hidden');
+        form__status[0].textContent = "Bład systemu";
+        form__status[0].classList.add('form__status--active');
       }
     });
   };
@@ -92,10 +98,15 @@
         message: $('#messageContact').val()
       },
       success: function success(data) {
-        console.log(data);
+        loader[1].classList.add('loader--hidden');
+        form__status[1].textContent = "Wiadomość została wysłana";
+        form__status[1].classList.add('form__status--active');
       },
       error: function error(XMLHttpRequest, textStatus, errorThrown) {
         console.log(XMLHttpRequest + textStatus + errorThrown);
+        loader[1].classList.add('loader--hidden');
+        form__status[1].textContent = "Bład systemu";
+        form__status[1].classList.add('form__status--active');
       }
     });
   };
@@ -106,14 +117,14 @@
 
     for (var i = firstBox; i < lastBox; i++) {
       if (form__checkbox[i].checked == false) {
-        form__errorCheckBox[i].classList.remove('form__error--notActive');
+        form__errorCheckBox[i].classList.remove('form__error--not-active');
         notChec++;
       }
     }
 
     for (var _i = firstInput; _i < lastInput; _i++) {
       if (form__input[_i].value.length == 0) {
-        errors[_i].classList.remove('form__error--notActive');
+        errors[_i].classList.remove('form__error--not-active');
 
         notEmpty++;
       }
@@ -128,7 +139,7 @@
       sendFormInvestments();
 
       for (var i = 0; i < 2; i++) {
-        form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
+        form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
         form__checkbox[i].checked = false;
       }
 
@@ -138,7 +149,7 @@
         form__label[_i2].classList.remove('form__label--active');
       }
 
-      form__status[0].classList.add('form__status--active');
+      loader[0].classList.remove('loader--hidden');
     }
   });
   form[1].addEventListener('submit', function (e) {
@@ -147,7 +158,7 @@
       sendFormContact();
 
       for (var i = 2; i < form__checkboxInfo.length; i++) {
-        form__checkboxInfo[i].classList.remove('form__checkboxInfo--chec');
+        form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
         form__checkbox[i].checked = false;
       }
 
@@ -157,7 +168,7 @@
         form__label[_i3].classList.remove('form__label--active');
       }
 
-      form__status[1].classList.add('form__status--active');
+      loader[1].classList.remove('loader--hidden');
     }
   }); //remove form status
 

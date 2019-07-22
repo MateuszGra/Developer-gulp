@@ -48,7 +48,7 @@
         display: none;
     }
 
-    &__logoLink {
+    &__logo-link {
         @include logo();
     }
 
@@ -56,13 +56,13 @@
         @include logo();
     }
 
-    &__ul {
+    &__menu {
         display: flex;
         list-style: none;
         margin: 0 8.8% 0 0;
     }
 
-    &__a {
+    &__menu-link {
         letter-spacing: 0.2rem;
         margin: 0 0 0 2.6vw;
         font-size: 1.7rem;
@@ -108,7 +108,7 @@
             transform: translateY(-30rem);
         }
 
-        &__ul {
+        &__menu {
             position: absolute;
             flex-direction: column;
             right: 0;
@@ -124,11 +124,11 @@
             }
         }
 
-        &__li {
+        &__menu-item {
             padding: 0.5rem;
         }
 
-        &__a {
+        &__menu-link {
             line-height: 3.5rem;
             margin: 0 0 0 0;
 
@@ -149,7 +149,7 @@
             height: 5rem;
         }
 
-        &__logoLink {
+        &__logo-link {
             height: 5rem;
         }
 
@@ -163,7 +163,7 @@
             z-index: 1;
             margin: 0 8% 0 0;
 
-            &Line {
+            &-line {
                 @include lines();
                 transition: transform 0.1s;
 

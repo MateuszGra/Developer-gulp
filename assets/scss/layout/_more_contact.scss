@@ -17,7 +17,7 @@
     text-align: center;
 }
 
-.moreAbout {
+.more-about {
     width: 100%;
 
     &__title {
@@ -28,7 +28,7 @@
         }
     }
 
-    &__titleTwo {
+    &__title-two {
         @include titleTwo();
 
         @media (max-width: 1025px) {
@@ -60,7 +60,7 @@
         }
     }
 
-    &__titleTwo {
+    &__title-two {
         @include titleTwo();
         color: white;
 
