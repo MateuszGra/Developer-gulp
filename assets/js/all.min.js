@@ -65,49 +65,21 @@
   } //send email
 
 
-  var sendFormInvestments = function sendFormInvestments(e) {
-    $.ajax({
-      type: 'POST',
-      url: '../../inc/send_inwestments.php',
-      data: {
-        name: $('#name').val(),
-        phone: $('#phone').val(),
-        message: $('#message').val()
-      },
-      success: function success(data) {
-        loader[0].classList.add('loader--hidden');
-        form__status[0].textContent = "Wiadomość została wysłana";
-        form__status[0].classList.add('form__status--active');
-      },
-      error: function error(XMLHttpRequest, textStatus, errorThrown) {
-        console.log(XMLHttpRequest + textStatus + errorThrown);
-        loader[0].classList.add('loader--hidden');
-        form__status[0].textContent = "Bład systemu";
-        form__status[0].classList.add('form__status--active');
-      }
-    });
-  };
-
-  var sendFormContact = function sendFormContact(e) {
-    $.ajax({
-      type: 'POST',
-      url: '../../inc/send_contact.php',
-      data: {
-        name: $('#nameContact').val(),
-        phone: $('#phoneContact').val(),
-        message: $('#messageContact').val()
-      },
-      success: function success(data) {
-        loader[1].classList.add('loader--hidden');
-        form__status[1].textContent = "Wiadomość została wysłana";
-        form__status[1].classList.add('form__status--active');
-      },
-      error: function error(XMLHttpRequest, textStatus, errorThrown) {
-        console.log(XMLHttpRequest + textStatus + errorThrown);
-        loader[1].classList.add('loader--hidden');
-        form__status[1].textContent = "Bład systemu";
-        form__status[1].classList.add('form__status--active');
-      }
+  var sendForm = function sendForm(adress, n) {
+    var dataToSend = {
+      name: document.querySelectorAll('#name')[n].value,
+      phone: document.querySelectorAll('#phone')[n].value,
+      message: document.querySelectorAll('#message')[n].value
+    };
+    fetch(adress, dataToSend).then(function (resp) {
+      loader[n].classList.add('loader--hidden');
+      form__status[n].textContent = "Wiadomość została wysłana";
+      form__status[n].classList.add('form__status--active');
+    }).catch(function (error) {
+      console.log(error);
+      loader[n].classList.add('loader--hidden');
+      form__status[n].textContent = "Błąd systemu";
+      form__status[n].classList.add('form__status--active');
     });
   };
 
@@ -136,7 +108,7 @@
   form[0].addEventListener('submit', function (e) {
     e.preventDefault();
     if (formValidation(0, 2, 0, 3) == false) return false;else {
-      sendFormInvestments();
+      sendForm('../../inc/send_inwestments.php', 0);
 
       for (var i = 0; i < 2; i++) {
         form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
@@ -155,7 +127,7 @@
   form[1].addEventListener('submit', function (e) {
     e.preventDefault();
     if (formValidation(2, 4, 3, 6) == false) return false;else {
-      sendFormContact();
+      sendForm('../../inc/send_contact.php', 1);
 
       for (var i = 2; i < form__checkboxInfo.length; i++) {
         form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
