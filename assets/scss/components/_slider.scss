@@ -297,6 +297,10 @@
 
         &:hover {
             background: rgba(134, 166, 222, 0.2);
+
+            @media (max-width: 680px) {
+                background: none;
+            }
         }
     }
 
@@ -306,6 +310,10 @@
 
         &:hover {
             background: rgba(134, 166, 222, 0.2);
+
+            @media (max-width: 680px) {
+                background: none;
+            }
         }
     }
 
