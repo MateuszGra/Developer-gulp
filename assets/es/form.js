@@ -44,15 +44,16 @@
     }
 
     //send email
+    const sendFormToPHP = (adress, n) => {
+        const data = new FormData();
+        data.append('name', document.querySelectorAll('#name')[n].value);
+        data.append('phone', document.querySelectorAll('#phone')[n].value);
+        data.append('message', document.querySelectorAll('#message')[n].value);
 
-    const sendForm = (adress, n) => {
-        const dataToSend = {
-            name: document.querySelectorAll('#name')[n].value,
-            phone: document.querySelectorAll('#phone')[n].value,
-            message: document.querySelectorAll('#message')[n].value
-        }
-
-        fetch(adress, dataToSend)
+        fetch(adress, {
+                method: 'POST',
+                body: data,
+            })
             .then(resp => {
                 loader[n].classList.add('loader--hidden')
                 form__status[n].textContent = "Wiadomość została wysłana";
@@ -92,7 +93,7 @@
         e.preventDefault();
         if (formValidation(0, 2, 0, 3) == false) return false;
         else {
-            sendForm('../../inc/send_inwestments.php', 0);
+            sendFormToPHP('../../inc/send_inwestments.php', 0);
             for (let i = 0; i < 2; i++) {
                 form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
                 form__checkbox[i].checked = false
@@ -109,7 +110,7 @@
         e.preventDefault();
         if (formValidation(2, 4, 3, 6) == false) return false;
         else {
-            sendForm('../../inc/send_contact.php', 1);
+            sendFormToPHP('../../inc/send_contact.php', 1);
             for (let i = 2; i < form__checkboxInfo.length; i++) {
                 form__checkboxInfo[i].classList.remove('form__checkbox-info--chec');
                 form__checkbox[i].checked = false
