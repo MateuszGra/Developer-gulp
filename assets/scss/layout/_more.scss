@@ -1,0 +1,29 @@
+.more-about {
+    width: 100%;
+
+    &__title {
+        @include title();
+
+        @media (max-width: 1025px) {
+            margin: 4rem 0 2rem 0;
+        }
+    }
+
+    &__title-two {
+        @include titleTwo();
+
+        @media (max-width: 1025px) {
+            margin: 2rem 0 2rem 0;
+        }
+    }
+
+    &__paragraph {
+        word-spacing: 0.4rem;
+        letter-spacing: 0.2rem;
+
+        @media (max-width: 1025px) {
+            @include paragraph();
+        }
+    }
+
+}
