@@ -3,3 +3,22 @@
  $boxShadow: rgba(0, 0, 0, 0.1);
  $bgGray: #F8F8F8;
  $bgBlack: #1F2022;
+
+ @mixin title {
+     letter-spacing: 0.4rem;
+     margin: 10.5rem 0 2rem 0;
+ }
+
+ @mixin titleTwo {
+     letter-spacing: 0.4rem;
+     margin: 4.5rem 0 2rem 0;
+ }
+
+
+ @mixin paragraph {
+     font-size: 1.4rem;
+     letter-spacing: 0.1rem;
+     margin: 0 0 2rem 0;
+     width: 80%;
+     text-align: center;
+ }

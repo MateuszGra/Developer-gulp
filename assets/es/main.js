@@ -1,10 +1,13 @@
 (() => {
     //additional functions
+    let createElements = [];
     const createElement = (name, type, clas, txt, parent) => {
-        window[name] = document.createElement(type);
-        window[name].classList.add(clas);
-        window[name].innerText = txt;
-        parent.appendChild(window[name]);
+        createElements[name] = document.createElement(type);
+        for (let i = 0; i < clas.length; i++) {
+            createElements[name].classList.add(clas[i]);
+        }
+        createElements[name].innerText = txt;
+        parent.appendChild(createElements[name]);
     };
 
     //API
@@ -29,10 +32,10 @@
                 if (resp[i].pietro == 0) floor = '- Parter';
                 else floor = '- Piętro';
 
-                createElement("slider__slide", "div", "slider__slide", null, slider);
-                if (i > 0 && i != resp.length - 1) slider__slide.classList.add('slider__slide--right');
-                if (i == resp.length - 1) slider__slide.classList.add('slider__slide--left');
-                slider__slide.innerHTML = `
+                createElement("slider__slide" + i, "div", ["slider__slide"], null, slider);
+                if (i > 0 && i != resp.length - 1) createElements['slider__slide' + i].classList.add('slider__slide--right');
+                if (i == resp.length - 1) createElements['slider__slide' + i].classList.add('slider__slide--left');
+                createElements['slider__slide' + i].innerHTML = `
                 <div class="slider__info-wrapper">
                     <h2 class="slider__local-name">${resp[i].nazwa}</h2>
                     <figure class="figure-line"></figure>
@@ -50,8 +53,8 @@
                     <img class="slider__map" src="${resp[i].obrazki.pietro}">
                 </div>
                 `
-                createElement("slider__dot", "figure", "slider__dot", null, slider__dotsWrapper);
-                if (i === 0) slider__dot.classList.add('slider__dot--active');
+                createElement("slider__dot" + i, "figure", ["slider__dot"], null, slider__dotsWrapper);
+                if (i === 0) createElements['slider__dot' + i].classList.add('slider__dot--active');
             }
         })
         //scroll_animation 
@@ -193,7 +196,7 @@
         .catch(error => {
             console.log('Błąd API: ', error)
             const errortext = 'Przepraszamy. Brak połączenia z serwerem.'
-            createElement("slider__errorApi", "h2", "slider__error-api", errortext, slider);
+            createElement("slider__errorApi", "h2", ["slider__error-api"], errortext, slider);
         });
 
     //hide hamburger
@@ -234,7 +237,7 @@
     let stats = [6, 3, 3, 4, 9, 5, 1, 5];
     for (let o = 0; o < stats.length; o++) {
         for (let i = 0; i <= stats[o]; i++) {
-            createElement("statistics__digit", "p", "statistics__digit", i, fragment);
+            createElement("statistics__digit", "p", ["statistics__digit"], i, fragment);
         }
         statistics__digitWrapper[o].appendChild(fragment);
     }

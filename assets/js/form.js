@@ -1,7 +1,20 @@
 "use strict";
 
 (function () {
-  //checkbox
+  var createElements = [];
+
+  var createElement = function createElement(name, type, clas, txt, parent) {
+    createElements[name] = document.createElement(type);
+
+    for (var i = 0; i < clas.length; i++) {
+      createElements[name].classList.add(clas[i]);
+    }
+
+    createElements[name].innerText = txt;
+    parent.appendChild(createElements[name]);
+  }; //checkbox
+
+
   var form__checkboxInfo = document.querySelectorAll('.form__checkbox-info');
   var form__checkbox = document.querySelectorAll('.form__checkbox');
 
@@ -23,6 +36,8 @@
 
   var form__input = document.querySelectorAll('.form__input');
   var form__label = document.querySelectorAll('.form__label');
+  var form__checkboxWrapper = document.querySelectorAll('.form__checkbox-wrapper');
+  var form__inputWrapper = document.querySelectorAll('.form__input-wrapper');
 
   var _loop2 = function _loop2(i) {
     form__input[i].addEventListener('focus', function (e) {
@@ -39,14 +54,13 @@
 
 
   var form = document.querySelectorAll('#form');
-  var form__errorCheckBox = document.querySelectorAll('.form__error--checkbox');
-  var errors = document.querySelectorAll('#error');
-  var form__status = document.querySelectorAll('.form__status');
-  var loader = document.querySelectorAll('.loader');
 
   var _loop3 = function _loop3(i) {
     form__input[i].addEventListener('focus', function (e) {
-      errors[i].classList.add('form__error--not-active');
+      if (createElements['error' + i]) {
+        createElements['error' + i].remove();
+        delete createElements['error' + i];
+      }
     });
   };
 
@@ -56,14 +70,47 @@
 
   var _loop4 = function _loop4(i) {
     form__checkboxInfo[i].addEventListener('click', function (e) {
-      form__errorCheckBox[i].classList.add('form__error--not-active');
+      if (createElements['errorBox' + i]) {
+        createElements['errorBox' + i].remove();
+        delete createElements['errorBox' + i];
+      }
     });
   };
 
   for (var i = 0; i < form__checkboxInfo.length; i++) {
     _loop4(i);
-  } //send email
+  }
 
+  var formValidation = function formValidation(firstBox, lastBox, firstInput, lastInput) {
+    var notChec = 0;
+    var notEmpty = 0;
+
+    for (var i = firstBox; i < lastBox; i++) {
+      if (form__checkbox[i].checked == false) {
+        if (!createElements['errorBox' + i]) {
+          if (i < 2) createElement("errorBox" + i, "div", ["form__error", "form__error--checkbox"], "Wymagana zgoda.", form__checkboxWrapper[i]);else createElement("errorBox" + i, "div", ["form__error", "form__error--checkbox", "form__error--white"], "Wymagana zgoda.", form__checkboxWrapper[i]);
+        }
+
+        notChec++;
+      }
+    }
+
+    for (var _i = firstInput; _i < lastInput; _i++) {
+      if (form__input[_i].value.length == 0) {
+        if (!createElements['error' + _i]) {
+          if (_i < 3) createElement("error" + _i, "div", ["form__error"], "Proszę uzupełnić pole.", form__inputWrapper[_i]);else createElement("error" + _i, "div", ["form__error", "form__error--white"], "Proszę uzupełnić pole.", form__inputWrapper[_i]);
+        }
+
+        notEmpty++;
+      }
+    }
+
+    if (notChec > 0 || notEmpty > 0) return false;
+  }; //send email
+
+
+  var form__status = document.querySelectorAll('.form__status');
+  var loader = document.querySelectorAll('.loader');
 
   var sendFormToPHP = function sendFormToPHP(adress, n) {
     var data = new FormData();
@@ -75,36 +122,14 @@
       body: data
     }).then(function (resp) {
       loader[n].classList.add('loader--hidden');
-      form__status[n].textContent = "Wiadomość została wysłana";
+      form__status[n].textContent = "Wiadomość została wysłana.";
       form__status[n].classList.add('form__status--active');
     }).catch(function (error) {
       console.log(error);
       loader[n].classList.add('loader--hidden');
-      form__status[n].textContent = "Błąd systemu";
+      form__status[n].textContent = "Błąd systemu.";
       form__status[n].classList.add('form__status--active');
     });
-  };
-
-  var formValidation = function formValidation(firstBox, lastBox, firstInput, lastInput) {
-    var notChec = 0;
-    var notEmpty = 0;
-
-    for (var i = firstBox; i < lastBox; i++) {
-      if (form__checkbox[i].checked == false) {
-        form__errorCheckBox[i].classList.remove('form__error--not-active');
-        notChec++;
-      }
-    }
-
-    for (var _i = firstInput; _i < lastInput; _i++) {
-      if (form__input[_i].value.length == 0) {
-        errors[_i].classList.remove('form__error--not-active');
-
-        notEmpty++;
-      }
-    }
-
-    if (notChec > 0 || notEmpty > 0) return false;
   };
 
   form[0].addEventListener('submit', function (e) {

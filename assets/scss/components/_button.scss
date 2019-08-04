@@ -4,6 +4,7 @@
 }
 
 .button {
+    position: relative;
     font-family: 'Lato', sans-serif;
     font-size: 1.8rem;
     border-radius: 1rem;
@@ -126,9 +127,13 @@
         }
     }
 
-    &--link {
+    &__link {
+        position: absolute;
         width: 100%;
         height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 100;
     }
 
     &--contact {

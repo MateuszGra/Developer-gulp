@@ -56,7 +56,6 @@
             border-bottom: 0.2rem white solid;
             z-index: 1;
         }
-
     }
 
     &__label {
@@ -135,18 +134,17 @@
         position: absolute;
         text-align: center;
         white-space: nowrap;
-        font-weight: lighter;
+        font-weight: bold;
         padding: 0.8rem;
         font-size: 1.5rem;
-        opacity: 1;
-        transition: opacity 0.6s;
         left: 50%;
         transform: translateX(-50%);
         z-index: 5;
         top: -3rem;
-
+        animation: create 0.6s;
         color: white;
-        background: $bgBlack;
+        background: rgba(0, 0, 0, 0.6);
+        ;
 
         @media (max-width: 500px) {
             font-size: 1.2rem;
@@ -161,25 +159,21 @@
             height: 0;
             border-left: 1rem solid transparent;
             border-right: 1rem solid transparent;
-            border-top: 1.5rem solid $bgBlack;
+            border-top: 1.5rem solid rgba(0, 0, 0, 0.6);
         }
 
         &--white {
             color: $bgBlack;
-            background: white;
+            background: rgba(255, 255, 255, 0.7);
 
             &::after {
-                border-top: 1.5rem solid white;
+                border-top: 1.5rem solid rgba(255, 255, 255, 0.7);
+                ;
             }
         }
 
         &--checkbox {
             top: -5rem;
-        }
-
-        &--not-active {
-            opacity: 0;
-            z-index: -1;
         }
     }
 
@@ -221,5 +215,16 @@
         &--active {
             opacity: 1;
         }
+    }
+}
+
+
+@keyframes create {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

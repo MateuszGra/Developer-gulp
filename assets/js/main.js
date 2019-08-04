@@ -2,11 +2,17 @@
 
 (function () {
   //additional functions
+  var createElements = [];
+
   var createElement = function createElement(name, type, clas, txt, parent) {
-    window[name] = document.createElement(type);
-    window[name].classList.add(clas);
-    window[name].innerText = txt;
-    parent.appendChild(window[name]);
+    createElements[name] = document.createElement(type);
+
+    for (var i = 0; i < clas.length; i++) {
+      createElements[name].classList.add(clas[i]);
+    }
+
+    createElements[name].innerText = txt;
+    parent.appendChild(createElements[name]);
   }; //API
 
 
@@ -28,12 +34,12 @@
     for (var i = 0; i < resp.length; i++) {
       var floor = void 0;
       if (resp[i].pietro == 0) floor = '- Parter';else floor = '- Piętro';
-      createElement("slider__slide", "div", "slider__slide", null, slider);
-      if (i > 0 && i != resp.length - 1) slider__slide.classList.add('slider__slide--right');
-      if (i == resp.length - 1) slider__slide.classList.add('slider__slide--left');
-      slider__slide.innerHTML = "\n                <div class=\"slider__info-wrapper\">\n                    <h2 class=\"slider__local-name\">".concat(resp[i].nazwa, "</h2>\n                    <figure class=\"figure-line\"></figure>\n                    <p class=\"slider__local-yardage\">Metra\u017C: ").concat(resp[i].metraz, " m2</p>\n                    <p class=\"slider__local-price\">Cena Netto: ").concat(resp[i].netto.toLocaleString('pl-PL'), " z\u0142*</p>\n                    <p class=\"slider__local-info-price\">* cena nie zawiera 23% VAT</p>\n                    <p class=\"slider__local-floor\">Pi\u0119tro: ").concat(resp[i].pietro + floor, " </p>\n                    <p class=\"slider__local-destyny\">Przeznaczenie: ").concat(resp[i].przeznaczenie, "</p>\n                    <p class=\"slider__loacal-status\">Status: ").concat(resp[i].status, "</p>\n                    <button class=\"button--black button--ask button\"><a id=\"button-scroll\" class=\"button__link\" href=\"#investments\"></a>Zapytaj</button><button class=\"button--black button--download button\"><a class=\"button__link\" href=\"../assets/images/plan.pdf\" target=\"_blank\"></a>Pobierz plan</button>\n                </div>\n                <img class=\"slider__blueprint\" src=\"").concat(resp[i].obrazki.rzut, "\">\n                <div class=\"slider__map-wrapper\">\n                    <img class=\"slider__compass\" src=\"../assets/images/SVG/polnoc.svg\" style=\"transform: rotate(").concat(rotateCompass(resp[i].ekspozycja), "deg)\">\n                    <img class=\"slider__map\" src=\"").concat(resp[i].obrazki.pietro, "\">\n                </div>\n                ");
-      createElement("slider__dot", "figure", "slider__dot", null, slider__dotsWrapper);
-      if (i === 0) slider__dot.classList.add('slider__dot--active');
+      createElement("slider__slide" + i, "div", ["slider__slide"], null, slider);
+      if (i > 0 && i != resp.length - 1) createElements['slider__slide' + i].classList.add('slider__slide--right');
+      if (i == resp.length - 1) createElements['slider__slide' + i].classList.add('slider__slide--left');
+      createElements['slider__slide' + i].innerHTML = "\n                <div class=\"slider__info-wrapper\">\n                    <h2 class=\"slider__local-name\">".concat(resp[i].nazwa, "</h2>\n                    <figure class=\"figure-line\"></figure>\n                    <p class=\"slider__local-yardage\">Metra\u017C: ").concat(resp[i].metraz, " m2</p>\n                    <p class=\"slider__local-price\">Cena Netto: ").concat(resp[i].netto.toLocaleString('pl-PL'), " z\u0142*</p>\n                    <p class=\"slider__local-info-price\">* cena nie zawiera 23% VAT</p>\n                    <p class=\"slider__local-floor\">Pi\u0119tro: ").concat(resp[i].pietro + floor, " </p>\n                    <p class=\"slider__local-destyny\">Przeznaczenie: ").concat(resp[i].przeznaczenie, "</p>\n                    <p class=\"slider__loacal-status\">Status: ").concat(resp[i].status, "</p>\n                    <button class=\"button--black button--ask button\"><a id=\"button-scroll\" class=\"button__link\" href=\"#investments\"></a>Zapytaj</button><button class=\"button--black button--download button\"><a class=\"button__link\" href=\"../assets/images/plan.pdf\" target=\"_blank\"></a>Pobierz plan</button>\n                </div>\n                <img class=\"slider__blueprint\" src=\"").concat(resp[i].obrazki.rzut, "\">\n                <div class=\"slider__map-wrapper\">\n                    <img class=\"slider__compass\" src=\"../assets/images/SVG/polnoc.svg\" style=\"transform: rotate(").concat(rotateCompass(resp[i].ekspozycja), "deg)\">\n                    <img class=\"slider__map\" src=\"").concat(resp[i].obrazki.pietro, "\">\n                </div>\n                ");
+      createElement("slider__dot" + i, "figure", ["slider__dot"], null, slider__dotsWrapper);
+      if (i === 0) createElements['slider__dot' + i].classList.add('slider__dot--active');
     }
   }) //scroll_animation 
   .then(function (resp) {
@@ -175,7 +181,7 @@
   }).catch(function (error) {
     console.log('Błąd API: ', error);
     var errortext = 'Przepraszamy. Brak połączenia z serwerem.';
-    createElement("slider__errorApi", "h2", "slider__error-api", errortext, slider);
+    createElement("slider__errorApi", "h2", ["slider__error-api"], errortext, slider);
   }); //hide hamburger
 
   var nav__hamburger = document.querySelector('.nav__hamburger');
@@ -214,7 +220,7 @@
 
   for (var o = 0; o < stats.length; o++) {
     for (var _i3 = 0; _i3 <= stats[o]; _i3++) {
-      createElement("statistics__digit", "p", "statistics__digit", _i3, fragment);
+      createElement("statistics__digit", "p", ["statistics__digit"], _i3, fragment);
     }
 
     statistics__digitWrapper[o].appendChild(fragment);
