@@ -45,11 +45,11 @@
                     <p class="slider__local-floor">Piętro: ${resp[i].pietro + floor} </p>
                     <p class="slider__local-destyny">Przeznaczenie: ${resp[i].przeznaczenie}</p>
                     <p class="slider__loacal-status">Status: ${resp[i].status}</p>
-                    <button class="button--black button--ask button"><a id="button-scroll" class="button__link" href="#investments"></a>Zapytaj</button><button class="button--black button--download button"><a class="button__link" href="../assets/images/plan.pdf" target="_blank"></a>Pobierz plan</button>
+                    <button class="button--black button--ask button"><a id="button-scroll" class="button__link" href="#investments"></a>Zapytaj</button><button class="button--black button--download button"><a class="button__link" href="assets/images/plan.pdf" target="_blank"></a>Pobierz plan</button>
                 </div>
                 <img class="slider__blueprint" src="${resp[i].obrazki.rzut}">
                 <div class="slider__map-wrapper">
-                    <img class="slider__compass" src="../assets/images/SVG/polnoc.svg" style="transform: rotate(${rotateCompass(resp[i].ekspozycja)}deg)">
+                    <img class="slider__compass" src="assets/images/SVG/polnoc.svg" style="transform: rotate(${rotateCompass(resp[i].ekspozycja)}deg)">
                     <img class="slider__map" src="${resp[i].obrazki.pietro}">
                 </div>
                 `
