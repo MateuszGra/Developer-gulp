@@ -1,5 +1,4 @@
 (() => {
-
     //additional functions
     const createElement = (name, type, clas, txt, parent) => {
         window[name] = document.createElement(type);
@@ -8,85 +7,97 @@
         parent.appendChild(window[name]);
     };
 
-    const rotateCompass = (n) => {
-        const direction = ['Północ', 'Północny-Wschód', 'Wschód', 'Południowy-Wschód', 'Południe', 'Południowy-Zachód', 'Zachód', 'Północny-Zachód']
-
-        for (let i = 1; i < direction.length; i++) {
-            if (n == direction[i]) return i * 45;
-        }
-    }
-
     //API
-    const fragment = document.createDocumentFragment();
-    const fragmentTwo = document.createDocumentFragment();
+    const slider = document.querySelector('.slider');
 
     fetch('https://api.adcookie.usermd.net/deweloper/')
-        //create elements API
+        //create elements API 
         .then(resp => resp.json())
         .then(resp => {
-            for (let i = 0; i < resp.length; i++) {
-                createElement("slider__slide", "div", "slider__slide", null, fragment);
-                if (i > 0 && i != resp.length - 1) slider__slide.classList.add('slider__slide--right');
-                if (i == resp.length - 1) slider__slide.classList.add('slider__slide--left');
-                createElement("slider__infoWrapper", "div", "slider__info-wrapper", null, slider__slide);
-                createElement("slider__localName", "h2", "slider__local-name", resp[i].nazwa, slider__infoWrapper);
-                createElement("figureLine", "figure", "figure-line", null, slider__infoWrapper);
-                createElement("slider__localYardage", "p", "slider__local-yardage", `Metraż: ${resp[i].metraz} m2`, slider__infoWrapper);
-                createElement("slider__localPrice", "p", "slider__local-price", `Cena Netto: ${resp[i].netto.toLocaleString('pl-PL')} zł*`, slider__infoWrapper);
-                createElement("slider__localInfoPrice", "p", "slider__local-info-price", `* cena nie zawiera 23% VAT`, slider__infoWrapper);
-                createElement("slider__localFloor", "p", "slider__local-floor", `Piętro: ${resp[i].pietro} `, slider__infoWrapper);
-                createElement("slider__localDestyny", "p", "slider__local-destyny", `Przeznaczenie: ${resp[i].przeznaczenie}`, slider__infoWrapper);
-                createElement("slider__loacalStatus", "p", "slider__loacal-status", `Status: ${resp[i].status}`, slider__infoWrapper);
-                createElement("buttonLink", "a", "button--link", null, slider__infoWrapper);
-                buttonLink.href = "#investments";
-                createElement("askButton", "button", "button--black", `Zapytaj`, buttonLink);
-                askButton.classList.add('button--ask');
-                askButton.classList.add('button');
-                createElement("downloadButtonLink", "a", "button--link", null, slider__infoWrapper);
-                downloadButtonLink.href = 'assets/images/plan.pdf';
-                downloadButtonLink.target = '_blank';
-                createElement("downloadButton", "button", "button--black", `Pobierz plan`, downloadButtonLink);
-                downloadButton.classList.add('button--download');
-                downloadButton.classList.add('button');
-                createElement("slider__blueprint", "img", "slider__blueprint", null, slider__slide);
-                createElement("slider__mapWrapper", "div", "slider__map-wrapper", null, slider__slide);
-                createElement("slider__compass", "img", "slider__compass", null, slider__mapWrapper);
-                slider__compass.style.transform = `rotate(${rotateCompass(resp[i].ekspozycja)}deg)`;
-                createElement("slider__map", "img", "slider__map", null, slider__mapWrapper);
+            const slider__dotsWrapper = document.querySelector('.slider__dots-wrapper');
 
-                if (resp[i].pietro == 0) slider__localFloor.textContent += '- Parter';
-                else slider__localFloor.textContent += '- Piętro';
+            const rotateCompass = (n) => {
+                const direction = ['Północ', 'Północny-Wschód', 'Wschód', 'Południowy-Wschód', 'Południe', 'Południowy-Zachód', 'Zachód', 'Północny-Zachód']
 
-                slider__blueprint.src = resp[i].obrazki.rzut;
-                slider__compass.src = "assets/images/SVG/polnoc.svg";
-                slider__map.src = resp[i].obrazki.pietro;
-
-                createElement("slider__dot", "figure", "slider__dot", null, fragmentTwo);
-                if (i === 0) slider__dot.classList.add('slider__dot--active');
+                for (let i = 1; i < direction.length; i++) {
+                    if (n == direction[i]) return i * 45;
+                }
             }
 
-            const slider = document.querySelector('.slider');
-            slider.appendChild(fragment);
+            for (let i = 0; i < resp.length; i++) {
+                let floor;
+                if (resp[i].pietro == 0) floor = '- Parter';
+                else floor = '- Piętro';
 
-            const slider__dotsWrapper = document.querySelector('.slider__dots-wrapper');
-            slider__dotsWrapper.appendChild(fragmentTwo);
+                createElement("slider__slide", "div", "slider__slide", null, slider);
+                if (i > 0 && i != resp.length - 1) slider__slide.classList.add('slider__slide--right');
+                if (i == resp.length - 1) slider__slide.classList.add('slider__slide--left');
+                slider__slide.innerHTML = `
+                <div class="slider__info-wrapper">
+                    <h2 class="slider__local-name">${resp[i].nazwa}</h2>
+                    <figure class="figure-line"></figure>
+                    <p class="slider__local-yardage">Metraż: ${resp[i].metraz} m2</p>
+                    <p class="slider__local-price">Cena Netto: ${resp[i].netto.toLocaleString('pl-PL')} zł*</p>
+                    <p class="slider__local-info-price">* cena nie zawiera 23% VAT</p>
+                    <p class="slider__local-floor">Piętro: ${resp[i].pietro + floor} </p>
+                    <p class="slider__local-destyny">Przeznaczenie: ${resp[i].przeznaczenie}</p>
+                    <p class="slider__loacal-status">Status: ${resp[i].status}</p>
+                    <button class="button--black button--ask button"><a id="button-scroll" class="button__link" href="#investments"></a>Zapytaj</button><button class="button--black button--download button"><a class="button__link" href="../assets/images/plan.pdf" target="_blank"></a>Pobierz plan</button>
+                </div>
+                <img class="slider__blueprint" src="${resp[i].obrazki.rzut}">
+                <div class="slider__map-wrapper">
+                    <img class="slider__compass" src="../assets/images/SVG/polnoc.svg" style="transform: rotate(${rotateCompass(resp[i].ekspozycja)}deg)">
+                    <img class="slider__map" src="${resp[i].obrazki.pietro}">
+                </div>
+                `
+                createElement("slider__dot", "figure", "slider__dot", null, slider__dotsWrapper);
+                if (i === 0) slider__dot.classList.add('slider__dot--active');
+            }
         })
-        //scroll_animation
+        //scroll_animation 
         .then(resp => {
-            $(document).ready(function () {
-                $('a[href^="#"]').on('click touch', function (event) {
+            const link = document.querySelectorAll('.nav__menu-link');
+            const button = document.querySelectorAll('#button-scroll');
 
-                    let target = $($(this).attr('href'));
+            for (let i = 0; i < button.length; i++) {
+                button[i].addEventListener("click", smoothScroll);
+                button[i].addEventListener("touch", smoothScroll);
+            }
+            for (let i = 0; i < link.length; i++) {
+                link[i].addEventListener("click", smoothScroll);
+                link[i].addEventListener("touch", smoothScroll);
+            }
 
-                    if (target.length) {
-                        event.preventDefault();
-                        $('html, body').animate({
-                            scrollTop: (target.offset().top - 60)
-                        }, 500);
-                    }
-                });
-            });
+            function smoothScroll(event) {
+                event.preventDefault();
+                const targetId = event.currentTarget.getAttribute("href") === "#" ? "header" : event.currentTarget.getAttribute("href");
+                const targetPosition = (document.querySelector(targetId).offsetTop - 60);
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                const duration = 700;
+                let start = null;
+
+                window.requestAnimationFrame(step);
+                if (history.pushState) history.pushState(null, null, targetId);
+                else location.hash = targetId;
+
+
+                function step(timestamp) {
+                    if (!start) start = timestamp;
+                    const progress = timestamp - start;
+                    window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+                    if (progress < duration) window.requestAnimationFrame(step);
+                }
+            }
+
+            const easeInOutCubic = (t, b, c, d) => {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t * t + b;
+                t -= 2;
+                return c / 2 * (t * t * t + 2) + b;
+            };
         })
+
         .then(resp => {
             //animate serch menu
             const arrow = document.querySelectorAll('#arrow');
@@ -182,7 +193,7 @@
         .catch(error => {
             console.log('Błąd API: ', error)
             const errortext = 'Przepraszamy. Brak połączenia z serwerem.'
-            createElement("slider__errorApi", "h2", "slider__errorApi", errortext, slider);
+            createElement("slider__errorApi", "h2", "slider__error-api", errortext, slider);
         });
 
     //hide hamburger
@@ -218,18 +229,18 @@
     }
 
     //animaton statistics
-    const FragmentThree = document.createDocumentFragment();
+    const fragment = document.createDocumentFragment();
     const statistics__digitWrapper = document.querySelectorAll('.statistics__digit-wrapper');
     let stats = [6, 3, 3, 4, 9, 5, 1, 5];
     for (let o = 0; o < stats.length; o++) {
         for (let i = 0; i <= stats[o]; i++) {
-            createElement("statistics__digit", "p", "statistics__digit", i, FragmentThree);
+            createElement("statistics__digit", "p", "statistics__digit", i, fragment);
         }
-        statistics__digitWrapper[o].appendChild(FragmentThree);
+        statistics__digitWrapper[o].appendChild(fragment);
     }
 
     //on scroll animations
-    let prevScrollpos = window.pageYOffset;
+    let prevScrollpos = window.pageYOffset + 60;
     const nav = document.querySelector('.nav');
 
     window.onscroll = () => {
@@ -237,7 +248,6 @@
         let currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) nav.classList.remove('nav--hide');
         else nav.classList.add('nav--hide');
-
 
         if (currentScrollPos > statistics__digitWrapper[0].offsetTop - window.innerHeight) {
             //animaton statistics
