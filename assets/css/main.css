@@ -1480,10 +1480,11 @@ main {
     @media (max-width: 500px) {
       .statistics__digit {
         font-size: 6rem; } }
+  .statistics__digit-wrapper {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content; }
   .statistics__digit-wrapper--animate {
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
     -webkit-animation: numberAnimation 1s both;
             animation: numberAnimation 1s both; }
 

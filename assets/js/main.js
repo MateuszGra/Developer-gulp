@@ -66,7 +66,7 @@
       var duration = 700;
       var start = null;
       window.requestAnimationFrame(step);
-      if (history.pushState) history.pushState(null, null, targetId);else location.hash = targetId;
+      if (history.replaceState) history.replaceState(null, null, targetId);else location.hash = targetId;
 
       function step(timestamp) {
         if (!start) start = timestamp;

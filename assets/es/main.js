@@ -81,7 +81,7 @@
                 let start = null;
 
                 window.requestAnimationFrame(step);
-                if (history.pushState) history.pushState(null, null, targetId);
+                if (history.replaceState) history.replaceState(null, null, targetId);
                 else location.hash = targetId;
 
 

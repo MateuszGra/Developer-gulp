@@ -94,8 +94,11 @@
         }
     }
 
+    &__digit-wrapper {
+        height: fit-content;
+    }
+
     &__digit-wrapper--animate {
-        height: max-content;
         animation: numberAnimation 1s both;
     }
 }
