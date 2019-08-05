@@ -122,8 +122,9 @@
     }
 
     &__input-wrapper {
-        width: 100%;
+        display: block;
         position: relative;
+        width: 100%;
 
         &--margin {
             margin: 0 1.3vw 0 0;

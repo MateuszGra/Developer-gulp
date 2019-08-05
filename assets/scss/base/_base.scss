@@ -12,7 +12,10 @@ h1,
 h2 {
   font-size: 4rem;
   font-weight: lighter;
-  padding: 0 2rem 0 2rem;
+
+  @media (max-width: 500px) {
+    padding: 0 1rem 0 1rem;
+  }
 }
 
 h3 {

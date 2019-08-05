@@ -18,8 +18,11 @@ body {
 h1,
 h2 {
   font-size: 4rem;
-  font-weight: lighter;
-  padding: 0 2rem 0 2rem; }
+  font-weight: lighter; }
+  @media (max-width: 500px) {
+    h1,
+    h2 {
+      padding: 0 1rem 0 1rem; } }
 
 h3 {
   font-size: 2rem;
@@ -715,8 +718,9 @@ main {
   display: none; }
 
 .form__input-wrapper {
-  width: 100%;
-  position: relative; }
+  display: block;
+  position: relative;
+  width: 100%; }
   .form__input-wrapper--margin {
     margin: 0 1.3vw 0 0; }
 
@@ -1068,7 +1072,7 @@ main {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  width: 82%;
+  width: 85%;
   height: 65rem;
   -webkit-box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
@@ -1179,7 +1183,7 @@ main {
     @media (max-width: 1025px) {
       .slider__local-yardage {
         font-size: 1.4rem;
-        margin: 0.5rem 0 0.5rem 0; } }
+        margin: 1.3rem 0 0.5rem 0; } }
   .slider__local-price {
     letter-spacing: 0.2rem;
     font-weight: lighter;
@@ -1240,7 +1244,7 @@ main {
         margin: 0.5rem 0 1.5rem 0; } }
     @media (max-width: 680px) {
       .slider__loacal-status {
-        margin: 1rem 0 1rem 0; } }
+        margin: 0.5rem 0 1rem 0; } }
   .slider__blueprint {
     margin: 4rem 0 0 0;
     width: 45rem;
