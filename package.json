@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "g": "^2.0.1",
-    "gulp-cli": "^2.2.0"
+    "gulp-cli": "^2.2.0",
+    "swiper": "^4.5.0"
   }
 }

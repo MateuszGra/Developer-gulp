@@ -1,12 +1,11 @@
 (() => {
     //API
-    const slider = document.querySelector('.slider');
+    const swiper = document.querySelector('.swiper-wrapper');
 
     fetch('https://api.adcookie.usermd.net/deweloper/')
         //create elements API 
         .then(resp => resp.json())
         .then(resp => {
-            const slider__dotsWrapper = document.querySelector('.slider__dots-wrapper');
 
             const rotateCompass = (n) => {
                 const direction = ['Północ', 'Północny-Wschód', 'Wschód', 'Południowy-Wschód', 'Południe', 'Południowy-Zachód', 'Zachód', 'Północny-Zachód']
@@ -21,29 +20,26 @@
                 if (resp[i].pietro == 0) floor = '- Parter';
                 else floor = '- Piętro';
 
-                createElement("slider__slide" + i, "div", ["slider__slide"], null, slider);
-                if (i > 0 && i != resp.length - 1) createElements['slider__slide' + i].classList.add('slider__slide--right');
-                if (i == resp.length - 1) createElements['slider__slide' + i].classList.add('slider__slide--left');
-                createElements['slider__slide' + i].innerHTML = `
-                <div class="slider__info-wrapper">
-                    <h2 class="slider__local-name">${resp[i].nazwa}</h2>
+                createElement(`swiper__slide${i}`, "div", ["swiper-slide"], null, swiper);
+                createElements[`swiper__slide${i}`].innerHTML = `
+                <div class="swiper__info-wrapper">
+                    <h2 class="swiper__local-name">${resp[i].nazwa}</h2>
                     <figure class="figure-line"></figure>
-                    <p class="slider__local-yardage">Metraż: ${resp[i].metraz} m2</p>
-                    <p class="slider__local-price">Cena Netto: ${resp[i].netto.toLocaleString('pl-PL')} zł*</p>
-                    <p class="slider__local-info-price">* cena nie zawiera 23% VAT</p>
-                    <p class="slider__local-floor">Piętro: ${resp[i].pietro + floor} </p>
-                    <p class="slider__local-destyny">Przeznaczenie: ${resp[i].przeznaczenie}</p>
-                    <p class="slider__loacal-status">Status: ${resp[i].status}</p>
+                    <p class="swiper__local-yardage">Metraż: ${resp[i].metraz} m2</p>
+                    <p class="swiper__local-price">Cena Netto: ${resp[i].netto.toLocaleString('pl-PL')} zł*</p>
+                    <p class="swiper__local-info-price">* cena nie zawiera 23% VAT</p>
+                    <p class="swiper__local-floor">Piętro: ${resp[i].pietro + floor} </p>
+                    <p class="swiper__local-destyny">Przeznaczenie: ${resp[i].przeznaczenie}</p>
+                    <p class="swiper__loacal-status">Status: ${resp[i].status}</p>
                     <button class="button--black button--ask button"><a id="button-scroll" class="button__link" href="#investments"></a>Zapytaj</button><button class="button--black button--download button"><a class="button__link" href="assets/images/plan.pdf" target="_blank"></a>Pobierz plan</button>
                 </div>
-                <img class="slider__blueprint" src="${resp[i].obrazki.rzut}">
-                <div class="slider__map-wrapper">
-                    <img class="slider__compass" src="assets/images/SVG/polnoc.svg" style="transform: rotate(${rotateCompass(resp[i].ekspozycja)}deg)">
-                    <img class="slider__map" src="${resp[i].obrazki.pietro}">
+                <img class="swiper__blueprint" src="${resp[i].obrazki.rzut}">
+                <div class="swiper__map-wrapper">
+                    <img class="swiper__compass" src="assets/images/SVG/polnoc.svg" style="transform: rotate(${rotateCompass(resp[i].ekspozycja)}deg)">
+                    <img class="swiper__map" src="${resp[i].obrazki.pietro}">
                 </div>
                 `
-                createElement("slider__dot" + i, "figure", ["slider__dot"], null, slider__dotsWrapper);
-                if (i === 0) createElements['slider__dot' + i].classList.add('slider__dot--active');
+                mySwiper.appendSlide(createElements[`swiper__slide${i}`]);
             }
         })
         //scroll_animation 
@@ -89,103 +85,10 @@
                 return c / 2 * (t * t * t + 2) + b;
             };
         })
-
-        .then(resp => {
-            //animate serch menu
-            const arrow = document.querySelectorAll('#arrow');
-            const slider__dot = document.querySelectorAll('.slider__dot');
-            const slider__slide = document.querySelectorAll('.slider__slide');
-            let position = 0;
-            let prev;
-            let next;
-
-            const rightMove = () => {
-
-                position++;
-                prev = position - 1;
-                next = position + 1;
-                if (position == slider__slide.length) {
-                    position = 0;
-                    prev = slider__slide.length - 1;
-                    next = position + 1;
-                }
-                if (position == slider__slide.length - 1) next = 0;
-
-                slider__slide[prev].classList.add('slider__slide--left');
-                slider__slide[next].classList.add('slider__slide--right');
-                slider__slide[position].classList.remove('slider__slide--right');
-                slider__slide[position].classList.remove('slider__slide--left');
-                slider__dot[position].classList.add('slider__dot--active')
-                slider__dot[prev].classList.remove('slider__dot--active')
-            }
-
-            const leftMove = () => {
-                position--;
-                prev = position + 1;
-                next = position - 1;
-                if (position < 0) {
-                    position = slider__slide.length - 1;
-                    prev = 0;
-                    next = position - 1;
-                }
-                if (position == 0) next = slider__slide.length - 1;
-
-                slider__slide[prev].classList.add('slider__slide--right');
-                slider__slide[next].classList.remove('slider__slide--right');
-                slider__slide[next].classList.add('slider__slide--left');
-                slider__slide[position].classList.remove('slider__slide--left');
-                slider__dot[prev].classList.remove('slider__dot--active')
-                slider__dot[position].classList.add('slider__dot--active')
-            }
-
-            arrow[1].addEventListener("click", rightMove);
-            arrow[1].addEventListener("touch", rightMove);
-            arrow[0].addEventListener("click", leftMove);
-            arrow[0].addEventListener("touch", leftMove);
-
-            document.addEventListener("keydown", event => { //keybord (left and right arrows)
-                if (event.keyCode == 37) leftMove();
-                if (event.keyCode == 39) rightMove();
-            });
-
-            const dotClick = (click) => {
-                position = click;
-                prev = position - 1;
-                next = position + 1;
-                if (position == slider__slide.length - 1) next = 0;
-                if (position == 0) prev = slider__slide.length - 1;
-
-                for (let i = 0; i < slider__slide.length; i++) {
-                    if (i > position) slider__slide[i].classList.add('slider__slide--right');
-                    if (i < position) slider__slide[i].classList.add('slider__slide--left');
-                }
-
-                slider__slide[prev].classList.add('slider__slide--left');
-                slider__slide[prev].classList.remove('slider__slide--right');
-                slider__slide[next].classList.add('slider__slide--right');
-                slider__slide[position].classList.remove('slider__slide--right');
-                slider__slide[position].classList.remove('slider__slide--left');
-
-                for (let i = 0; i < slider__dot.length; i++) {
-                    slider__dot[i].classList.remove('slider__dot--active');
-                }
-                slider__dot[position].classList.add('slider__dot--active')
-
-            }
-
-            for (let i = 0; i < slider__dot.length; i++) {
-                slider__dot[i].addEventListener('click', (e) => {
-                    dotClick(i);
-                })
-                slider__dot[i].addEventListener('touch', (e) => {
-                    dotClick(i);
-                })
-            }
-        })
         .catch(error => {
             console.log('Błąd API: ', error)
             const errortext = 'Przepraszamy. Brak połączenia z serwerem.'
-            createElement("slider__errorApi", "h2", ["slider__error-api"], errortext, slider);
+            createElement("swiper__errorApi", "h2", ["swiper__error-api"], errortext, swiper);
         });
 
     //hide hamburger
