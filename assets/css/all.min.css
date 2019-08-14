@@ -590,7 +590,7 @@ main {
   background: white; }
 
 .form__checkbox:checked::before {
-  background-image: url(/assets/images/checked_white.png);
+  background-image: url(../images/checked_white.png);
   background-position: center;
   background-size: contain; }
 
@@ -599,7 +599,7 @@ main {
   background: #1F2022; }
 
 .form__checkbox--contact:checked::before {
-  background-image: url(/assets/images/checked_black.png);
+  background-image: url(../images/checked_black.png);
   background-position: center;
   background-size: contain; }
 
@@ -654,7 +654,7 @@ main {
     width: 3.2rem;
     height: 3.2rem;
     margin: 0 0.3rem 0 0;
-    background-image: url(/assets/images/error_white.png);
+    background-image: url(../images/error_white.png);
     background-position: center;
     background-size: cover; }
   .form__error--white {
@@ -663,7 +663,7 @@ main {
     .form__error--white::after {
       border-top: 1.5rem solid white; }
     .form__error--white::before {
-      background-image: url(/assets/images/error_black.png); }
+      background-image: url(../images/error_black.png); }
   .form__error--checkbox {
     top: -5rem; }
 
