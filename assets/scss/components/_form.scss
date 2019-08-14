@@ -91,34 +91,48 @@
         display: block;
         font-size: 1.4rem;
         font-weight: lighter;
-        margin: 0 0 0 3rem;
+        margin: 0 0 0 2.5rem;
         cursor: pointer;
-
-        &::before {
-            content: '';
-            position: absolute;
-            left: -3rem;
-            width: 1.3rem;
-            height: 1.3rem;
-            transition: 0.3s;
-            border: 0.1rem solid $fontColor;
-        }
-
-        &--chec::before {
-            background: $linkActive;
-        }
 
         &--contact {
             color: white;
+        }
 
-            &::before {
-                border: 0.1rem solid white;
-            }
+        @media (max-width: 500px) {
+            font-size: 1.3rem;
         }
     }
 
     &__checkbox {
-        display: none;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.6rem;
+            height: 1.6rem;
+            border: 0.1rem solid $fontColor;
+            background: white;
+        }
+
+        &:checked::before {
+            background-image: url(/assets/images/checked_white.png);
+            background-position: center;
+            background-size: contain;
+        }
+
+        &--contact {
+            &::before {
+                border: 0.1rem solid white;
+                background: $bgBlack;
+            }
+
+            &:checked::before {
+                background-image: url(/assets/images/checked_black.png);
+                background-position: center;
+                background-size: contain;
+            }
+        }
     }
 
     &__input-wrapper {
@@ -133,22 +147,26 @@
 
     &__error {
         position: absolute;
+        display: flex;
+        align-items: center;
         text-align: center;
         white-space: nowrap;
         font-weight: bold;
-        padding: 0.8rem;
+        padding: 0.4rem 0.8rem 0.4rem 0.3rem;
+        border-radius: 0.4rem;
         font-size: 1.5rem;
         left: 50%;
         transform: translateX(-50%);
         z-index: 5;
         top: -3rem;
         animation: create 0.6s;
-        color: white;
-        background: rgba(0, 0, 0, 0.6);
+        color: $bgGray;
+        background: $bgBlack;
         ;
 
         @media (max-width: 500px) {
             font-size: 1.2rem;
+            padding: 0.3rem 0.7rem 0.3rem 0.2rem;
         }
 
         &::after {
@@ -156,20 +174,36 @@
             display: block;
             position: absolute;
             bottom: -1.5rem;
+            left: 2rem;
             width: 0;
             height: 0;
             border-left: 1rem solid transparent;
             border-right: 1rem solid transparent;
-            border-top: 1.5rem solid rgba(0, 0, 0, 0.6);
+            border-top: 1.5rem solid $bgBlack;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: 3.2rem;
+            height: 3.2rem;
+            margin: 0 0.3rem 0 0;
+            background-image: url(/assets/images/error_white.png);
+            background-position: center;
+            background-size: cover;
         }
 
         &--white {
             color: $bgBlack;
-            background: rgba(255, 255, 255, 0.7);
+            background: white;
 
             &::after {
-                border-top: 1.5rem solid rgba(255, 255, 255, 0.7);
+                border-top: 1.5rem solid white;
                 ;
+            }
+
+            &::before {
+                background-image: url(/assets/images/error_black.png);
             }
         }
 
@@ -180,6 +214,10 @@
 
     &__row {
         display: flex;
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+        }
     }
 
     &__button-wrapper {
@@ -191,7 +229,7 @@
         position: relative;
         display: block;
         width: fit-content;
-        color: white;
+        color: $bgGray;
         text-align: center;
         background-color: $linkActive;
         padding: 0.9rem;
@@ -213,9 +251,14 @@
             border-bottom: 0.7rem solid transparent;
         }
 
+        &--contact {
+            color: $bgBlack;
+        }
+
         &--active {
             opacity: 1;
         }
+
     }
 }
 

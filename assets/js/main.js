@@ -134,10 +134,6 @@
         statistics__digitWrapper[6].classList.add('statistics__digit-wrapper--animate');
         statistics__digitWrapper[7].classList.add('statistics__digit-wrapper--animate');
       });
-    } else {
-      for (var _i3 = 0; _i3 < statistics__digitWrapper.length; _i3++) {
-        statistics__digitWrapper[_i3].classList.remove('statistics__digit-wrapper--animate');
-      }
     }
 
     prevScrollpos = currentScrollPos;

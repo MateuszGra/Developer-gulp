@@ -4,11 +4,8 @@
     align-items: center;
     margin: 0 0 0 2rem;
 
-    &--hidden {
-        display: none;
-    }
-
-    &__quadrat {
+    &::before {
+        content: '';
         animation: animateQuadrat 0.7s infinite linear;
         width: 2rem;
         height: 2rem;
@@ -17,12 +14,17 @@
         margin: 0 0 0.8rem 0;
     }
 
-    &__shadow {
+    &::after {
+        content: '';
         animation: animateShadow 0.7s infinite linear;
         border-radius: 50%;
         width: 2.8rem;
         height: 1.5rem;
         background: lightgray;
+    }
+
+    &--hidden {
+        display: none;
     }
 }
 

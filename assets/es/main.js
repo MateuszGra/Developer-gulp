@@ -160,11 +160,6 @@
                 statistics__digitWrapper[6].classList.add('statistics__digit-wrapper--animate');
                 statistics__digitWrapper[7].classList.add('statistics__digit-wrapper--animate');
             });
-
-        } else {
-            for (let i = 0; i < statistics__digitWrapper.length; i++) {
-                statistics__digitWrapper[i].classList.remove('statistics__digit-wrapper--animate');
-            }
         }
         prevScrollpos = currentScrollPos;
     }
