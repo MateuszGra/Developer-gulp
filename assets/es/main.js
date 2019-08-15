@@ -139,6 +139,7 @@
     //on scroll animations
     let prevScrollpos = window.pageYOffset + 60;
     const nav = document.querySelector('.nav');
+    const sectionAnimation = document.querySelectorAll('.section-animation')
 
     window.onscroll = () => {
         //nav animation
@@ -162,6 +163,12 @@
                 statistics__digitWrapper[6].classList.add('statistics__digit-wrapper--animate');
                 statistics__digitWrapper[7].classList.add('statistics__digit-wrapper--animate');
             });
+        }
+        //section animation
+        for (let i = 0; i < sectionAnimation.length; i++) {
+            if (currentScrollPos > sectionAnimation[i].offsetTop - window.innerHeight + 200 && currentScrollPos < sectionAnimation[i].offsetTop + sectionAnimation[i].offsetHeight - 200) {
+                sectionAnimation[i].classList.add('section-animation-stop');
+            }
         }
         prevScrollpos = currentScrollPos;
     }

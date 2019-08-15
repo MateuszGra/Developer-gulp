@@ -15,6 +15,9 @@ body {
       -ms-flex-pack: center;
           justify-content: center; }
 
+main {
+  overflow-y: hidden; }
+
 h1,
 h2 {
   font-size: 4rem;
@@ -85,7 +88,22 @@ html {
     height: 0.2rem;
     background: white; }
 
+.section-animation {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+  -webkit-transition: opacity 1.5s, -webkit-transform 1s;
+  transition: opacity 1.5s, -webkit-transform 1s;
+  transition: transform 1s, opacity 1.5s;
+  transition: transform 1s, opacity 1.5s, -webkit-transform 1s; }
+
+.section-animation-stop {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1; }
+
 .benefits {
+  z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,7 +112,8 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-bottom: 38rem;
-  width: 88%; }
+  width: 100%;
+  background: white; }
   @media (max-width: 1025px) {
     .benefits {
       width: 95%;
@@ -160,6 +179,7 @@ html {
                 flex-direction: column; } }
 
 .blog {
+  z-index: 4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -186,6 +206,7 @@ html {
               flex-direction: column; } }
 
 .contact {
+  z-index: 6;
   background: #1F2022;
   width: 100%; }
   .contact__title {
@@ -215,6 +236,7 @@ html {
         text-align: center; } }
 
 .footer {
+  z-index: 7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,7 +247,8 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  height: 10rem; }
+  height: 10rem;
+  background: white; }
   @media (max-width: 500px) {
     .footer {
       -webkit-box-orient: vertical;
@@ -320,6 +343,7 @@ html {
         width: 100%; } }
 
 .investments {
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -369,6 +393,8 @@ html {
           width: 95%; } }
 
 .more-about {
+  z-index: 5;
+  background: white;
   width: 100%; }
   .more-about__title {
     letter-spacing: 0.4rem;
@@ -394,6 +420,7 @@ html {
         text-align: center; } }
 
 .search {
+  z-index: 1;
   width: 100%; }
   .search__info {
     margin: 3.5rem 0 0 0;
@@ -1230,8 +1257,8 @@ html {
     height: -moz-fit-content;
     height: fit-content; }
   .statistics__digit-wrapper--animate {
-    -webkit-animation: numberAnimation 1s both;
-            animation: numberAnimation 1s both; }
+    -webkit-animation: numberAnimation 1s 0.8s both;
+            animation: numberAnimation 1s 0.8s both; }
 
 @-webkit-keyframes numberAnimation {
   0% {

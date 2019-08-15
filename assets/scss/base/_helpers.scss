@@ -17,3 +17,14 @@ html {
         background: white;
     }
 }
+
+.section-animation {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 1s, opacity 1.5s;
+}
+
+.section-animation-stop {
+    transform: translateY(0);
+    opacity: 1;
+}

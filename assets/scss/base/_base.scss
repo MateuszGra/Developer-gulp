@@ -8,6 +8,10 @@ body {
   justify-content: center;
 }
 
+main {
+  overflow-y: hidden;
+}
+
 h1,
 h2 {
   font-size: 4rem;
