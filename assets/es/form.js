@@ -50,14 +50,17 @@
                     if (i < 3) createElement("error" + i, "div", ["form__error"], "Proszę uzupełnić pole.", form__inputWrapper[i]);
                     else createElement("error" + i, "div", ["form__error", "form__error--white"], "Proszę uzupełnić pole.", form__inputWrapper[i]);
                 }
+                form__input[i].focus();
                 return false
             }
             if (i == 1 && !form__input[i].value.match(regPhone)) {
                 if (!createElements['error' + i]) createElement("error" + i, "div", ["form__error"], "Błędny numer telefonu.", form__inputWrapper[i]);
+                form__input[i].focus();
                 return false
             }
             if (i == 4 && !form__input[i].value.match(regPhone) && !form__input[i].value.match(regEmail)) {
                 if (!createElements['error' + i]) createElement("error" + i, "div", ["form__error", "form__error--white"], "Błędny telefon lub adres email.", form__inputWrapper[i]);
+                form__input[i].focus();
                 return false
             }
         }
