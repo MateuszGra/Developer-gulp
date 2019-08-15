@@ -69,6 +69,11 @@
         flex-direction: row;
         height: 17rem;
         overflow: hidden;
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
 
         @media (max-width: 1025px) {
             height: 11rem;

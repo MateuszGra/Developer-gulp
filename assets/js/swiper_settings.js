@@ -5,11 +5,7 @@ var mySwiper = new Swiper('.swiper-container', {
   direction: 'horizontal',
   loop: true,
   initialSlide: 1,
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
+  speed: 800,
   // Navigation arrows
   navigation: {
     nextEl: '.swiper__next',

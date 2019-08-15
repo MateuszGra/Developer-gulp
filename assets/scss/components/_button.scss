@@ -34,10 +34,6 @@
     &:hover::after,
     &:hover::before {
         transform: translateY(-100%);
-
-        @media (max-width: 680px) {
-            transform: translateY(0%);
-        }
     }
 
 

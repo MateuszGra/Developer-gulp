@@ -22,21 +22,23 @@
 
                 createElement(`swiper__slide${i}`, "div", ["swiper-slide"], null, swiper);
                 createElements[`swiper__slide${i}`].innerHTML = `
-                <div class="swiper__info-wrapper">
-                    <h2 class="swiper__local-name">${resp[i].nazwa}</h2>
-                    <figure class="figure-line"></figure>
-                    <p class="swiper__local-yardage">Metraż: ${resp[i].metraz} m2</p>
-                    <p class="swiper__local-price">Cena Netto: ${resp[i].netto.toLocaleString('pl-PL')} zł*</p>
-                    <p class="swiper__local-info-price">* cena nie zawiera 23% VAT</p>
-                    <p class="swiper__local-floor">Piętro: ${resp[i].pietro + floor} </p>
-                    <p class="swiper__local-destyny">Przeznaczenie: ${resp[i].przeznaczenie}</p>
-                    <p class="swiper__loacal-status">Status: ${resp[i].status}</p>
-                    <button class="button--black button--ask button"><a id="button-scroll" class="button__link" href="#investments"></a>Zapytaj</button><button class="button--black button--download button"><a class="button__link" href="assets/images/plan.pdf" target="_blank"></a>Pobierz plan</button>
-                </div>
-                <img class="swiper__blueprint" src="${resp[i].obrazki.rzut}">
-                <div class="swiper__map-wrapper">
-                    <img class="swiper__compass" src="assets/images/SVG/polnoc.svg" style="transform: rotate(${rotateCompass(resp[i].ekspozycja)}deg)">
-                    <img class="swiper__map" src="${resp[i].obrazki.pietro}">
+                <div class="swiper-slide-content">
+                    <div class="swiper__info-wrapper">
+                        <h2 class="swiper__local-name">${resp[i].nazwa}</h2>
+                        <figure class="figure-line"></figure>
+                        <p class="swiper__local-yardage">Metraż: ${resp[i].metraz} m2</p>
+                        <p class="swiper__local-price">Cena Netto: ${resp[i].netto.toLocaleString('pl-PL')} zł*</p>
+                        <p class="swiper__local-info-price">* cena nie zawiera 23% VAT</p>
+                        <p class="swiper__local-floor">Piętro: ${resp[i].pietro + floor} </p>
+                        <p class="swiper__local-destyny">Przeznaczenie: ${resp[i].przeznaczenie}</p>
+                        <p class="swiper__loacal-status">Status: ${resp[i].status}</p>
+                        <button class="button--black button--ask button"><a id="button-scroll" class="button__link" href="#investments"></a>Zapytaj</button><button class="button--black button--download button"><a class="button__link" href="assets/images/plan.pdf" target="_blank"></a>Pobierz plan</button>
+                    </div>
+                    <img class="swiper__blueprint" src="${resp[i].obrazki.rzut}">
+                    <div class="swiper__map-wrapper">
+                        <img class="swiper__compass" src="assets/images/SVG/polnoc.svg" style="transform: rotate(${rotateCompass(resp[i].ekspozycja)}deg)">
+                        <img class="swiper__map" src="${resp[i].obrazki.pietro}">
+                    </div>
                 </div>
                 `
                 mySwiper.appendSlide(createElements[`swiper__slide${i}`]);

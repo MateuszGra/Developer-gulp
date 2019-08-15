@@ -23,6 +23,11 @@
         width: 10rem;
         height: 10rem;
         margin: 13rem 0 5rem 0;
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
 
         @media (max-width: 1025px) {
             margin: 5rem 0 3rem 0;

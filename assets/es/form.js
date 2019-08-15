@@ -7,6 +7,10 @@
     const form__checkbox = document.querySelectorAll('.form__checkbox');
 
     for (let i = 0; i < form__input.length; i++) {
+        if (form__input[i].value.length != 0) form__label[i].classList.add('form__label--active');
+    }
+
+    for (let i = 0; i < form__input.length; i++) {
         form__input[i].addEventListener('focus', (e) => {
             form__label[i].classList.add('form__label--active');
         });
@@ -14,6 +18,7 @@
             if (form__input[i].value == '') form__label[i].classList.remove('form__label--active');
         });
     }
+
     //form validation
     const form = document.querySelectorAll('#form');
     const form__status = document.querySelectorAll('.form__status');

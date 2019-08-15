@@ -54,12 +54,21 @@
         width: 100%;
         max-width: 77.4rem;
         overflow: hidden;
+
+        &:hover .post__image--one {
+            transform: scale(1.1);
+        }
+
+        &:hover .post__image--two {
+            transform: scale(1.1);
+        }
     }
 
     &__image--one {
         position: relative;
         width: 100%;
         mix-blend-mode: normal;
+        transition: transform 0.5s;
     }
 
     &__image--two {
@@ -69,6 +78,7 @@
         left: 0;
         opacity: 0.66;
         mix-blend-mode: overlay;
+        transition: transform 0.5s;
     }
 
     &__title {
